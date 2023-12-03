@@ -36,10 +36,10 @@ body, html {
    header h1 {
     color: white;
     font-size: 222px;
-    line-height: .55; /* Adjust the line height */
+    line-height: .8; /* Adjust the line height */
     font-family: 'blaue-milch', sans-serif;
     margin-bottom: 24px;
-    margin-top: 128px;
+    margin-top: 64px;
   }
   
   header p {
@@ -76,7 +76,6 @@ body, html {
     font-size: 16px;
     font-family: 'courier', sans-serif;
     font-weight: normal;
-    margin-top: auto;
-    margin-botom: 0px;
+    margin-botom: 24px;
   }
 
