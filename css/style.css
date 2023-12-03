@@ -21,7 +21,7 @@
 
 * {
   margin: 0px;
-  padding: 0px;
+  padding-top: 24px;
   box-sizing: border-box;
 }
 
@@ -38,7 +38,6 @@ body, html {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding-top: 64px;
     min-height: 100vh;
   }
   
