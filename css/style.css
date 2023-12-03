@@ -20,8 +20,8 @@
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0vw;
+  padding: 0vw;
   box-sizing: border-box;
 }
 
@@ -42,13 +42,13 @@ body, html {
   }
   
    header h1 {
-    padding-top: 144px;
-    padding-bottom: 0px;
+    padding-top: 24vh;
+    padding-bottom: 0vh;
     color: white;
     line-height: .9;
     font-size: 10vw;
     font-family: 'blaue-milch', sans-serif;
-    margin-bottom: 0px;
+    margin-bottom: 0vh;
     text-align: center;
   }
   
@@ -59,10 +59,10 @@ body, html {
     font-weight: normal;
     width: 55%;
     margin: 0 auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 0vh;
   }
   
   button {
@@ -71,14 +71,14 @@ body, html {
     font-family: 'futura', sans-serif;
     text-align: center;
     display: inline-block;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-right: 55px;
-    padding-left: 55px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 3.4vw;
+    padding-left: 3.4vw;
     cursor: pointer;
     border-radius: 64px; /* This gives the button rounded corners */
     font-size: 2vw;
-    margin-top: 36px;
+    margin-top: 2.25vh;
     border: none;
     outline: none;
   }
@@ -89,12 +89,12 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 2vh;
 }
   
   footer p {
     color: #555555;
-    font-size: 1.5vw;
+    font-size: 1vw;
     font-family: 'courier', sans-serif;
     font-weight: normal;
   }
