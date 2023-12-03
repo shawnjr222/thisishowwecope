@@ -42,11 +42,11 @@ body, html {
   }
   
    header h1 {
-    padding-top: 164px;
+    padding-top: 144px;
     padding-bottom: 0px;
     color: white;
     line-height: .9;
-    font-size: 222px;
+    font-size: 10vw;
     font-family: 'blaue-milch', sans-serif;
     margin-bottom: 0px;
     text-align: center;
@@ -54,7 +54,7 @@ body, html {
   
   header p {
     color: white;
-    font-size: 24px;
+    font-size: 2vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 55%;
@@ -77,7 +77,7 @@ body, html {
     padding-left: 55px;
     cursor: pointer;
     border-radius: 64px; /* This gives the button rounded corners */
-    font-size: 24px;
+    font-size: 2vw;
     margin-top: 36px;
     border: none;
     outline: none;
@@ -94,7 +94,7 @@ footer {
   
   footer p {
     color: #555555;
-    font-size: 16px;
+    font-size: 1.5vw;
     font-family: 'courier', sans-serif;
     font-weight: normal;
   }
