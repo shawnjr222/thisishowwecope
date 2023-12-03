@@ -30,11 +30,11 @@ body, html {
     text-align: center;
   }
   
-  header h1 {
+   header h1 {
     font-size: 222px;
-    line-height: 1.2; /* Adjust the line height */
+    line-height: .8; /* Adjust the line height */
     font-family: 'blaue-milch', sans-serif;
-    margin-bottom: 0.5em; /* Control the bottom margin */
+    margin-bottom: 24px; /* Control the bottom margin */
   }
   
   header p {
@@ -42,7 +42,8 @@ body, html {
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 55%;
-    margin: 0 auto 1em; /* Control the top and bottom margins */
+    margin-top: 0px;
+    margin-bottom: 0px;  
   }
   
   
