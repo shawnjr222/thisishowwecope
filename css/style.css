@@ -199,7 +199,7 @@ footer {
   
    header h1 {
     width: 77%;
-    padding-top: 28vh;
+    padding-top: 8vh;
     padding-bottom: 0vh;
     color: white;
     line-height: .9;
@@ -216,7 +216,7 @@ footer {
     font-size: 4vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
-    width: 44%;
+    width: 77%;
     margin: 0 auto;
     margin-top: 0vh;
     margin-bottom: 0vh;
@@ -230,10 +230,10 @@ footer {
     font-family: 'futura', sans-serif;
     text-align: center;
     display: inline-block;
-    padding-top: 1.2vh;
-    padding-bottom: 1.2vh;
-    padding-right: 3vw;
-    padding-left: 3vw;
+    padding-top: 2vh;
+    padding-bottom: 2h;
+    padding-right: 6vw;
+    padding-left: 6vw;
     cursor: pointer;
     border-radius: 64px; 
     font-size: 4vw;
