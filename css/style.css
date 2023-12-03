@@ -34,7 +34,7 @@ body, html {
 
 
 /* Desktop */
-@media only screen and (min-width: 1536px) {
+@media only screen and (min-width: 1600px) {
 .container {
     display: flex;
     flex-direction: column;
@@ -110,7 +110,7 @@ footer {
 
 
 /* Desktop Split View */
-@media only screen and (min-width: 1367px) and (max-width: 1535px) { 
+@media only screen and (min-width: 1367px) and (max-width: 1599px) { 
 .container {
     display: flex;
     flex-direction: column;
