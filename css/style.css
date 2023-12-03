@@ -20,9 +20,8 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Optional, ensures padding doesn't affect overall dimensions */
+  margin: 0px;
+  padding: 0px;
 }
 
 
