@@ -203,7 +203,7 @@ footer {
     padding-bottom: 0vh;
     color: white;
     line-height: .9;
-    font-size: 12vh;
+    font-size: 8vh;
     font-family: 'blaue-milch', sans-serif;
     margin: 0 auto;
     margin-top: 0vh;
@@ -231,7 +231,7 @@ footer {
     text-align: center;
     display: inline-block;
     padding-top: 2vh;
-    padding-bottom: 2h;
+    padding-bottom: 2vh;
     padding-right: 6vw;
     padding-left: 6vw;
     cursor: pointer;
@@ -253,7 +253,7 @@ footer {
   
   footer p {
     color: #555555;
-    font-size: 1vw;
+    font-size: 3vw;
     font-family: 'courier', sans-serif;
     font-weight: normal;
   }
