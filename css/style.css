@@ -19,6 +19,10 @@
   font-style: normal;
 }
 
+header, footer {
+  width: 100%; /* Ensure full width for alignment */
+}
+
 body, html {
     height: 100%;
     background-color: #222222;
