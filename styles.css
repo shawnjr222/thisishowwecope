@@ -1,6 +1,13 @@
 @font-face {
-  font-family: 'BLAUE-MILCH';
-  src: url('../fonts/BLAUE-MILCH.woff2') format('woff2');
+  font-family: 'blaue-milch';
+  src: url('../fonts/blaue-milch.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futura';
+  src: url('../fonts/futura.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,7 +33,7 @@ body, html {
   header h1 {
     font-size: 222px; 
     line-height: 188px;
-    font-family: 'BAUE-MILCH', sans-serif;
+    font-family: 'blaue-milch', sans-serif;
   }
   
   header p {
@@ -40,7 +47,7 @@ body, html {
   button {
     background-color: white;
     color: #222222;
-    font-family: 'Futura', sans-serif;
+    font-family: 'futura', sans-serif;
     text-align: center;
     display: inline-block;
     padding-top: 16px;
