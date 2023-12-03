@@ -38,7 +38,8 @@ body, html {
     font-size: 222px;
     line-height: .8; /* Adjust the line height */
     font-family: 'blaue-milch', sans-serif;
-    margin-bottom: 24px; /* Control the bottom margin */
+    margin-bottom: 24px;
+    margin-top: 0px;
   }
   
   header p {
