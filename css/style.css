@@ -42,8 +42,8 @@ body, html {
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 55%;
-    margin-top: 0px;
-    margin-bottom: 0px;  
+    width: 55%;
+    margin: 0 auto; /* Adjusted for top and bottom */
     text-align: center;
   }
   
@@ -62,7 +62,6 @@ body, html {
     border-radius: 64px; /* This gives the button rounded corners */
     font-size: 24px;
     margin-top: 40px;
-    margin-bottom: 0px; 
   }
   
   footer p {
