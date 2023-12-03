@@ -1,11 +1,4 @@
 /* Foundation */
-
-.title {
-    background-image: url('../fonts/title.svg');
-    width: 100%; /* Adjust as necessary */
-    height: 100%; /* Adjust as necessary */
-}
-
 @font-face {
   font-family: 'blaue-milch';
   src: url('../fonts/blaue-milch.woff2') format('woff2');
@@ -50,6 +43,19 @@ body, html {
     text-align: center;
     min-height: 100vh;
   }
+
+    .title {
+    background-image: url('../fonts/title.svg');
+    width: 100%; /* Adjust as necessary */
+    height: 100%; /* Adjust as necessary */
+    width: 77%;
+    padding-top: 28vh;
+    padding-bottom: 0vh;
+    margin: 0 auto;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    text-align: center;
+}
   
    header h1 {
     width: 77%;
