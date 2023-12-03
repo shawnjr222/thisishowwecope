@@ -22,13 +22,14 @@
 body, html {
     height: 100%;
     background-color: #222222;
+    margin: 0;
   }
   
   .container {
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    jjustify-content: space-between;
     align-items: center;
     text-align: center;
   }
@@ -76,6 +77,6 @@ body, html {
     font-size: 16px;
     font-family: 'courier', sans-serif;
     font-weight: normal;
-    margin-botom: 24px;
+    margin-bottom: 24px;
   }
 
