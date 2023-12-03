@@ -22,7 +22,7 @@
 body, html {
     height: 100%;
     background-color: #222222;
-    margin: 0;
+    margin: 64px;
     padding: 0;
   }
   
@@ -39,7 +39,7 @@ body, html {
     font-size: 222px;
     line-height: .8; /* Adjust the line height */
     font-family: 'blaue-milch', sans-serif;
-    margin-top: 64px;
+    margin-top: 0px;
     margin-bottom: 24px;
   }
   
