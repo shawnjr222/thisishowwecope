@@ -26,7 +26,6 @@ body, html {
   }
   
   .container {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     jjustify-content: space-between;
@@ -34,14 +33,6 @@ body, html {
     text-align: center;
     padding-bottom: 64px;
   }
-
-.content {
-  flex: 1; /* Allows this div to expand and fill available space */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
   
    header h1 {
     color: white;
@@ -49,7 +40,7 @@ body, html {
     line-height: .8; /* Adjust the line height */
     font-family: 'blaue-milch', sans-serif;
     margin-bottom: 24px;
-    margin-top: 64px;
+    margin-top: 400px;
   }
   
   header p {
@@ -87,6 +78,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  margin-bottom: 24px;
 }
   
   footer p {
@@ -94,6 +86,5 @@ footer {
     font-size: 16px;
     font-family: 'courier', sans-serif;
     font-weight: normal;
-    margin-bottom: 0px;
   }
 
