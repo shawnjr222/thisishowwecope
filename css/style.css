@@ -58,12 +58,11 @@ body, html {
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 55%;
+    margin: 0 auto;
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: center;
     padding-top: 0px;
-    justify-content: center;
-    align-items: center;
   }
   
   button {
