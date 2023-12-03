@@ -47,7 +47,7 @@ body, html {
     .title {
     background-image: url('../fonts/title.svg');
     height: 100%; /* Adjust as necessary */
-    width: 77%;
+    width: 100%;
     padding-top: 28vh;
     padding-bottom: 0vh;
     margin: 0 auto;
