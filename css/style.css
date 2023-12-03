@@ -46,7 +46,6 @@ body, html {
 
     .title {
     background-image: url('../fonts/title.svg');
-    width: 100%; /* Adjust as necessary */
     height: 100%; /* Adjust as necessary */
     width: 77%;
     padding-top: 28vh;
@@ -57,19 +56,6 @@ body, html {
     text-align: center;
 }
   
-   header h1 {
-    width: 77%;
-    padding-top: 28vh;
-    padding-bottom: 0vh;
-    color: white;
-    line-height: .9;
-    font-size: 24vh;
-    font-family: 'blaue-milch', sans-serif;
-    margin: 0 auto;
-    margin-top: 0vh;
-    margin-bottom: 0vh;
-    text-align: center;
-  }
   
   header p {
     color: white;
