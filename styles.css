@@ -15,7 +15,6 @@
 body, html {
     height: 100%;
     margin: 0;
-    background-color: #222222;
   }
   
   .container {
@@ -24,7 +23,7 @@ body, html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: #222222;
     color: white;
     padding: 20px;
     text-align: center;
