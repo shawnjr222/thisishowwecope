@@ -39,16 +39,17 @@ body, html {
   
   button {
     background-color: white;
-    color: black;
-    border: none;
-    padding: 10px 20px;
+    color: #222222;
     font-family: 'Futura', sans-serif;
     text-align: center;
     display: inline-block;
-    margin: 4px 2px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 55px;
+    padding-left: 55px;
     cursor: pointer;
-    border-radius: 20px; /* This gives the button rounded corners */
-    font-size: 18px;
+    border-radius: 64px; /* This gives the button rounded corners */
+    font-size: 24px;
   }
   
   footer p {
