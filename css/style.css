@@ -199,7 +199,7 @@ footer {
   
    header h1 {
     width: 77%;
-    padding-top: 8vh;
+    padding-top: 20vh;
     padding-bottom: 0vh;
     color: white;
     line-height: .9;
@@ -216,7 +216,7 @@ footer {
     font-size: 4vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
-    width: 55%;
+    width: 66%;
     margin: 0 auto;
     margin-top: 0vh;
     margin-bottom: 0vh;
