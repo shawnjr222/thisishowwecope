@@ -56,7 +56,8 @@ body, html {
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 55%;
-    margin: 0 auto; /* Adjusted for top and bottom */
+    margin-top: 0px;
+    margin-bottom: 0px;
     text-align: center;
   }
   
