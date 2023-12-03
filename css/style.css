@@ -26,7 +26,7 @@ body, html {
   }
   
   .container {
-    padding-top: 64px;
+    padding-top: 234px;
     display: flex;
     flex-direction: column;
     jjustify-content: center;
