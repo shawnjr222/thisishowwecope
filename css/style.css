@@ -42,13 +42,15 @@ body, html {
   }
   
    header h1 {
-    width: 55%;
-    padding-top: 24vh;
+    width: 66%;
+    padding-top: 20vh;
     padding-bottom: 0vh;
     color: white;
     line-height: .9;
     font-size: 20vh;
     font-family: 'blaue-milch', sans-serif;
+    margin: 0 auto;
+    margin-top: 0vh;
     margin-bottom: 0vh;
     text-align: center;
   }
