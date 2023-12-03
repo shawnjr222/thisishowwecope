@@ -31,18 +31,20 @@ body, html {
   }
   
   header h1 {
-    font-size: 222px; 
-    line-height: 188px;
+    font-size: 222px;
+    line-height: 1.2; /* Adjust the line height */
     font-family: 'blaue-milch', sans-serif;
+    margin-bottom: 0.5em; /* Control the bottom margin */
   }
   
   header p {
-    font-size: 24px; 
+    font-size: 24px;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 55%;
-    margin: auto;
+    margin: 0 auto 1em; /* Control the top and bottom margins */
   }
+  
   
   button {
     background-color: white;
