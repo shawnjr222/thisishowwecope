@@ -44,7 +44,7 @@ body, html {
     min-height: 100vh;
   }
 
-    .title {
+    header h1 {
     background-image: url('../fonts/title.svg');
     height: 100%; /* Adjust as necessary */
     width: 100%;
