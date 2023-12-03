@@ -1,3 +1,4 @@
+/* Foundation */
 @font-face {
   font-family: 'blaue-milch';
   src: url('../fonts/blaue-milch.woff2') format('woff2');
@@ -25,14 +26,16 @@
   box-sizing: border-box;
 }
 
-
 body, html {
     height: 100%;
     width: 100%;
     background-color: #222222;
   }
-  
-  .container {
+
+
+/* Desktop */
+@media only screen and (min-width: 901px) {
+.container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -101,4 +104,24 @@ footer {
     font-family: 'courier', sans-serif;
     font-weight: normal;
   }
+  
+}
+
+
+/* Tablet */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  /* CSS rules for mobile devices */
+
+  
+}
+
+
+
+
 
