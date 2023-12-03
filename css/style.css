@@ -38,7 +38,8 @@ body, html {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 20px;
+    min-height: 100vh;
   }
   
    header h1 {
