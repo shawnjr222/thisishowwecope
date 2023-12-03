@@ -46,7 +46,7 @@ body, html {
     padding-bottom: 0vh;
     color: white;
     line-height: .9;
-    font-size: 10vw;
+    font-size: 10vh;
     font-family: 'blaue-milch', sans-serif;
     margin-bottom: 0vh;
     text-align: center;
@@ -54,7 +54,7 @@ body, html {
   
   header p {
     color: white;
-    font-size: 2vw;
+    font-size: 1vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 55%;
@@ -76,8 +76,8 @@ body, html {
     padding-right: 3.4vw;
     padding-left: 3.4vw;
     cursor: pointer;
-    border-radius: 64px; /* This gives the button rounded corners */
-    font-size: 2vw;
+    border-radius: 64px; 
+    font-size: 1vw;
     margin-top: 2.25vh;
     border: none;
     outline: none;
