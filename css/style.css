@@ -19,6 +19,13 @@
   font-style: normal;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Optional, ensures padding doesn't affect overall dimensions */
+}
+
+
 body, html {
     background-color: #222222;
   }
@@ -26,7 +33,7 @@ body, html {
   .container {
     display: flex;
     flex-direction: column;
-    jjustify-content: center;
+    justify-content: center;
     align-items: center;
     text-align: center;
   }
