@@ -32,6 +32,7 @@ body, html {
     jjustify-content: space-between;
     align-items: center;
     text-align: center;
+    padding-bottom: 64px;
   }
 
 .content {
@@ -81,8 +82,11 @@ body, html {
   }
 
 footer {
-  width: 100%;
   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
   
   footer p {
