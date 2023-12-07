@@ -32,6 +32,10 @@ body, html {
     background-color: #2066EA;
   }
 
+a {
+     color: white;
+}
+
 
 /* Desktop */
 @media only screen and (min-width: 1367px) {
@@ -97,7 +101,6 @@ footer {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
-  color: white;
 }
   
   footer p {
@@ -174,7 +177,6 @@ footer {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
-  color: white;
 }
   
   footer p {
@@ -251,7 +253,6 @@ footer {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
-  color: white;
 }
   
   footer p {
@@ -327,7 +328,6 @@ footer {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
-  color: white;
 }
   
   footer p {
