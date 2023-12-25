@@ -49,7 +49,7 @@ a {
   }
 
  .card {
-    width: 150px; /* responsive width */
+    width: 200px; /* responsive width */
     height: 700px; /* responsive height based on viewport height */
     margin-top: 24vh; /* Adjust padding, consider using % for responsiveness */
     background-color: #ffffff; /* white background */
