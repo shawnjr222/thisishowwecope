@@ -49,9 +49,9 @@ a {
   }
 
 .card {
-  width: 100%; /* responsive width */
-  height: auto; /* responsive height */
-  padding: 20px; /* Adjust padding to give content some space inside the card */
+  width: 20%; /* responsive width */
+  height: 30%; /* responsive height */
+  padding-top: 20vh; /* Adjust padding to give content some space inside the card */
   background-color: #ffffff; /* white background */
   border-radius: 22px; /* rounded corners with a radius of 22px */
   /* Add more styling as needed, such as border, padding, etc. */
