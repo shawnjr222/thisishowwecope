@@ -49,9 +49,9 @@ a {
   }
 
  .card {
-    width: 20%; /* responsive width */
-    height: 30vh; /* responsive height based on viewport height */
-    padding: 2%; /* Adjust padding, consider using % for responsiveness */
+    width: 200px; /* responsive width */
+    height: 600px; /* responsive height based on viewport height */
+    padding: 24vh; /* Adjust padding, consider using % for responsiveness */
     background-color: #ffffff; /* white background */
     border-radius: 22px; /* rounded corners with a radius of 22px */
     /* Ensure it's visible for testing */
