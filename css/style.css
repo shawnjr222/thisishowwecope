@@ -311,8 +311,8 @@ footer {
   }
 
 .card {
-    width: 227.22px; /* responsive width */
-    height: 444px; /* responsive height based on viewport height */
+    width: 212.89px; /* responsive width */
+    height: 416px; /* responsive height based on viewport height */
     margin-top: 10vh; /* Adjust padding, consider using % for responsiveness */
     background-color: #ffffff; /* white background */
     padding-bottom: 0vh;
