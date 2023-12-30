@@ -226,7 +226,7 @@ footer {
    .card {
     width: 283px; /* responsive width */
     height: 553px; /* responsive height based on viewport height */
-    margin-top: 14vh; /* Adjust padding, consider using % for responsiveness */
+    margin-top: 16vh; /* Adjust padding, consider using % for responsiveness */
     background-color: #ffffff; /* white background */
     padding-bottom: 0vh;
     border-radius: 22px; /* rounded corners with a radius of 22px */
