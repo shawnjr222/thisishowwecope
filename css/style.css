@@ -309,7 +309,9 @@ footer {
     text-align: center;
     min-height: 100vh;
   }
-
+body {
+    overflow: hidden; /* Hide scrollbars */
+}
 .card {
     width: 212.89px; /* responsive width */
     height: 416px; /* responsive height based on viewport height */
