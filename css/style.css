@@ -1,23 +1,6 @@
 /* Animation */
 
-@keyframes slideIn {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
-h1 span {
-  display: inline-block; /* Needed so transform applies */
-  opacity: 0; /* Start invisible */
-  transform: translateY(100%); /* Start below */
-  animation: slideIn 0.5s forwards; /* Animation name, duration, fill-mode */
-  /* animation-delay will be set by JS */
-}
 
 /* Foundation */
 @font-face {
