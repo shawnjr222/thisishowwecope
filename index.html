@@ -17,6 +17,24 @@
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
       </footer>
   </div>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const title = document.querySelector('h1');
+      // Split the text into individual letters
+      const letters = title.innerText.split('');
+      title.innerHTML = ''; // Clear the original text
+
+      // Wrap each letter in a span and add it back to the h1
+      letters.forEach((letter, index) => {
+        let span = document.createElement('span');
+        span.textContent = letter;
+        span.style.animationDelay = `${index * 0.05}s`; // Delay each letter
+        title.appendChild(span);
+      });
+    });
+  </script>
+  
 </body>
 </html>
 
