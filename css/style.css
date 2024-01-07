@@ -19,11 +19,11 @@ h1[data-splitting] .word .char {
 
 @keyframes slide-up {
   from {
-    transform: translateY(75%);
+    transform: translateY(100%);
     opacity: 0; /* Start fully transparent */
   }
   to {
-    transform: translateY(0);
+    transform: translateY(25%);
     opacity: 1; /* Fully visible at the end */
   }
 }
