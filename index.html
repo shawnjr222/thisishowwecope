@@ -21,10 +21,10 @@
   </div>
   <!-- Include Splitting.js before your closing body tag -->
   <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Splitting with line splitting
-   Splitting({ target: '[data-splitting="lines"]', by: 'lines' });
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Splitting with line splitting and capture the result
+    const results = Splitting({ target: '[data-splitting="lines"]', by: 'lines' });
 
     // Loop through each line and set staggered animation delays
     results.forEach((split) => {
@@ -36,6 +36,6 @@
       });
     });
   });
-  </script>
+</script>
 </body>
 </html>
