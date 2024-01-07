@@ -11,7 +11,8 @@
 <body>
   <div class="container">
     <header>
-      <h1 data-splitting="lines">This is How We Cope</h1>
+      <!-- Just use data-splitting for character-based splitting -->
+      <h1 data-splitting>This is How We Cope</h1>
       <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
       <button onclick="location.href='game.html'">Deal</button>
     </header>
@@ -24,15 +25,16 @@
   <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize Splitting with line splitting and capture the result
-      const results = Splitting({ target: '[data-splitting="lines"]', by: 'lines' });
+      // Initialize Splitting for character-based splitting
+      const results = Splitting();
 
-      // Loop through each line and set staggered animation delays
+      // Loop through each line and set staggered animation delays based on lines
       results.forEach((split) => {
-        split.lines.forEach((line, lineIndex) => {
-          line.forEach((char) => {
-            // Set a delay based on the line index, adjust timing as needed
-            char.style.animationDelay = `${lineIndex * 0.5}s`;
+        split.words.forEach((word, wordIndex) => {
+          // Delay each word based on which line it's part of
+          const lineIndex = word.parentElement.dataset.line;
+          word.childNodes.forEach((char) => {
+            char.style.animationDelay = `${lineIndex * 0.5 + wordIndex * 0.1}s`;
           });
         });
       });
