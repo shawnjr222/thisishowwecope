@@ -25,29 +25,27 @@
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Initialize Splitting for character-based splitting
-    const results = Splitting();
+<script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Splitting for character-based splitting
+      const results = Splitting();
 
-    // Loop through each line and set staggered animation delays based on lines
-    results.forEach((split) => {
-      // Assign a cumulative delay for each line
+      // Loop through each line and set staggered animation delays
       let cumulativeDelay = 0;
-      
-      split.lines.forEach((line, lineIndex) => {
-        line.forEach((char, charIndex) => {
-          // Set a delay based on the line index and character index
-          // This staggers the characters within the line and also delays each line
-          const delay = cumulativeDelay + charIndex * 0.05; // Adjust charIndex multiplier for speed
-          char.style.animationDelay = `${delay}s`;
-
-          // After the last character of each line, add a delay before the next line starts
-          if (charIndex === line.length - 1) {
-            cumulativeDelay += 0.5; // Adjust this for delay between lines
-          }
+      results.forEach((result) => {
+        result.lines.forEach((line) => {
+          line.forEach((word) => {
+            word.forEach((char) => {
+              char.style.animationDelay = `${cumulativeDelay}s`;
+              cumulativeDelay += 0.05; // Increment delay for each character
+            });
+          });
+          cumulativeDelay += 0.5; // Additional delay after each line
         });
       });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
