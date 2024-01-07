@@ -1,12 +1,21 @@
 /* Animation */
-h1[data-splitting] .char {
+h1[data-splitting] span {
   display: inline-block;
-  transform: translateY(100%);
-  opacity: 0;
-  overflow: hidden; /* Ensures that the transform reveal effect is visible */
-  animation: slide-up 1s forwards;
+  white-space: pre;
 }
 
+h1[data-splitting] .word {
+  overflow: hidden;
+}
+
+h1[data-splitting] .word .char {
+  position: relative;
+  transform: translateY(100%); /* Start below */
+  opacity: 0; /* Start invisible */
+  animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+  /* Animation delay: Adjust the coefficient (0.1s) to control speed */
+  animation-delay: calc(0.1s * var(--char-index));
+}
 @keyframes slide-up {
   from {
     transform: translateY(100%);
