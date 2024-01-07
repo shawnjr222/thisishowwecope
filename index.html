@@ -22,8 +22,19 @@
   <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      Splitting();
+  // Initialize Splitting with line splitting
+  const results = Splitting({ target: "[data-splitting='lines']", by: "lines" });
+
+  // Loop through each line and set staggered animation delays
+  results.forEach((split) => {
+    split.lines.forEach((line, lineIndex) => {
+      line.forEach((char) => {
+        // Set a delay based on the line index, adjust timing as needed
+        char.style.animationDelay = `${lineIndex * 0.5}s`;
+      });
     });
+  });
+});
   </script>
 </body>
 </html>
