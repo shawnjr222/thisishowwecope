@@ -1,15 +1,15 @@
 /* Animation */
 
-.without span {
+h1[data-splitting] span {
   display: inline-block;
   white-space: pre;
 }
 
-.without .word {
+h1[data-splitting] .word {
   overflow: hidden;
 }
 
-.without .word .char {
+h1[data-splitting] .word .char {
   position: relative;
   animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) both;
   /* Adjust the animation delay to suit your preference */
@@ -19,9 +19,11 @@
 @keyframes slide-up {
   from {
     transform: translateY(100%);
+    opacity: 0; /* Start fully transparent */
   }
   to {
     transform: translateY(0);
+    opacity: 1; /* Fully visible at the end */
   }
 }
 
