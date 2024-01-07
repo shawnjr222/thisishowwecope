@@ -29,6 +29,8 @@
       let delay = 0; // Initialize delay
       results[0].lines.forEach((line, lineIndex) => { // Iterate through each line
         line.forEach((word) => { // Iterate through each word in the line
+        line.style.animationDelay = `${delay}s`; // Apply the delay
+        delay += 2.0; // Increment delay for next character
           word.forEach((char) => { // Iterate through each character in the word
             char.style.animationDelay = `${delay}s`; // Apply the delay
             delay += 0.0; // Increment delay for next character
