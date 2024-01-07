@@ -14,7 +14,7 @@ h1[data-splitting] .word .char {
   opacity: 0; /* Start invisible */
   animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) forwards;
   /* Animation delay: Adjust the coefficient (0.1s) to control speed */
-  animation-delay: calc(0.0s * var(--line-index));
+  animation-delay: calc(1s * var(--line-index));
 }
 @keyframes slide-up {
   from {
