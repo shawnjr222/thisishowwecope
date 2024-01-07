@@ -5,36 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Is How We Cope - Home</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- Include Splitting CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.css" />
 </head>
 <body>
   <div class="container">
-      <header>
+    <header>
       <h1 data-splitting="lines">This is How We Cope</h1>
       <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
       <button onclick="location.href='game.html'">Deal</button>
-      </header>
-      <footer>
+    </header>
+    <footer>
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
-      </footer>
+    </footer>
   </div>
+
   <!-- Include Splitting.js before your closing body tag -->
   <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Splitting with line splitting and capture the result
-    const results = Splitting({ target: '[data-splitting="lines"]', by: 'lines' });
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Splitting with line splitting and capture the result
+      const results = Splitting({ target: '[data-splitting="lines"]', by: 'lines' });
 
-    // Loop through each line and set staggered animation delays
-    results.forEach((split) => {
-      split.lines.forEach((line, lineIndex) => {
-        line.forEach((char) => {
-          // Set a delay based on the line index, adjust timing as needed
-          char.style.animationDelay = `${lineIndex * 0.5}s`;
+      // Loop through each line and set staggered animation delays
+      results.forEach((split) => {
+        split.lines.forEach((line, lineIndex) => {
+          line.forEach((char) => {
+            // Set a delay based on the line index, adjust timing as needed
+            char.style.animationDelay = `${lineIndex * 0.5}s`;
+          });
         });
       });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
