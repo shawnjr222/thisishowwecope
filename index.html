@@ -10,42 +10,21 @@
 </head>
 <body>
   <div class="container">
-    <header>
-      <!-- Just use data-splitting for character-based splitting -->
+      <header>
       <h1 data-splitting>This is How We Cope</h1>
       <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
       <button onclick="location.href='game.html'">Deal</button>
-    </header>
-    <footer>
+      </header>
+      <footer>
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
-    </footer>
+      </footer>
   </div>
-
   <!-- Include Splitting.js before your closing body tag -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Splitting for character-based splitting
-<script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize Splitting for character-based splitting
-      const results = Splitting();
-
-      // Loop through each line and set staggered animation delays
-      let cumulativeDelay = 0;
-      results.forEach((result) => {
-        result.lines.forEach((line) => {
-          line.forEach((word) => {
-            word.forEach((char) => {
-              char.style.animationDelay = `${cumulativeDelay}s`;
-              cumulativeDelay += 0.05; // Increment delay for each character
-            });
-          });
-          cumulativeDelay += 0.5; // Additional delay after each line
-        });
-      });
+      Splitting();
     });
   </script>
-
 </body>
 </html>
