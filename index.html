@@ -24,7 +24,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
     // Initialize Splitting with line splitting
-    const results = Splitting({ target: "[data-splitting='lines']", by: "lines" });
+   Splitting({ target: '[data-splitting="lines"]', by: 'lines' });
 
     // Loop through each line and set staggered animation delays
     results.forEach((split) => {
