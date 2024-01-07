@@ -22,23 +22,32 @@
   </div>
 
   <!-- Include Splitting.js before your closing body tag -->
-  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize Splitting for character-based splitting
-      const results = Splitting();
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Splitting for character-based splitting
+    const results = Splitting();
 
-      // Loop through each line and set staggered animation delays based on lines
-      results.forEach((split) => {
-        split.words.forEach((word, wordIndex) => {
-          // Delay each word based on which line it's part of
-          const lineIndex = word.parentElement.dataset.line;
-          word.childNodes.forEach((char) => {
-            char.style.animationDelay = `${lineIndex * 0.5 + wordIndex * 0.1}s`;
-          });
+    // Loop through each line and set staggered animation delays based on lines
+    results.forEach((split) => {
+      // Assign a cumulative delay for each line
+      let cumulativeDelay = 0;
+      
+      split.lines.forEach((line, lineIndex) => {
+        line.forEach((char, charIndex) => {
+          // Set a delay based on the line index and character index
+          // This staggers the characters within the line and also delays each line
+          const delay = cumulativeDelay + charIndex * 0.05; // Adjust charIndex multiplier for speed
+          char.style.animationDelay = `${delay}s`;
+
+          // After the last character of each line, add a delay before the next line starts
+          if (charIndex === line.length - 1) {
+            cumulativeDelay += 0.5; // Adjust this for delay between lines
+          }
         });
       });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
