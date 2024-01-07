@@ -25,7 +25,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     const results = Splitting(); // Initialize Splitting for character-based splitting
 
-    let lineDelay = 0; // Initialize delay for each line
+    let lineDelay = 0; // Initialize delay for the first line
     results.forEach((result) => {
       result.lines.forEach((line) => {
         line.forEach((char) => {
@@ -33,7 +33,7 @@
           char.style.animationDelay = `${lineDelay}s`;
         });
         // Increase the delay for the next line
-        lineDelay += 0.5; // Adjust this value for more or less delay between lines
+        lineDelay += 0.5; // Increment the delay for the next line
       });
     });
   });
