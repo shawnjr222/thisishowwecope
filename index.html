@@ -25,12 +25,12 @@
   document.addEventListener('DOMContentLoaded', function() {
     const results = Splitting(); // Initialize Splitting for character-based splitting
     
-    let lineDelay = 0; // Initialize delay for the first line
+    let lineDelay = 1; // Initialize delay for the first line
     results[0].lines.forEach((line) => { // Make sure to reference the first result if only one h1 is present
       line.forEach((char) => {
         char.style.animationDelay = `${lineDelay}s`; // Apply the same delay to each character in the line
       });
-      lineDelay += 0.5; // Increment the delay after each line is set
+      lineDelay += 1; // Increment the delay after each line is set
     });
   });
 </script>
