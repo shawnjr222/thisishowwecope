@@ -23,7 +23,7 @@ h1[data-splitting] .word .char {
     opacity: 0; /* Start fully transparent */
   }
   to {
-    transform: translateY(75%);
+    transform: translateY(0%);
     opacity: 1; /* Fully visible at the end */
   }
 }
