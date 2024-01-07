@@ -1,6 +1,29 @@
 /* Animation */
 
+.without span {
+  display: inline-block;
+  white-space: pre;
+}
 
+.without .word {
+  overflow: hidden;
+}
+
+.without .word .char {
+  position: relative;
+  animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) both;
+  /* Adjust the animation delay to suit your preference */
+  animation-delay: calc(0.1s * var(--char-index));
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 
 /* Foundation */
 @font-face {
