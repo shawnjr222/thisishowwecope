@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Is How We Cope - Home</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Include Splitting CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.css" />
 </head>
 <body>
   <div class="container">
@@ -22,20 +23,19 @@
   <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-  // Initialize Splitting with line splitting
-  const results = Splitting({ target: "[data-splitting='lines']", by: "lines" });
+    // Initialize Splitting with line splitting
+    const results = Splitting({ target: "[data-splitting='lines']", by: "lines" });
 
-  // Loop through each line and set staggered animation delays
-  results.forEach((split) => {
-    split.lines.forEach((line, lineIndex) => {
-      line.forEach((char) => {
-        // Set a delay based on the line index, adjust timing as needed
-        char.style.animationDelay = `${lineIndex * 0.5}s`;
+    // Loop through each line and set staggered animation delays
+    results.forEach((split) => {
+      split.lines.forEach((line, lineIndex) => {
+        line.forEach((char) => {
+          // Set a delay based on the line index, adjust timing as needed
+          char.style.animationDelay = `${lineIndex * 0.5}s`;
+        });
       });
     });
   });
-});
   </script>
 </body>
 </html>
-
