@@ -4,15 +4,13 @@ h1[data-splitting] span {
   white-space: pre;
 }
 
-h1[data-splitting] .word {
-  overflow: hidden;
-}
 
-h1[data-splitting] .word .char {
+h1[data-splitting] .char {
   position: relative;
   transform: translateY(100%); /* Start below */
   opacity: 0; /* Start invisible */
   animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+  overflow: hidden; /* Hide until animated */
 }
 @keyframes slide-up {
   from {
