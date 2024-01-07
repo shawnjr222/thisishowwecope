@@ -22,23 +22,21 @@
   <!-- Include Splitting.js before your closing body tag -->
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const results = Splitting(); // Initialize Splitting for character-based splitting
-      
-      // Assuming you want to animate each character in sequence based on the line
-      let delay = 0; // Initialize delay
-      results[0].lines.forEach((line, lineIndex) => { // Iterate through each line
-        line.forEach((word) => { // Iterate through each word in the line
-        line.style.animationDelay = `${delay}s`; // Apply the delay
-        delay += 2.0; // Increment delay for next character
-          word.forEach((char) => { // Iterate through each character in the word
-            char.style.animationDelay = `${delay}s`; // Apply the delay
-            delay += 0.0; // Increment delay for next character
-          });
+  document.addEventListener('DOMContentLoaded', function() {
+    const results = Splitting(); // Initialize Splitting for character-based splitting
+
+    let lineDelay = 0; // Initialize delay for each line
+    results.forEach((result) => {
+      result.lines.forEach((line) => {
+        line.forEach((char) => {
+          // Apply the same delay to each character in the line
+          char.style.animationDelay = `${lineDelay}s`;
         });
-        delay += 0.0; // Add a bit more delay after each line completes
+        // Increase the delay for the next line
+        lineDelay += 0.5; // Adjust this value for more or less delay between lines
       });
     });
-   </script>
+  });
+</script>
 </body>
 </html>
