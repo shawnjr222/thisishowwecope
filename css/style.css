@@ -1,13 +1,9 @@
 /* Animation */
 
-h1[data-splitting] span {
-  display: inline-block;
-  white-space: pre;
-}
-
 h1[data-splitting] .line {
+  display: inline-block; /* Allows transform and hides overflow in line */
   overflow: hidden; /* Hide overflow to make the reveal effect */
-  display: inline-block; /* Allows transform */
+  white-space: nowrap; /* Keep the line unbroken */
 }
 
 h1[data-splitting] .line .char {
@@ -16,9 +12,9 @@ h1[data-splitting] .line .char {
   transform: translateY(100%);
   opacity: 0;
   animation: slide-up 1s forwards;
-  /* No specific delay here; it's set in JavaScript */
 }
 
+/* Define the keyframes for slide-up */
 @keyframes slide-up {
   from {
     transform: translateY(100%);
