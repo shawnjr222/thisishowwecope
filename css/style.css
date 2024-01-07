@@ -21,7 +21,7 @@ h1[data-splitting] .word .char {
   position: relative;
   transform: translateY(100%); /* Start below */
   opacity: 0; /* Start invisible */
-  animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+  animation: slide-up 3s cubic-bezier(0.75, 0, 0.25, 1) forwards;
 }
 @keyframes slide-up {
   from {
