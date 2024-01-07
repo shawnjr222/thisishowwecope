@@ -1,20 +1,12 @@
 /* Animation */
-
-h1[data-splitting] .line {
-  display: inline-block; /* Allows transform and hides overflow in line */
-  overflow: hidden; /* Hide overflow to make the reveal effect */
-  white-space: nowrap; /* Keep the line unbroken */
-}
-
-h1[data-splitting] .line .char {
-  position: relative;
-  display: inline-block; /* Allows transform */
+h1[data-splitting] .char {
+  display: inline-block;
+  overflow: hidden;
   transform: translateY(100%);
   opacity: 0;
   animation: slide-up 1s forwards;
 }
 
-/* Define the keyframes for slide-up */
 @keyframes slide-up {
   from {
     transform: translateY(100%);
