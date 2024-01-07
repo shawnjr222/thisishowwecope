@@ -5,16 +5,18 @@ h1[data-splitting] span {
   white-space: pre;
 }
 
-h1[data-splitting] .word {
-  overflow: hidden;
+h1[data-splitting] .line {
+  overflow: hidden; /* Hide overflow to make the reveal effect */
+  display: inline-block; /* Allows transform */
 }
 
-h1[data-splitting] .word .char {
+h1[data-splitting] .line .char {
   position: relative;
-  animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) both;
-  /* Adjust the animation delay to suit your preference */
-  animation-delay: calc(0.1s * var(--char-index));
-  overflow: visible;
+  display: inline-block; /* Allows transform */
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slide-up 1s forwards;
+  /* No specific delay here; it's set in JavaScript */
 }
 
 @keyframes slide-up {
