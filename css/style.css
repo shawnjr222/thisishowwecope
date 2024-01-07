@@ -93,7 +93,7 @@ a {
     margin-bottom: 0vh;
     text-align: center;
     /* Additional overflow visible to ensure characters animate in properly */
-    overflow: hidden;
+    overflow: visible;
   }
   
   
@@ -182,7 +182,7 @@ footer {
     margin-bottom: 0vh;
     text-align: center;
     /* Additional overflow visible to ensure characters animate in properly */
-    overflow: hidden;
+    overflow: visible;
   }
   
   
@@ -271,7 +271,7 @@ footer {
     margin-bottom: 0vh;
     text-align: center;
     /* Additional overflow visible to ensure characters animate in properly */
-    overflow: hidden;
+    overflow: visible;
   }
   
   
@@ -363,7 +363,7 @@ body {
     margin-bottom: 0vh;
     text-align: center;
     /* Additional overflow visible to ensure characters animate in properly */
-    overflow: hidden;
+    overflow: visible;
   }
   
   header p {
