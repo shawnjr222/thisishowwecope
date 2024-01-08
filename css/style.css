@@ -39,17 +39,7 @@ h1[data-splitting] .word .char {
 
 /*Paragraph*/
 
-@keyframes typing {
-  to {
-    width: 100%; /* Full width of the text */
-  }
-}
 
-@keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-}
 
 /* Foundation */
 @font-face {
@@ -141,12 +131,6 @@ a {
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
-    white-space: normal;
-    overflow: hidden; /* Ensures text is clipped */
-    border-right: .15em solid white; /* The caret */
-    width: 0;
-    animation: typing 8s steps(104) forwards, /* Approximate number of characters */
-             caret 1s steps(1) infinite;
   }
   
   button {
