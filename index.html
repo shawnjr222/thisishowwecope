@@ -26,13 +26,15 @@
  // The text you want to type
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
 
-// Typewriter function
+// Typewriter function with caret
 function typeWriter(element, text, n) {
   if (n < text.length) {
-    element.innerHTML = text.substring(0, n+1);
+    element.innerHTML = text.substring(0, n+1) + '<span class="caret">|</span>';
     setTimeout(function() {
       typeWriter(element, text, n + 1)
-    }, 50); // Adjust typing speed by changing the timeout duration
+    }, 50); // Adjust typing speed
+  } else {
+    element.innerHTML = text.substring(0, n+1); // Remove caret at the end
   }
 }
 
@@ -40,7 +42,7 @@ function typeWriter(element, text, n) {
 window.onload = function() {
   const typingContainer = document.getElementById("typingContainer");
   typeWriter(typingContainer, text, 0);
-};
+}
 
 // Splitting.js and h1 animation code
 document.addEventListener('DOMContentLoaded', function() {
