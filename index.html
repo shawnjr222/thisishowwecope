@@ -11,7 +11,7 @@
 <body>
   <div class="container">
       <header>
-      <h1 data-splitting>This is How We Cope</h1>
+      <h1 data-splitting="lines">This is How We Cope</h1>
       <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
       <button onclick="location.href='game.html'">Deal</button>
       </header>
@@ -23,16 +23,17 @@
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script>
   document.addEventListener('DOMContentLoaded', function() {
-  const results = Splitting(); // Initialize Splitting for character-based splitting
-  console.log(results); // Log the results to see what they look like
+  const results = Splitting({ by: "lines" }); // Specifically request line splitting
 
-  if(results.length > 0 && results[0].hasOwnProperty('lines')) {
+  if(results.length > 0 && results[0].lines) {
     let lineDelay = 0; // Initialize delay for the first line
-    results[0].lines.forEach((line) => {
+    results[0].lines.forEach((line, index) => {
       line.forEach((char) => {
+        // Apply the same delay to each character in the line
         char.style.animationDelay = `${lineDelay}s`;
       });
-      lineDelay += 1.0; // Increment the delay after each line is set
+      // Increment the delay after all characters in a line are set
+      lineDelay += 0.5; // Adjust this value for more or less delay between lines
     });
   } else {
     console.error('Unexpected structure for results:', results);
