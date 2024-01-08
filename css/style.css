@@ -38,16 +38,7 @@ h1[data-splitting] .word .char {
 }
 
 /*Paragraph*/
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: white; }
-}
 
-.typing-animation {
-  border-right: 2px solid white;
-  letter-spacing: 3px;
-  animation: blink-caret .75s step-end infinite;
-}
 
 /* Foundation */
 @font-face {
@@ -141,7 +132,7 @@ a {
     padding-top: 0vh;
   }
 
-  header p.typing-animation {
+header p.typing-animation {
   color: #ffffff;
   font-size: 1.4vw;
   font-family: 'Courier', Courier, monospace;
@@ -152,6 +143,9 @@ a {
   margin-bottom: 0vh;
   text-align: center;
   padding-top: 0vh;
+  border-right: 2px solid white;
+  letter-spacing: 3px;
+  animation: blink-caret .75s step-end infinite;
 }
   
   button {
