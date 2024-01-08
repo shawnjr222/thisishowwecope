@@ -23,17 +23,17 @@
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script>
   document.addEventListener('DOMContentLoaded', function() {
-  const results = Splitting({ by: "lines" }); // Specifically request line splitting
+  const results = Splitting(); // Initialize Splitting for character-based splitting
 
-    let lineDelay = 0; // Initialize delay for the first line
-    results[0].lines.forEach((line, index) => {
-      line.forEach((char) => {
-        // Apply the same delay to each character in the line
-        char.style.animationDelay = `${lineDelay}s`;
-      });
-      // Increment the delay after all characters in a line are set
-      lineDelay += 0.5; // Adjust this value for more or less delay between lines
+  let lineDelay = 0; // Initialize delay for the first line
+  console.log("Animation Delays for Each Line:");
+  results[0].lines.forEach((line) => {
+    line.forEach((char) => {
+      char.style.animationDelay = `${lineDelay}s`;
     });
+    console.log(`Line Delay: ${lineDelay}s`);
+    lineDelay += 1.0; // Increment the delay after each line is set
+  });
 });
 </script>
 </body>
