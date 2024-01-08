@@ -10,7 +10,7 @@ h1[data-splitting] .line {
 }
 
 
-h1[data-splitting] .char {
+h1[data-splitting] .word .char {
   display: inline-block;
   overflow: hidden; /* Hide until animated */
   position: relative;
