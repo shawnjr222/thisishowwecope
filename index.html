@@ -25,7 +25,6 @@
   document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting({ by: "lines" }); // Specifically request line splitting
 
-  if(results.length > 0 && results[0].lines) {
     let lineDelay = 0; // Initialize delay for the first line
     results[0].lines.forEach((line, index) => {
       line.forEach((char) => {
@@ -35,9 +34,6 @@
       // Increment the delay after all characters in a line are set
       lineDelay += 0.5; // Adjust this value for more or less delay between lines
     });
-  } else {
-    console.error('Unexpected structure for results:', results);
-  }
 });
 </script>
 </body>
