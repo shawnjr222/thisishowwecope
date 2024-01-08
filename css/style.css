@@ -4,15 +4,20 @@ h1[data-splitting] span {
   white-space: pre;
 }
 
+h1[data-splitting] .word {
+  display: inline-block;
+  white-space: pre;
+  overflow: hidden; /* Hide until animated */
+}
+
 h1[data-splitting] .line {
   display: inline-block;
+  white-space: pre;
   overflow: hidden; /* Hide until animated */
 }
 
 
 h1[data-splitting] .word .char {
-  display: inline-block;
-  overflow: hidden; /* Hide until animated */
   position: relative;
   transform: translateY(100%); /* Start below */
   opacity: 0; /* Start invisible */
@@ -426,8 +431,3 @@ footer {
   }
   
 }
-
-
-
-
-
