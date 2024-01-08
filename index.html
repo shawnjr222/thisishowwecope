@@ -25,8 +25,8 @@
  <script>
   document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting for both h1 and p
-  const pElements = document.querySelectorAll('p');
 
+  let lineDelay = 0; // Define lineDelay
   // Animate h1 
   results[0].lines.forEach((line) => {
     line.forEach((char) => {
@@ -35,18 +35,15 @@
     });
   });
 
-  // Animate p 
-   // Initialize Typed.js for the <p> element
-     var options = {
-      strings: ["Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience."],
-      typeSpeed: 50,
-      startDelay: 3000,
-      showCursor: true,
-      cursorChar: '|',
-      loop: false
-    };
-
-    var typed = new Typed('#typed-text', options);
+  // Initialize Typed.js for the <p> element
+  var typed = new Typed('#typed-text', {
+    strings: ["Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience."],
+    typeSpeed: 50,
+    startDelay: 0,
+    showCursor: true,
+    cursorChar: '|',
+    loop: false
+  });
 });
 </script>
 </body>
