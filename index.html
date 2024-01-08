@@ -34,12 +34,13 @@
       lineDelay += 0.1; // Increment delay for each character in h1
     });
   });
-
+});
+ document.addEventListener('DOMContentLoaded', function() {
   // Initialize Typed.js for the <p> element
   var typed = new Typed('#typed-text', {
     strings: ["Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience."],
     typeSpeed: 50,
-    startDelay: 0,
+    startDelay: 3000,
     showCursor: true,
     cursorChar: '|',
     loop: false
