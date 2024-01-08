@@ -141,7 +141,7 @@ a {
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden; /* Ensures text is clipped */
     border-right: .15em solid white; /* The caret */
     width: 0;
