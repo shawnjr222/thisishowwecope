@@ -32,7 +32,7 @@ function typeWriter(element, text, n) {
     element.innerHTML = text.substring(0, n+1);
     setTimeout(function() {
       typeWriter(element, text, n + 1)
-    }, 100); // Adjust typing speed by changing the timeout duration
+    }, 50); // Adjust typing speed by changing the timeout duration
   }
 }
 
