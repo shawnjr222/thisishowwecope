@@ -24,16 +24,19 @@
  <script>
   document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting for character-based splitting
+  console.log(results); // Log the results to see what they look like
 
-  let lineDelay = 0; // Initialize delay for the first line
-  console.log("Animation Delays for Each Line:");
-  results[0].lines.forEach((line) => {
-    line.forEach((char) => {
-      char.style.animationDelay = `${lineDelay}s`;
+  if(results.length > 0 && results[0].hasOwnProperty('lines')) {
+    let lineDelay = 0; // Initialize delay for the first line
+    results[0].lines.forEach((line) => {
+      line.forEach((char) => {
+        char.style.animationDelay = `${lineDelay}s`;
+      });
+      lineDelay += 1.0; // Increment the delay after each line is set
     });
-    console.log(`Line Delay: ${lineDelay}s`);
-    lineDelay += 1.0; // Increment the delay after each line is set
-  });
+  } else {
+    console.error('Unexpected structure for results:', results);
+  }
 });
 </script>
 </body>
