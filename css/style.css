@@ -140,6 +140,19 @@ a {
     text-align: center;
     padding-top: 0vh;
   }
+
+  header p.typing-animation {
+  color: #ffffff;
+  font-size: 1.4vw;
+  font-family: 'Courier', Courier, monospace;
+  font-weight: normal;
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
+  text-align: center;
+  padding-top: 0vh;
+}
   
   button {
     background-color: #ffffff;
