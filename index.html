@@ -24,7 +24,7 @@
  <script>
   document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting for both h1 and p
-  let fixedDelay = 5; // Delay in seconds after which p animation starts
+  const pElements = document.querySelectorAll('p');
 
   // Animate h1 
   results[0].lines.forEach((line) => {
@@ -35,12 +35,9 @@
   });
 
   // Animate p with typing effect
-  results[1].lines.forEach((line) => {
-    let charDelay = fixedDelay; // Start with the fixed delay
-    line.forEach((char) => {
-      char.style.animationDelay = `${charDelay}s`;
-      charDelay += 0.05; // Increment delay for typing effect, adjust for speed
-    });
+  pElements.forEach(p => {
+    const charCount = p.textContent.length;
+    p.style.setProperty('--char-count', charCount);
   });
 });
 </script>
