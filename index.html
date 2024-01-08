@@ -23,16 +23,18 @@
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const results = Splitting(); // Initialize Splitting for character-based splitting
-    
-    let lineDelay = 1; // Initialize delay for the first line
-    results[0].lines.forEach((line) => { // Make sure to reference the first result if only one h1 is present
-      line.forEach((char) => {
-        char.style.animationDelay = `${lineDelay}s`; // Apply the same delay to each character in the line
-      });
-      lineDelay += 1; // Increment the delay after each line is set
+  const results = Splitting(); // Initialize Splitting for character-based splitting
+
+  let lineDelay = 0; // Initialize delay for the first line
+  console.log("Animation Delays for Each Line:");
+  results[0].lines.forEach((line) => {
+    line.forEach((char) => {
+      char.style.animationDelay = `${lineDelay}s`;
     });
+    console.log(`Line Delay: ${lineDelay}s`);
+    lineDelay += 1.0; // Increment the delay after each line is set
   });
+});
 </script>
 </body>
 </html>
