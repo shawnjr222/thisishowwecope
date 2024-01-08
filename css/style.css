@@ -38,24 +38,18 @@ h1[data-splitting] .word .char {
 }
 
 /*Paragraph*/
-p[data-splitting] .char {
-  opacity: 0;
-  display: inline-block; /* Needed for individual character manipulation */
-  transform: translateX(10px); /* Start slightly to the right */
-  animation: typing 0.5s forwards;
-}
 
 @keyframes typing {
-  from {
-    opacity: 0;
-    transform: translateX(10px);
-  }
   to {
-    opacity: 1;
-    transform: translateX(0px);
+    width: 100%; /* Full width of the text */
   }
 }
 
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
 
 /* Foundation */
 @font-face {
@@ -147,6 +141,12 @@ a {
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
+    white-space: nowrap;
+    overflow: hidden; /* Ensures that text is clipped */
+    border-right: .15em solid white; /* The caret */
+    width: 0;
+    animation: typing 4s steps(var(--char-count)) forwards,
+             caret 1s steps(1) infinite;
   }
   
   button {
