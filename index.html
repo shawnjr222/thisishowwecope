@@ -37,15 +37,17 @@
 
   // Animate p 
    // Initialize Typed.js for the <p> element
-    var typed = new Typed('header p', {
+     var options = {
       strings: ["Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience."],
       typeSpeed: 50,
-      backSpeed: 50,
-      loop: false,
+      startDelay: 3000,
       showCursor: true,
       cursorChar: '|',
-      startDelay: 3000
-    });  
+      loop: false
+    };
+
+    var typed = new Typed('#typed-text', options);
+  });
 });
 </script>
 </body>
