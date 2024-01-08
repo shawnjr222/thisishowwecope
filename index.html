@@ -32,7 +32,7 @@ function typeWriter(element, text, n) {
     element.innerHTML = text.substring(0, n+1);
     setTimeout(function() {
       typeWriter(element, text, n + 1)
-    }, 60); // Adjust typing speed
+    }, 70); // Adjust typing speed
   } else {
     element.innerHTML = text.substring(0, n+1); // Remove caret at the end
   }
