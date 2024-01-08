@@ -1,4 +1,6 @@
 /* Animation */
+
+/*Header*/
 h1[data-splitting] span {
   display: inline-block;
   white-space: pre;
@@ -31,6 +33,21 @@ h1[data-splitting] .word .char {
   }
   to {
     transform: translateY(10%);
+    opacity: 1;
+  }
+}
+
+/*Paragraph*/
+p[data-splitting] .char {
+  opacity: 0; /* Start invisible */
+  animation: typing 0.5s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+}
+
+@keyframes typing {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
