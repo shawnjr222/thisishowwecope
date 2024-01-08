@@ -147,17 +147,6 @@ header p.typing-animation {
   position: relative;
   white-space: pre-wrap;
 }
-
-  .typing-animation:after {
-  content: '|';
-  position: absolute;
-  right: -2px; /* Adjust as necessary */
-  animation: blink-caret 1s step-end infinite;
-}
-
-@keyframes blink-caret {
-  50% { opacity: 0; }
-}
   
   button {
     background-color: #ffffff;
