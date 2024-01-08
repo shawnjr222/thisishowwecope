@@ -12,7 +12,7 @@
   <div class="container">
       <header>
       <h1 data-splitting>This is How We Cope</h1>
-      <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
+      <p data-splitting>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
       <button onclick="location.href='game.html'">Deal</button>
       </header>
       <footer>
@@ -23,16 +23,23 @@
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script>
   document.addEventListener('DOMContentLoaded', function() {
-  const results = Splitting(); // Initialize Splitting for character-based splitting
+  const results = Splitting(); // Initialize Splitting for both h1 and p
+  let maxDelayH1 = 0; // To store the maximum delay for h1 animation
 
-  let lineDelay = 0; // Initialize delay for the first line
-  console.log("Animation Delays for Each Line:");
+  // Animate h1
   results[0].lines.forEach((line) => {
     line.forEach((char) => {
-      char.style.animationDelay = `${lineDelay}s`;
+      char.style.animationDelay = `${maxDelayH1}s`;
+      maxDelayH1 += 0.1; // Increment delay for each character in h1
     });
-    console.log(`Line Delay: ${lineDelay}s`);
-    lineDelay += 1.0; // Increment the delay after each line is set
+  });
+
+  // Animate p after h1
+  const delayStartP = maxDelayH1; // Start delay for p after the last character of h1
+  results[1].lines.forEach((line) => {
+    line.forEach((char, index) => {
+      char.style.animationDelay = `${delayStartP + (index * 0.1)}s`; // Increment delay for each character in p
+    });
   });
 });
 </script>
