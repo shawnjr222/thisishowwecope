@@ -12,7 +12,7 @@
   <div class="container">
       <header>
       <h1 data-splitting>This is How We Cope</h1>
-      <p id="typed-text">Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
+      <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
       <button onclick="location.href='game.html'">Deal</button>
       </header>
       <footer>
@@ -33,17 +33,6 @@
       char.style.animationDelay = `${lineDelay}s`;
       lineDelay += 0.1; // Increment delay for each character in h1
     });
-  });
-});
- document.addEventListener('DOMContentLoaded', function() {
-  // Initialize Typed.js for the <p> element
-  var typed = new Typed('#typed-text', {
-    strings: ["Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience."],
-    typeSpeed: 50,
-    startDelay: 3000,
-    showCursor: true,
-    cursorChar: '|',
-    loop: false
   });
 });
 </script>
