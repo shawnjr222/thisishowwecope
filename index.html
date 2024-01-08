@@ -12,7 +12,7 @@
   <div class="container">
       <header>
       <h1 data-splitting>This is How We Cope</h1>
-      <p data-splitting>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
+      <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
       <button onclick="location.href='game.html'">Deal</button>
       </header>
       <footer>
@@ -32,12 +32,6 @@
       char.style.animationDelay = `${lineDelay}s`;
       lineDelay += 0.1; // Increment delay for each character in h1
     });
-  });
-
-  // Animate p with typing effect
-  pElements.forEach(p => {
-    const charCount = p.textContent.length;
-    p.style.setProperty('--char-count', charCount);
   });
 });
 </script>
