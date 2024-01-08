@@ -142,10 +142,10 @@ a {
     text-align: center;
     padding-top: 0vh;
     white-space: nowrap;
-    overflow: hidden; /* Ensures that text is clipped */
+    overflow: hidden; /* Ensures text is clipped */
     border-right: .15em solid white; /* The caret */
     width: 0;
-    animation: typing 4s steps(var(--char-count)) forwards,
+    animation: typing 8s steps(95) forwards, /* Approximate number of characters */
              caret 1s steps(1) infinite;
   }
   
