@@ -12,7 +12,7 @@
   <div class="container">
       <header>
       <h1 data-splitting>This is How We Cope</h1>
-      <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
+      <p class="container typing-animation" id="typingContainer"></p>
       <button onclick="location.href='game.html'">Deal</button>
       </header>
       <footer>
@@ -23,6 +23,30 @@
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
  <script>
+ function typeWriter(text, n) {
+  if (n < (text.length)) {
+    document.getElementById("typingContainer").innerHTML = text.substring(0, n+1);
+    setTimeout(function() {
+      typeWriter(text, n + 1)
+    }, 100); // Adjust typing speed by changing the timeout duration
+   }
+  }
+  // The text you want to type
+const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
+
+// Start the typewriter effect
+window.onload = function() {
+  typeWriter(text, 0);
+}; 
+
+// The text you want to type
+const text = "This is a typing animation using a p element inside a narrower container.";
+
+// Start the typewriter effect
+window.onload = function() {
+  typeWriter(text, 0);
+};
+   
   document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting for both h1 and p
 
