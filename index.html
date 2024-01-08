@@ -32,7 +32,7 @@ function typeWriter(element, text, n) {
     element.innerHTML = text.substring(0, n+1);
     setTimeout(function() {
       typeWriter(element, text, n + 1)
-    }, 75); // Adjust typing speed
+    }, 60); // Adjust typing speed
   } else {
     element.innerHTML = text.substring(0, n+1); // Remove caret at the end
   }
@@ -40,9 +40,10 @@ function typeWriter(element, text, n) {
 
 // Start the typewriter effect
 window.onload = function() {
-  const typingContainer = document.getElementById("typingContainer");
-  typeWriter(typingContainer, text, 0);
-}
+  setTimeout(function() {
+    const typingContainer = document.getElementById("typingContainer");
+    typeWriter(typingContainer, text, 0);
+  }, 4000); // Delay of 4000 milliseconds (4 seconds)
 
 // Splitting.js and h1 animation code
 document.addEventListener('DOMContentLoaded', function() {
