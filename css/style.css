@@ -143,9 +143,20 @@ header p.typing-animation {
   margin-bottom: 0vh;
   text-align: center;
   padding-top: 0vh;
-  border-right: 2px solid white;
   letter-spacing: 3px;
-  animation: blink-caret .75s step-end infinite;
+  position: relative;
+  white-space: pre-wrap;
+}
+
+  .typing-animation:after {
+  content: '|';
+  position: absolute;
+  right: -2px; /* Adjust as necessary */
+  animation: blink-caret 1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  50% { opacity: 0; }
 }
   
   button {
