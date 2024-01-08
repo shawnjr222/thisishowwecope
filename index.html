@@ -26,7 +26,7 @@
   const results = Splitting(); // Initialize Splitting for both h1 and p
   let fixedDelay = 5; // Delay in seconds after which p animation starts
 
-  // Animate h1 (existing code)
+  // Animate h1 
   results[0].lines.forEach((line) => {
     line.forEach((char) => {
       char.style.animationDelay = `${lineDelay}s`;
@@ -34,10 +34,12 @@
     });
   });
 
-  // Animate p after a fixed delay
+  // Animate p with typing effect
   results[1].lines.forEach((line) => {
-    line.forEach((char, index) => {
-      char.style.animationDelay = `${fixedDelay + (index * 0.1)}s`; // Start p animation after the fixed delay
+    let charDelay = fixedDelay; // Start with the fixed delay
+    line.forEach((char) => {
+      char.style.animationDelay = `${charDelay}s`;
+      charDelay += 0.05; // Increment delay for typing effect, adjust for speed
     });
   });
 });
