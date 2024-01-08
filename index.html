@@ -24,21 +24,20 @@
  <script>
   document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting for both h1 and p
-  let maxDelayH1 = 0; // To store the maximum delay for h1 animation
+  let fixedDelay = 5; // Delay in seconds after which p animation starts
 
-  // Animate h1
+  // Animate h1 (existing code)
   results[0].lines.forEach((line) => {
     line.forEach((char) => {
-      char.style.animationDelay = `${maxDelayH1}s`;
-      maxDelayH1 += 0.1; // Increment delay for each character in h1
+      char.style.animationDelay = `${lineDelay}s`;
+      lineDelay += 0.1; // Increment delay for each character in h1
     });
   });
 
-  // Animate p after h1
-  const delayStartP = maxDelayH1; // Start delay for p after the last character of h1
+  // Animate p after a fixed delay
   results[1].lines.forEach((line) => {
     line.forEach((char, index) => {
-      char.style.animationDelay = `${delayStartP + (index * 0.1)}s`; // Increment delay for each character in p
+      char.style.animationDelay = `${fixedDelay + (index * 0.1)}s`; // Start p animation after the fixed delay
     });
   });
 });
