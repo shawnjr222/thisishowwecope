@@ -39,6 +39,16 @@ h1[data-splitting] .word .char {
 
 /*Paragraph*/
 
+.typed-cursor {
+  opacity: 1;
+  animation: blink 0.7s infinite;
+  /* Style your cursor (e.g., color, font size) */
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 
 /* Foundation */
