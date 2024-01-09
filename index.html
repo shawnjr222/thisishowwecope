@@ -26,26 +26,6 @@
  // The text you want to type
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
 
-// Typewriter function
-function typeWriter(element, text, n) {
-  if (n < text.length) {
-    element.innerHTML = text.substring(0, n+1);
-    setTimeout(function() {
-      typeWriter(element, text, n + 1)
-    }, 70); // Adjust typing speed
-  } else {
-    element.innerHTML = text.substring(0, n+1); // Remove caret at the end
-  }
-}
-
-// Start the typewriter effect
-window.onload = function() {
-  setTimeout(function() {
-    const typingContainer = document.getElementById("typingContainer");
-    typeWriter(typingContainer, text, 0);
-  }, 1500); // Delay of 4000 milliseconds (4 seconds)
-}
-
 // Splitting.js and h1 animation code
 document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting
