@@ -23,7 +23,7 @@ h1[data-splitting] .word .char {
   position: relative;
   transform: translateY(100%); /* Start below */
   opacity: 0; /* Start invisible */
-  animation: slide-up 1s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+  animation: slide-up 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) forwards;
 }
 
 @keyframes slide-up {
@@ -131,22 +131,6 @@ a {
     text-align: center;
     padding-top: 0vh;
   }
-
-header p.typing-animation {
-  color: #ffffff;
-  font-size: 1.4vw;
-  font-family: 'Courier', Courier, monospace;
-  font-weight: normal;
-  width: 55%;
-  margin: 0 auto;
-  margin-top: 0vh;
-  margin-bottom: 0vh;
-  text-align: center;
-  padding-top: 0vh;
-  letter-spacing: 3px;
-  position: relative;
-  white-space: pre-wrap;
-}
   
   button {
     background-color: #ffffff;
