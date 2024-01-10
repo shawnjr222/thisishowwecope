@@ -38,6 +38,23 @@ h1[data-splitting] .word .char {
 }
 
 /*Paragraph&Footer*/
+@keyframes slide-down-fade-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header p {
+  /* ... existing styles ... */
+  animation: slide-down-fade-in 2s ease forwards;
+  animation-delay: 2s; /* Delay of 2 seconds */
+}
+
 
 /* Foundation */
 @font-face {
