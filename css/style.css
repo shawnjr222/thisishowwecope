@@ -172,8 +172,8 @@ a {
     margin-top: 3vh;
     border: none;
     outline: none;
-    animation: button-slide-down-fade-in 1.25s ease forwards;
-    animation-delay: 1s; /* Delay of 1.85 seconds */
+    animation: button-slide-down-fade-in 1.5s ease forwards;
+    animation-delay: 1.2s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-100%); /* Start shifted up */
   }
