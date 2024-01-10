@@ -54,7 +54,7 @@ h1[data-splitting] .word .char {
   }
   to {
     opacity: 1;
-    transform: translateY(-30%);
+    transform: translateY(-50%);
   }
 }
 
@@ -173,9 +173,9 @@ a {
     border: none;
     outline: none;
     animation: button-slide-down-fade-in 1.25s ease forwards;
-    animation-delay: 1.15s; /* Delay of 1.85 seconds */
+    animation-delay: 1.14s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
-    transform: translateY(-60%); /* Start shifted up */
+    transform: translateY(-75%); /* Start shifted up */
   }
 
 footer {
