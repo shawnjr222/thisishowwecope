@@ -21,7 +21,6 @@
   </div>
   <!-- Include Splitting.js before your closing body tag -->
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
  <script>
  // The text you want to type
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
@@ -38,7 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
       lineDelay += 0.1; // Increment delay for each character in h1
     });
   });
-
+ // Set staggered animation delays
+    let delay = 1.5; // start after 1.5 seconds
+    results.forEach(result => {
+        result.el.style.animationDelay = `${delay}s`;
+        delay += 0.5; // stagger the next element by 0.5 seconds
+    });
 
 });
 </script>
