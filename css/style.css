@@ -185,7 +185,7 @@ a {
     transform: translateY(-75%); /* Start shifted up */
   }
 
-  cb {
+  .cb {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -215,7 +215,7 @@ footer {
   opacity: 0; /* Start with no opacity */
 }
 
-  ok {
+  .ok {
   text-align: center;
   position: fixed;
   left: 0;
@@ -313,7 +313,7 @@ footer {
     transform: translateY(-75%); /* Start shifted up */
   }
 
-  cb {
+  .cb {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -344,7 +344,7 @@ footer {
   opacity: 0; /* Start with no opacity */
 }
 
-  ok {
+  .ok {
   text-align: center;
   position: fixed;
   left: 0;
@@ -441,7 +441,7 @@ footer {
     transform: translateY(-75%); /* Start shifted up */
   }
 
-  cb {
+  .cb {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -471,7 +471,7 @@ footer {
   opacity: 0; /* Start with no opacity */
 }
 
-  ok {
+  .ok {
   text-align: center;
   position: fixed;
   left: 0;
@@ -573,7 +573,7 @@ body {
     transform: translateY(-75%); /* Start shifted up */
   }
 
-cb {
+.cb {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -604,7 +604,7 @@ footer {
   opacity: 0; /* Start with no opacity */
 }
 
-  ok {
+  .ok {
   text-align: center;
   position: fixed;
   left: 0;
