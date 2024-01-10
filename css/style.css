@@ -38,7 +38,15 @@ h1[data-splitting] .word .char {
 }
 
 /*Paragraph&Footer*/
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
+[data-splitting] {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
 
 /* Foundation */
 @font-face {
