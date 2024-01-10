@@ -39,25 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Start animations after 1.5 seconds
-    setTimeout(function() {
-        // Fade in the paragraph
-        var paragraph = document.querySelector('header p');
-        paragraph.classList.add('fade-in');
 
-        // Fade in the button after an additional delay
-        setTimeout(function() {
-            var button = document.querySelector('header button');
-            button.classList.add('fade-in');
-            
-            // Fade in the footer after another additional delay
-            setTimeout(function() {
-                var footer = document.querySelector('footer');
-                footer.classList.add('fade-in');
-            }, 500); // Delay for the footer
-        }, 500); // Delay for the button
-    }, 1500); // Initial delay
-  
 });
 </script>
 </body>
