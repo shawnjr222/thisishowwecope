@@ -175,7 +175,7 @@ a {
     animation: button-slide-down-fade-in 1.25s ease forwards;
     animation-delay: .825s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
-    transform: translateY(-75%); /* Start shifted up */
+    transform: translateY(-80%); /* Start shifted up */
   }
 
 footer {
