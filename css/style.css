@@ -37,7 +37,7 @@ h1[data-splitting] .word .char {
   }
 }
 
-/*Paragraph&Footer*/
+/*Paragraph&Button&Footer*/
 @keyframes slide-down-fade-in {
   from {
     opacity: 0;
@@ -47,6 +47,18 @@ h1[data-splitting] .word .char {
     transform: translateY(-60%); /* Start shifted up */
   }
 }
+
+@keyframes button-slide-down-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-60%);
+  }
+}
+
+
 
 /* Foundation */
 @font-face {
@@ -160,6 +172,10 @@ a {
     margin-top: 3vh;
     border: none;
     outline: none;
+    animation: button-slide-down-fade-in 1.25s ease forwards;
+    animation-delay: 1.85s; /* Delay of 1.85 seconds */
+    opacity: 0; /* Start with no opacity */
+    transform: translateY(-100%); /* Start shifted up */
   }
 
 footer {
