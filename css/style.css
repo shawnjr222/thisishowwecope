@@ -124,7 +124,6 @@ a {
     text-align: center;
     /* Additional overflow visible to ensure characters animate in properly */
     overflow: visible;
-    transform: translateY(-100%); /* Start shifted up */
   }
   
   
@@ -142,6 +141,7 @@ a {
     animation: slide-down-fade-in 1s ease forwards;
     animation-delay: .6s; /* Delay of 2 seconds */
     opacity: 0; /* Start with no opacity */
+    transform: translateY(-100%); /* Start shifted up */
   }
   
   button {
