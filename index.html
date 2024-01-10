@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
  // Set staggered animation delays
-    let delay = 1.5; // start after 1.5 seconds
+    let delay = 3; // start after 1.5 seconds
     results.forEach(result => {
         result.el.style.animationDelay = `${delay}s`;
-        delay += 0.5; // stagger the next element by 0.5 seconds
+        delay += 1.5; // stagger the next element by 0.5 seconds
     });
 
 });
