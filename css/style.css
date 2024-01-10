@@ -185,7 +185,7 @@ a {
     transform: translateY(-75%); /* Start shifted up */
   }
 
-  button2 {
+  cb {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -214,6 +214,16 @@ footer {
   animation-delay: 1.45s; /* Delay of 2 seconds */
   opacity: 0; /* Start with no opacity */
 }
+
+  ok {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+}
+
   
   footer p {
     color: #ffffff;
@@ -303,7 +313,7 @@ footer {
     transform: translateY(-75%); /* Start shifted up */
   }
 
-  button2 {
+  cb {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -323,6 +333,18 @@ footer {
 
   
 footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.45s; /* Delay of 2 seconds */
+  opacity: 0; /* Start with no opacity */
+}
+
+  ok {
   text-align: center;
   position: fixed;
   left: 0;
@@ -419,7 +441,7 @@ footer {
     transform: translateY(-75%); /* Start shifted up */
   }
 
-  button2 {
+  cb {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -444,6 +466,21 @@ footer {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.45s; /* Delay of 2 seconds */
+  opacity: 0; /* Start with no opacity */
+}
+
+  ok {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.45s; /* Delay of 2 seconds */
+  opacity: 0; /* Start with no opacity */
 }
   
   footer p {
@@ -536,7 +573,7 @@ body {
     transform: translateY(-75%); /* Start shifted up */
   }
 
-button2 {
+cb {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -556,6 +593,18 @@ button2 {
 
   
 footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.45s; /* Delay of 2 seconds */
+  opacity: 0; /* Start with no opacity */
+}
+
+  ok {
   text-align: center;
   position: fixed;
   left: 0;
