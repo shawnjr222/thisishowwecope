@@ -173,7 +173,7 @@ a {
     border: none;
     outline: none;
     animation: button-slide-down-fade-in 1.3s ease forwards;
-    animation-delay: 1.12s; /* Delay of 1.85 seconds */
+    animation-delay: 1.115s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-75%); /* Start shifted up */
   }
