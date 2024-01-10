@@ -173,9 +173,9 @@ a {
     border: none;
     outline: none;
     animation: button-slide-down-fade-in 1.25s ease forwards;
-    animation-delay: 1.16s; /* Delay of 1.85 seconds */
+    animation-delay: 1.15s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
-    transform: translateY(-50%); /* Start shifted up */
+    transform: translateY(-60%); /* Start shifted up */
   }
 
 footer {
