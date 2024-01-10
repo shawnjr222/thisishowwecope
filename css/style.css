@@ -44,7 +44,7 @@ h1[data-splitting] .word .char {
   }
   to {
     opacity: 1;
-    transform: translateY(-90%); /* Start shifted up */
+    transform: translateY(-50%); /* Start shifted up */
   }
 }
 
