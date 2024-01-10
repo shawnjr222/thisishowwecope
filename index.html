@@ -12,11 +12,11 @@
   <div class="container">
       <header>
       <h1 data-splitting>This is How We Cope</h1>
-      <p data-splitting>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
-      <button onclick="location.href='game.html'" data-splitting>Deal</button>
+      <p>Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.</p>
+      <button onclick="location.href='game.html'">Deal</button>
       </header>
       <footer>
-      <p data-splitting><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
+      <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
       </footer>
   </div>
   <!-- Include Splitting.js before your closing body tag -->
@@ -37,13 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
       lineDelay += 0.1; // Increment delay for each character in h1
     });
   });
- // Set staggered animation delays
-    let delay = 3; // start after 1.5 seconds
-    results.forEach(result => {
-        result.el.style.animationDelay = `${delay}s`;
-        delay += 1.5; // stagger the next element by 0.5 seconds
-    });
-
 });
 </script>
 </body>
