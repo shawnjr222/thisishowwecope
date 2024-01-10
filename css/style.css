@@ -45,7 +45,7 @@ h1[data-splitting] .word .char {
 
 [data-splitting] {
     opacity: 0;
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 1.5s forwards;
 }
 
 /* Foundation */
