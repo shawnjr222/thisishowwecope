@@ -37,7 +37,17 @@ h1[data-splitting] .word .char {
   }
 }
 
-/*Paragraph*/
+/*Paragraph&Footer*/
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s; /* Adjust duration as needed */
+    animation-fill-mode: forwards; /* Keeps the element visible after animation */
+}
 
 
 /* Foundation */
