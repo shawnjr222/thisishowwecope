@@ -40,11 +40,11 @@ h1[data-splitting] .word .char {
 /*Paragraph&Footer*/
 @keyframes slide-down-fade-in {
   from {
-    transform: translateY(-100%);
+    transform: translateY(0%);
     opacity: 0;
   }
   to {
-    transform: translateY(-90);
+    transform: translateY(0);
     opacity: 1;
   }
 }
