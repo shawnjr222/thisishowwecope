@@ -44,7 +44,7 @@ h1[data-splitting] .word .char {
     opacity: 0;
   }
   to {
-    transform: translateY(-80);
+    transform: translateY(-90);
     opacity: 1;
   }
 }
@@ -139,7 +139,7 @@ a {
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
-    animation: slide-down-fade-in 1.25s ease forwards;
+    animation: slide-down-fade-in 1s ease forwards;
     animation-delay: .6s; /* Delay of 2 seconds */
     opacity: 0; /* Start with no opacity */
   }
