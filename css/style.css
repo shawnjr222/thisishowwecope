@@ -58,6 +58,16 @@ h1[data-splitting] .word .char {
   }
 }
 
+@keyframes p-tablet {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-35%); /* Start shifted up */
+  }
+}
+
 @keyframes b-desktop {
   from {
     opacity: 0;
@@ -69,6 +79,16 @@ h1[data-splitting] .word .char {
 }
 
 @keyframes b-desktop-split {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-60%);
+  }
+}
+
+@keyframes b-tablet {
   from {
     opacity: 0;
   }
@@ -433,7 +453,7 @@ footer {
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
-    animation: slide-down-fade-in 1.25s ease forwards;
+    animation: p-tablet 1.25s ease forwards;
     animation-delay: .6s; /* Delay of 2 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-90%); /* Start shifted up */
@@ -455,7 +475,7 @@ footer {
     margin-top: 3vh;
     border: none;
     outline: none;
-    animation: button-slide-down-fade-in 1.5s ease forwards;
+    animation: b-tablet 1.5s ease forwards;
     animation-delay: .82s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-75%); /* Start shifted up */
