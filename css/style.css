@@ -177,6 +177,10 @@ a {
     min-height: 100vh;
   }
 
+  body {
+    overflow: hidden; /* Hide scrollbars */
+}
+
  .card {
     width: 283px; /* responsive width */
     height: 553px; /* responsive height based on viewport height */
@@ -305,6 +309,10 @@ footer {
     text-align: center;
     min-height: 100vh;
   }
+
+  body {
+    overflow: hidden; /* Hide scrollbars */
+}
   
  .card {
     width: 283px; /* responsive width */
