@@ -604,10 +604,6 @@ body {
     text-align: center;
     /* Additional overflow visible to ensure characters animate in properly */
     overflow: visible;
-    animation: slide-down-fade-in 1.25s ease forwards;
-    animation-delay: .6s; /* Delay of 2 seconds */
-    opacity: 0; /* Start with no opacity */
-    transform: translateY(-90%); /* Start shifted up */
   }
   
   header p {
