@@ -94,7 +94,7 @@ h1[data-splitting] .word .char {
   }
   to {
     opacity: 1;
-    transform: translateY(-60%);
+    transform: translateY(-50%);
   }
 }
 
@@ -414,6 +414,10 @@ footer {
     min-height: 100vh;
   }
 
+body {
+    overflow: hidden; /* Hide scrollbars */
+}
+  
    .card {
     width: 283px; /* responsive width */
     height: 553px; /* responsive height based on viewport height */
@@ -456,7 +460,7 @@ footer {
     animation: p-tablet 1.25s ease forwards;
     animation-delay: .6s; /* Delay of 2 seconds */
     opacity: 0; /* Start with no opacity */
-    transform: translateY(-90%); /* Start shifted up */
+    transform: translateY(-55%); /* Start shifted up */
   }
   
   button {
@@ -478,7 +482,7 @@ footer {
     animation: b-tablet 1.5s ease forwards;
     animation-delay: .82s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
-    transform: translateY(-75%); /* Start shifted up */
+    transform: translateY(-60%); /* Start shifted up */
   }
 
   .cb {
