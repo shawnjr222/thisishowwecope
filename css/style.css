@@ -114,7 +114,7 @@ h1[data-splitting] .word .char {
   }
   to {
     opacity: 1;
-    transform: translateY(-50%);
+    transform: translateY(-20%);
   }
 }
 
@@ -592,7 +592,7 @@ body {
   
    header h1 {
     width: 77%;
-    padding-top: 0vh;
+    padding-top: 20vh;
     padding-bottom: 0vh;
     color: #ffffff;
     line-height: .9;
@@ -642,7 +642,7 @@ body {
     animation: b-mobile 1.5s ease forwards;
     animation-delay: .82s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
-    transform: translateY(-60%); /* Start shifted up */
+    transform: translateY(-30%); /* Start shifted up */
   }
 
 .cb {
