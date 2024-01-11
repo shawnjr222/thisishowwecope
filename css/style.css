@@ -68,6 +68,16 @@ h1[data-splitting] .word .char {
   }
 }
 
+@keyframes p-mobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-35%); /* Start shifted up */
+  }
+}
+
 @keyframes b-desktop {
   from {
     opacity: 0;
@@ -89,6 +99,16 @@ h1[data-splitting] .word .char {
 }
 
 @keyframes b-tablet {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes b-mobile {
   from {
     opacity: 0;
   }
@@ -593,6 +613,10 @@ body {
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
+    animation: p-mobile 1.25s ease forwards;
+    animation-delay: .6s; /* Delay of 2 seconds */
+    opacity: 0; /* Start with no opacity */
+    transform: translateY(-55%); /* Start shifted up */
   }
   
   button {
@@ -611,10 +635,10 @@ body {
     margin-top: 2vh;
     border: none;
     outline: none;
-    animation: button-slide-down-fade-in 1.5s ease forwards;
+    animation: b-mobile 1.5s ease forwards;
     animation-delay: .82s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
-    transform: translateY(-75%); /* Start shifted up */
+    transform: translateY(-60%); /* Start shifted up */
   }
 
 .cb {
