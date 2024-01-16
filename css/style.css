@@ -268,7 +268,19 @@ a {
     animation: none;
   }
 
-footer {
+.homef {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.45s; /* Delay of 2 seconds */
+  opacity: 0; /* Start with no opacity */
+}
+
+ .gamef {
   text-align: center;
   position: fixed;
   left: 0;
@@ -350,7 +362,7 @@ footer {
     transform: translateY(-55%); /* Start shifted up */
   }
   
-  button {
+  .deal {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -372,7 +384,7 @@ footer {
     transform: translateY(-70%); /* Start shifted up */
   }
 
-  .cb {
+  .deal2 {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -391,7 +403,7 @@ footer {
   }
 
   
-footer {
+.homef {
   text-align: center;
   position: fixed;
   left: 0;
@@ -403,14 +415,18 @@ footer {
   opacity: 0; /* Start with no opacity */
 }
 
-  .ok {
+  .gamef {
   text-align: center;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.45s; /* Delay of 2 seconds */
+  opacity: 0; /* Start with no opacity */
 }
+
   
   footer p {
     color: #ffffff;
@@ -482,7 +498,7 @@ body {
     transform: translateY(-55%); /* Start shifted up */
   }
   
-  button {
+  .deal {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -504,7 +520,7 @@ body {
     transform: translateY(-60%); /* Start shifted up */
   }
 
-  .cb {
+  .deal2 {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -522,7 +538,7 @@ body {
     outline: none;
   }
 
-footer {
+.homef {
   text-align: center;
   position: fixed;
   left: 0;
@@ -534,7 +550,7 @@ footer {
   opacity: 0; /* Start with no opacity */
 }
 
-  .ok {
+.gamef {
   text-align: center;
   position: fixed;
   left: 0;
@@ -545,6 +561,7 @@ footer {
   animation-delay: 1.45s; /* Delay of 2 seconds */
   opacity: 0; /* Start with no opacity */
 }
+
   
   footer p {
     color: #ffffff;
@@ -614,7 +631,7 @@ body {
     transform: translateY(-15%); /* Start shifted up */
   }
   
-  button {
+  .deal {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -636,7 +653,7 @@ body {
     transform: translateY(-30%); /* Start shifted up */
   }
 
-.cb {
+.deal2 {
     background-color: #ffffff;
     color: #111111;
     font-family: 'futura', sans-serif;
@@ -655,7 +672,7 @@ body {
   }
 
   
-footer {
+.homef {
   text-align: center;
   position: fixed;
   left: 0;
@@ -667,14 +684,18 @@ footer {
   opacity: 0; /* Start with no opacity */
 }
 
-  .ok {
+  .gamef {
   text-align: center;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.45s; /* Delay of 2 seconds */
+  opacity: 0; /* Start with no opacity */
 }
+
   
   footer p {
     color: #ffffff;
