@@ -128,18 +128,33 @@
 '110.png'
   ];
 
+   // Shuffle array function
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  // Filter and shuffle odd images
+  let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
+  shuffle(oddImages);
+
   function loadRandomOddImage() {
-      // Filter out only odd-numbered images
-      console.log("Loading an odd image..."); // For debugging
-      const oddImages = images.filter((img, index) => (index + 1) % 2 !== 0);
-      const randomIndex = Math.floor(Math.random() * oddImages.length);
-      const imageUrl = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${oddImages[randomIndex]}`;
-      document.getElementById('imageCard').style.backgroundImage = `url('${imageUrl}')`;
-      console.log(imageUrl);
+    if (oddImages.length === 0) {
+      // All images have been displayed, reshuffle and start over
+      oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
+      shuffle(oddImages);
     }
 
-    // Load a random odd image when the page loads
-    window.onload = loadRandomOddImage;
+    // Load the next image
+    const imageUrl = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${oddImages.pop()}`;
+    document.getElementById('imageCard').style.backgroundImage = `url('${imageUrl}')`;
+  }
+
+  // Load an image when the page loads
+  window.onload = loadRandomOddImage;
+    
 </script>
 
 </body>
