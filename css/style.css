@@ -190,6 +190,8 @@ a {
     border-radius: 22px; /* rounded corners with a radius of 22px */
     /* Ensure it's visible for testing */
     border: 1px solid #ccc; /* Optional: adds a light border to visualize the card */
+    background-size: cover;
+    background-position: center;
  }
 
   
@@ -326,6 +328,8 @@ a {
     border-radius: 22px; /* rounded corners with a radius of 22px */
     /* Ensure it's visible for testing */
     border: 1px solid #ccc; /* Optional: adds a light border to visualize the card */
+    background-size: cover;
+    background-position: center;
  }
   
  header h1 {
@@ -462,6 +466,8 @@ body {
     border-radius: 22px; /* rounded corners with a radius of 22px */
     /* Ensure it's visible for testing */
     border: 1px solid #ccc; /* Optional: adds a light border to visualize the card */
+    background-size: cover;
+    background-position: center;
  }
 
  header h1 {
@@ -595,6 +601,8 @@ body {
     border-radius: 22px; /* rounded corners with a radius of 22px */
     /* Ensure it's visible for testing */
     border: 1px solid #ccc; /* Optional: adds a light border to visualize the card */
+    background-size: cover;
+    background-position: center;
  }
 
   
