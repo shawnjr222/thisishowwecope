@@ -192,6 +192,7 @@ a {
     border: 1px solid #ccc; /* Optional: adds a light border to visualize the card */
     background-size: cover;
     background-position: center;
+    background-image: url('path/to/image.png'); /* This will be set by JS */
  }
 
   
