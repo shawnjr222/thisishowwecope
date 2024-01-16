@@ -130,10 +130,12 @@
 
   function loadRandomOddImage() {
       // Filter out only odd-numbered images
+      console.log("Loading an odd image..."); // For debugging
       const oddImages = images.filter((img, index) => (index + 1) % 2 !== 0);
       const randomIndex = Math.floor(Math.random() * oddImages.length);
       const imageUrl = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${oddImages[randomIndex]}`;
       document.getElementById('imageCard').style.backgroundImage = `url('${imageUrl}')`;
+      console.log(imageUrl);
     }
 
     // Load a random odd image when the page loads
