@@ -265,6 +265,7 @@ a {
     margin-top: 3vh;
     border: none;
     outline: none;
+    animation: none;
   }
 
 footer {
@@ -286,6 +287,7 @@ footer {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
+  animation: none;
 }
 
   
