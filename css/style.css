@@ -202,6 +202,14 @@ a {
     overflow: hidden; /* Hide scrollbars */
 }
 
+  .guidance-text {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff; /* or any color you prefer */
+    font-size: 2vw; /* or as per your design */
+    /* Additional styling */
+}
+
  .card {
     width: 283px; /* responsive width */
     height: 553px; /* responsive height based on viewport height */
