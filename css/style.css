@@ -224,6 +224,7 @@ a {
 }
 
 .back {
+  transform: rotateY(180deg);
   background: #ffffff;
   color: white;
   background-size: cover; /* Ensures the image covers the entire div */
