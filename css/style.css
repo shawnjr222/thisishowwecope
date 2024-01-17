@@ -208,9 +208,10 @@ a {
     font-weight: normal;
     width: 55%;
     margin: 0 auto;
-    margin-top: 80px;
+    padding-top: 80px;
     margin-bottom: 0vh;
     text-align: center;
+    color: #ffffff;
 }
 
  .card {
