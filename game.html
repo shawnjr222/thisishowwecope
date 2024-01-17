@@ -187,6 +187,7 @@ function getNextImage(currentImage) {
 function flipCard() {
   document.getElementById('flipCard').classList.toggle('flipped');
   flipCount++;
+  console.log("Flip count: ", flipCount); // Debugging line
 
   if (flipCount >= 2) {
     document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
