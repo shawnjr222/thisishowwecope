@@ -154,6 +154,28 @@
 
   // Load an image when the page loads
   window.onload = loadRandomOddImage;
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const card = document.getElementById('imageCard');
+    const docWidth = document.documentElement.clientWidth;
+    const docHeight = document.documentElement.clientHeight;
+    const range = 30;
+
+    function followMouse(e) {
+        let horiz = ((range * 2) * (e.pageX / docWidth)) - range;
+        let vert = -(((range * 2) * (e.pageY / docHeight)) - range);
+        card.style.transform = `rotateX(${vert}deg) rotateY(${horiz}deg)`;
+    }
+
+    function reset() {
+        card.style.transform = '';
+    }
+
+    document.addEventListener('mousemove', followMouse);
+    document.addEventListener('mouseleave', reset);
+    document.addEventListener('mousedown', reset);
+});
+
     
 </script>
 
