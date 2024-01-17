@@ -166,8 +166,8 @@
         const centerY = cardRect.top + cardHeight / 2;
         const mouseX = e.clientX - centerX;
         const mouseY = e.clientY - centerY;
-        const rotateX = (10 * mouseY / cardHeight);
-        const rotateY = (-10 * mouseX / cardWidth);
+        const rotateX = (60 * mouseY / cardHeight);
+        const rotateY = (-60 * mouseX / cardWidth);
 
         card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     }
