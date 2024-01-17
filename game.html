@@ -8,10 +8,7 @@
 </head>
 <body>
   <div class="container">
-   <div class="card" id="imageCard">
-        <div class="front"></div>
-        <div class="back"></div>
-    </div>  
+    <div class="card" id="imageCard"></div>  
     <button class="deal2" onclick="loadRandomOddImage()">Deal New Card</button>
     <footer class="gamef">
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
@@ -132,45 +129,33 @@
   ];
 
   // Shuffle array function
- function shuffle(array) {
+  function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
-}
+  }
 
-let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
-shuffle(oddImages);
+  // Filter and shuffle odd images
+  let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
+  shuffle(oddImages);
 
-function loadRandomOddImage() {
+  function loadRandomOddImage() {
     if (oddImages.length === 0) {
-        oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
-        shuffle(oddImages);
+      // All images have been displayed, reshuffle and start over
+      oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
+      shuffle(oddImages);
     }
 
-    const frontImageUrl = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${oddImages.pop()}`;
-    const backImageUrl = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${getNextImage(frontImageUrl)}`;
+    // Load the next image
+    const imageUrl = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${oddImages.pop()}`;
+    document.getElementById('imageCard').style.backgroundImage = `url('${imageUrl}')`;
+  }
+
+  // Load an image when the page loads
+  window.onload = loadRandomOddImage;
     
-    const card = document.getElementById('imageCard');
-    card.querySelector('.front').style.backgroundImage = `url('${frontImageUrl}')`;
-    card.querySelector('.back').style.backgroundImage = `url('${backImageUrl}')`;
-    card.classList.remove('flipped'); // Reset flip state
-}
-
-function getNextImage(currentImage) {
-    const currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
-    const nextNumber = (currentNumber % allImages.length) + 1; // Loop back to 1 after the last image
-    return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0')));
-}
-
-document.getElementById('imageCard').addEventListener('click', () => {
-    document.getElementById('imageCard').classList.toggle('flipped');
-});
-
-window.onload = loadRandomOddImage;
 </script>
 
 </body>
 </html>
-
-
