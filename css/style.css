@@ -127,6 +127,27 @@ h1[data-splitting] .word .char {
   }
 }
 
+
+.guidance-fade-out-desktop {
+  animation: guidanceFadeOutAnimation 1s forwards;
+}
+
+@keyframes guidanceFadeOutDesktopAnimation {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.button-slide-up-desktop {
+  animation: buttonSlideUpAnimation 1s forwards;
+}
+
+@keyframes buttonSlideUpDesktopAnimation {
+  from { transform: translateY(0); }
+  to { transform: translateY(-20px); } /* Adjust as needed */
+}
+
+
+
 /* Foundation */
 @font-face {
   font-family: 'blaue-milch';
