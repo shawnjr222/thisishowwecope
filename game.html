@@ -8,8 +8,12 @@
 </head>
 <body>
   <div class="container">
-    <div class="card" id="imageCard"></div>  
-    <button class="deal2" onclick="loadRandomOddImage()">Deal New Card</button>
+   <div class="flip-container" onclick="flipCard()">
+  <div class="card" id="flipCard">
+    <div class="front" id="cardFront">Click to flip</div>
+    <div class="back" id="cardBack">Back side</div>
+  </div>
+</div>
     <footer class="gamef">
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
     </footer>
@@ -140,20 +144,28 @@
   let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
   shuffle(oddImages);
 
-  function loadRandomOddImage() {
-    if (oddImages.length === 0) {
-      // All images have been displayed, reshuffle and start over
-      oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
-      shuffle(oddImages);
-    }
+ function loadRandomOddImage() {
+  let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
+  let randomIndex = Math.floor(Math.random() * oddImages.length);
+  let frontImageUrl = oddImages[randomIndex];
+  let backImageUrl = getNextImage(frontImageUrl);
 
-    // Load the next image
-    const imageUrl = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${oddImages.pop()}`;
-    document.getElementById('imageCard').style.backgroundImage = `url('${imageUrl}')`;
-  }
+  document.getElementById('cardFront').style.backgroundImage = `url('path/to/img/${frontImageUrl}')`;
+  document.getElementById('cardBack').style.backgroundImage = `url('path/to/img/${backImageUrl}')`;
+  document.getElementById('flipCard').classList.remove('flipped');
+}
 
-  // Load an image when the page loads
-  window.onload = loadRandomOddImage;
+function getNextImage(currentImage) {
+  let currentNumber = parseInt(currentImage, 10);
+  let nextNumber = currentNumber + 1;
+  return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.png';
+}
+
+function flipCard() {
+  document.getElementById('flipCard').classList.toggle('flipped');
+}
+
+window.onload = loadRandomOddImage;
     
 </script>
 
