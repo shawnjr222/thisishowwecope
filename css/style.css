@@ -137,13 +137,9 @@ h1[data-splitting] .word .char {
   to { opacity: 0; }
 }
 
-.button-slide-up-desktop {
-  animation: buttonSlideUpDesktopAnimation 1s forwards;
-}
-
 @keyframes buttonSlideUpDesktopAnimation {
   from { transform: translateY(0); }
-  to { transform: translateY(-20px); }
+  to { transform: translateY(-40px); }
 }
 
 
@@ -344,7 +340,7 @@ a {
     margin-top: 3vh;
     border: none;
     outline: none;
-    animation: none;
+    animation: buttonSlideUpDesktopAnimation 1s forwards;
   }
 
 .homef {
