@@ -202,7 +202,7 @@ a {
     overflow: hidden; /* Hide scrollbars */
 }
 
-  .guidance-text {
+  .guidance-text-desktop {
     font-size: 1.4vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
