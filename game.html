@@ -155,26 +155,31 @@
   // Load an image when the page loads
   window.onload = loadRandomOddImage;
 
-    document.addEventListener('DOMContentLoaded', (event) => {
+  document.addEventListener('DOMContentLoaded', (event) => {
     const card = document.getElementById('imageCard');
-    const docWidth = document.documentElement.clientWidth;
-    const docHeight = document.documentElement.clientHeight;
-    const range = 30;
 
     function followMouse(e) {
-        let horiz = ((range * 2) * (e.pageX / docWidth)) - range;
-        let vert = -(((range * 2) * (e.pageY / docHeight)) - range);
-        card.style.transform = `rotateX(${vert}deg) rotateY(${horiz}deg)`;
+        const cardRect = card.getBoundingClientRect();
+        const cardWidth = cardRect.width;
+        const cardHeight = cardRect.height;
+        const centerX = cardRect.left + cardWidth / 2;
+        const centerY = cardRect.top + cardHeight / 2;
+        const mouseX = e.clientX - centerX;
+        const mouseY = e.clientY - centerY;
+        const rotateX = (10 * mouseY / cardHeight);
+        const rotateY = (-10 * mouseX / cardWidth);
+
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     }
 
     function reset() {
-        card.style.transform = '';
+        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
     }
 
-    document.addEventListener('mousemove', followMouse);
-    document.addEventListener('mouseleave', reset);
-    document.addEventListener('mousedown', reset);
+    card.addEventListener('mousemove', followMouse);
+    card.addEventListener('mouseleave', reset);
 });
+
 
     
 </script>
