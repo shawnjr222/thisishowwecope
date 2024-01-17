@@ -203,12 +203,12 @@ a {
 }
 
   .guidance-text-desktop {
-    font-size: 1.4vw;
+    font-size: 1vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 55%;
     margin: 0 auto;
-    padding-top: 80px;
+    padding-top: 20px;
     margin-bottom: 0vh;
     text-align: center;
     color: #ffffff;
