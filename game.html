@@ -155,7 +155,7 @@
   // Load an image when the page loads
   window.onload = loadRandomOddImage;
 
-  document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('DOMContentLoaded', (event) => {
     const card = document.getElementById('imageCard');
 
     function followMouse(e) {
@@ -169,19 +169,11 @@
         const rotateX = (10 * mouseY / cardHeight);
         const rotateY = (-10 * mouseX / cardWidth);
 
-        // Shadow adjustments based on rotation
-        const shadowX = -rotateY * 5;
-        const shadowY = rotateX * 5;
-        const shadowBlur = Math.abs(rotateX) + Math.abs(rotateY) * 5;
-        const shadowColor = 'rgba(0,0,0,0.5)'; // Adjusted for better visibility
-
         card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        card.style.boxShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor}`;
     }
 
     function reset() {
         card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-        card.style.boxShadow = ''; // Resetting the shadow
     }
 
     card.addEventListener('mousemove', followMouse);
