@@ -207,6 +207,7 @@ a {
   width: 283px;  /* Adjust as necessary */
   height: 553px; /* Adjust as necessary */
   position: relative;
+  margin-bottom: 20px;
 }
 
   .front, .back {
@@ -220,6 +221,8 @@ a {
   border-radius: 6px;
   background: #fff;
   color: #fff;
+  background-size: cover; /* Cover the entire area of the div */
+  background-position: center; /* Center the image */
 }
 
 .back {
