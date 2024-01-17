@@ -209,6 +209,10 @@ a {
     color: #ffffff;
 }
 
+  .button-slide-up-desktop {
+    animation: buttonSlideUpDesktopAnimation 1s forwards;
+  }
+
  .card {
     width: 283px; /* responsive width */
     height: 553px; /* responsive height based on viewport height */
@@ -340,7 +344,6 @@ a {
     margin-top: 3vh;
     border: none;
     outline: none;
-    animation: buttonSlideUpDesktopAnimation 1s forwards;
   }
 
 .homef {
