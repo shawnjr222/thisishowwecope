@@ -205,7 +205,7 @@ a {
   width: 283px; /* responsive width */
   height: 553px; /* responsive height based on viewport height */
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
   .front, .back {
@@ -227,6 +227,12 @@ a {
   transform: rotateY(180deg);
   background: #ffffff;
   color: white;
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image within the div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 }
 
 .card.flipped {
