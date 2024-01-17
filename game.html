@@ -186,10 +186,12 @@ function getNextImage(currentImage) {
 
 function flipCard() {
   document.getElementById('flipCard').classList.toggle('flipped');
-  if (flipCount === 2) {
-        document.getElementById('guidanceText').classList.add('guidance-fade-out');
-        document.querySelector('.deal2').classList.add('button-slide-up'); // Replace '.deal2' with your button's class
-    }
+  flipCount++;
+
+  if (flipCount >= 2) {
+    document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
+    document.querySelector('.deal2').classList.add('button-slide-up-desktop');
+  }
 }
 
 window.onload = loadRandomOddImage;
