@@ -14,6 +14,7 @@
     <div class="back" id="cardBack"></div>
   </div>
   </div>
+    <p id="guidanceText" class="guidance-text">Tap card to view guidance</p>
     <button class="deal2" onclick="loadRandomOddImage()">Deal New Card</button>
     <footer class="gamef">
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
@@ -181,8 +182,14 @@ function getNextImage(currentImage) {
   return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.png';
 }
 
+    let flipCount = 0;
+
 function flipCard() {
   document.getElementById('flipCard').classList.toggle('flipped');
+  if (flipCount === 2) {
+        document.getElementById('guidanceText').classList.add('guidance-fade-out');
+        document.querySelector('.deal2').classList.add('button-slide-up'); // Replace '.deal2' with your button's class
+    }
 }
 
 window.onload = loadRandomOddImage;
