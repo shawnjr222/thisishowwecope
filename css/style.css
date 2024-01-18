@@ -149,10 +149,14 @@ h1[data-splitting] .word .char {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .loading-line {
-    width: 0%;
+    width: 0;
     height: 5px;
     background-color: #fff; /* or any color you prefer */
     transition: width 2s linear; /* Adjust time as needed */
