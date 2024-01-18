@@ -388,9 +388,6 @@ a {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
-  animation: footer-fade-in 1s ease forwards;
-  animation-delay: 1.45s; /* Delay of 2 seconds */
-  opacity: 0; /* Start with no opacity */
 }
   
   footer p {
@@ -525,9 +522,6 @@ a {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
-  animation: footer-fade-in 1s ease forwards;
-  animation-delay: 1.45s; /* Delay of 2 seconds */
-  opacity: 0; /* Start with no opacity */
 }
 
   
@@ -662,9 +656,6 @@ body {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
-  animation: footer-fade-in 1s ease forwards;
-  animation-delay: 1.45s; /* Delay of 2 seconds */
-  opacity: 0; /* Start with no opacity */
 }
 
   
@@ -798,9 +789,6 @@ body {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
-  animation: footer-fade-in 1s ease forwards;
-  animation-delay: 1.45s; /* Delay of 2 seconds */
-  opacity: 0; /* Start with no opacity */
 }
 
   
