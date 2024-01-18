@@ -143,27 +143,6 @@ h1[data-splitting] .word .char {
 }
 
 
-.loading-container {
-   
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed; /* or absolute */
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5); /* Semi-transparent background */
-  z-index: 1000; /* Above all other content */
-}
-
-.loading-line {
-    width: 0;
-    height: 5px;
-    background-color: #fff; /* or any color you prefer */
-    transition: width 2s linear; /* Adjust time as needed */
-}
-
-/* Add additional CSS for the vertical transformation and 3D card reveal */
-
 
 
 /* Foundation */
