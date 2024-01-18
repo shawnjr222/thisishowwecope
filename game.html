@@ -8,10 +8,15 @@
 </head>
 <body>
   <div class="container">
+    <div class="loading-container">
+    <div class="loading-line" id="loadingLine"></div>
+</div>
+<div class="card-container" id="cardContainer" style="display:none;">
    <div class="flip-container" onclick="flipCard()">
   <div class="card" id="flipCard">
     <div class="front" id="cardFront"></div>
     <div class="back" id="cardBack"></div>
+  </div>
   </div>
   </div>
     <p id="guidanceText" class="guidance-text-desktop">tap card to view guidance</p>
@@ -133,6 +138,35 @@
 '109.png',
 '110.png'
   ];
+
+    let imagesLoaded = 0;
+
+    function preloadImages() {
+    for (let i = 0; i < allImages.length; i++) {
+        const img = new Image();
+        img.onload = imageLoaded;
+        img.src = allImages[i];
+    }
+}
+
+function imageLoaded() {
+    imagesLoaded++;
+    if (imagesLoaded == allImages.length) {
+        transformLoadingLine();
+    }
+}
+
+function transformLoadingLine() {
+    // Rotate the line to vertical and then do the 3D transformation
+    // After transformation, hide the loader and show the card
+    document.getElementById('loadingLine').style.transform = 'rotate(90deg)';
+    // Add further transformations and logic to reveal the card
+}
+
+window.onload = () => {
+    document.getElementById('loadingLine').style.width = '100%'; // Start the loading line animation
+    preloadImages();
+};
 
   // Shuffle array function
   function shuffle(array) {
