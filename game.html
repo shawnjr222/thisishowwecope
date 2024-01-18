@@ -4,28 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Is How We Cope - Game</title>
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="loading-container">
-    <div class="loading-line" id="loadingLine"></div>
-</div>
-<div class="card-container" id="cardContainer" style="display:none;">
-   <div class="flip-container" onclick="flipCard()">
-  <div class="card" id="flipCard">
-    <div class="front" id="cardFront"></div>
-    <div class="back" id="cardBack"></div>
+  <div class="loading-container" id="loadingContainer">
+      <div class="loading-line" id="loadingLine"></div>
   </div>
-  </div>
-  </div>
-    <p id="guidanceText" class="guidance-text-desktop">tap card to view guidance</p>
-    <button class="deal2" onclick="loadRandomOddImage()">Deal New Card</button>
+  <div class="container" style="display: none;" id="mainContent">
+    <div class="flip-container" onclick="flipCard()">
+      <div class="card" id="flipCard">
+        <div class="front" id="cardFront"></div>
+        <div class="back" id="cardBack"></div>
+      </div>
+    </div>
+    <p id="guidanceText" class="guidance-text-desktop" style="display: none;">tap card to view guidance</p>
+    <button class="deal2" onclick="loadRandomOddImage()" style="display: none;">Deal New Card</button>
     <footer class="gamef">
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
     </footer>
   </div>
   <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+  // Start loading line animation
+  document.getElementById('loadingLine').style.width = '100%';
+
+  // Simulate the loading of images
+  setTimeout(function() {
+    // Hide loader and show main content
+    document.getElementById('loadingContainer').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+    document.getElementById('guidanceText').style.display = 'block';
+    document.querySelector('.deal2').style.display = 'block';
+
+    // Load first image
+    loadRandomOddImage();
+  }, 3000); // Replace with actual loading logic
+});
+    
   const allImages = [
    '01.png', 
 '02.png', 
@@ -139,45 +155,23 @@
 '110.png'
   ];
 
-    let imagesLoaded = 0;
-
-    function preloadImages() {
-    for (let i = 0; i < allImages.length; i++) {
-        const img = new Image();
-        img.onload = imageLoaded;
-        img.src = allImages[i];
-    }
-}
-
-function imageLoaded() {
-    imagesLoaded++;
-    if (imagesLoaded == allImages.length) {
-        transformLoadingLine();
-    }
-}
-
-function transformLoadingLine() {
-    // Rotate the line to vertical and then do the 3D transformation
-    // After transformation, hide the loader and show the card
-    document.getElementById('loadingLine').style.transform = 'rotate(90deg)';
-    // Add further transformations and logic to reveal the card
-}
-
-window.onload = () => {
-    document.getElementById('loadingLine').style.width = '100%'; // Start the loading line animation
-    preloadImages();
-};
-
   // Shuffle array function
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
+function shuffle(array) {
+  let currentIndex = array.length, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // Swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
 
-  // Filter and shuffle odd images
- let oddImages = shuffle(allImages.filter((img, index) => (index + 1) % 2 !== 0));
+  return array;
+}
+
+let oddImages = shuffle(allImages.filter((img, index) => (index + 1) % 2 !== 0));
 let usedImages = [];
 
 function loadRandomOddImage() {
@@ -195,42 +189,23 @@ function loadRandomOddImage() {
   document.getElementById('flipCard').classList.remove('flipped');
 }
 
-function shuffle(array) {
-  let currentIndex = array.length, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // Swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
-
 function getNextImage(currentImage) {
   let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
   let nextNumber = currentNumber + 1;
   return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.png';
 }
 
-    let flipCount = 0;
+let flipCount = 0;
 
 function flipCard() {
   document.getElementById('flipCard').classList.toggle('flipped');
   flipCount++;
-  console.log("Flip count: ", flipCount); // Debugging line
 
-  if (flipCount >= 2) {
+  if (flipCount === 2) {
     document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
     document.querySelector('.deal2').classList.add('button-slide-up-desktop');
   }
 }
-
-window.onload = loadRandomOddImage;
-    
 </script>
 
 </body>
