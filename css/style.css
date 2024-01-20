@@ -475,7 +475,7 @@ a {
     padding-bottom: 0vh;
     color: #ffffff;
     line-height: .9;
-    font-size: 24vh;
+    font-size: 14vh;
     font-family: 'blaue-milch', sans-serif;
     margin: 0 auto;
     margin-top: 0vh;
@@ -497,7 +497,7 @@ a {
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
-    animation: p-desktop 1.25s ease forwards;
+    animation: p-split 1.25s ease forwards;
     animation-delay: .6s; /* Delay of 2 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-90%); /* Start shifted up */
@@ -519,7 +519,7 @@ a {
     margin-top: .5vh;
     border: none;
     outline: none;
-    animation: b-desktop 1.5s ease forwards;
+    animation: b-split 1.5s ease forwards;
     animation-delay: .82s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-75%); /* Start shifted up */
