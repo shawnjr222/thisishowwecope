@@ -293,12 +293,12 @@ a {
   
   header p {
     color: #ffffff;
-    font-size: 1vw;
+    font-size: 1.4 vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
-    width: 55%;
+    width: 52%;
     margin: 0 auto;
-    margin-top: 0vh;
+    margin-top: 4vh;
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
