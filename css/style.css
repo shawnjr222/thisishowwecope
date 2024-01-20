@@ -518,7 +518,7 @@ a {
     cursor: pointer;
     border-radius: 64px; 
     font-size: 20px;
-    margin-top: .5vh;
+    margin-top: 2vh;
     border: none;
     outline: none;
     animation: b-desktop-split 1.5s ease forwards;
