@@ -293,12 +293,12 @@ a {
   
   header p {
     color: #ffffff;
-    font-size: 2.4vh;
+    font-size: 2.7vh;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 52%;
     margin: 0 auto;
-    margin-top: 1vh;
+    margin-top: 2vh;
     margin-bottom: 0vh;
     text-align: center;
     padding-top: 0vh;
@@ -314,14 +314,14 @@ a {
     font-family: 'futura', sans-serif;
     text-align: center;
     display: inline-block;
-    padding-top: 1.2vh;
-    padding-bottom: 1.2vh;
-    padding-right: 2.4vw;
-    padding-left: 2.4vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 2vw;
+    padding-left: 2vw;
     cursor: pointer;
     border-radius: 64px; 
-    font-size: 2vh;
-    margin-top: 2vh;
+    font-size: 2.7vh;
+    margin-top: 1.5vh;
     border: none;
     outline: none;
     animation: b-desktop 1.5s ease forwards;
