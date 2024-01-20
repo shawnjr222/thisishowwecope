@@ -314,8 +314,8 @@ a {
     font-family: 'futura', sans-serif;
     text-align: center;
     display: inline-block;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
     padding-right: 2.5vw;
     padding-left: 2.5vw;
     cursor: pointer;
