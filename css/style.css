@@ -344,7 +344,7 @@ a {
 .deal:hover {
     background-color: #111111; /* Inverted background color */
     color: #ffffff; /* Inverted text color */
-    border: 2px solid white;
+    border: 2px dotted white;
 }
 
   .deal2 {
