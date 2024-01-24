@@ -341,6 +341,11 @@ a {
     transform: translateY(-75%); /* Start shifted up */
   }
 
+.deal:hover {
+    background-color: #111111; /* Inverted background color */
+    color: #ffffff; /* Inverted text color */
+}
+
   .deal2 {
     background-color: #ffffff;
     color: #111111;
