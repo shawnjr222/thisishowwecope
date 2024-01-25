@@ -25,13 +25,13 @@
  // The text you want to type
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
 
-   function handleDealClick() {
-    // Select all elements except the footer
-    const elementsToFade = document.querySelectorAll('.container > *:not(footer)');
+function handleDealClick() {
+    // Select all elements to animate
+    const elementsToAnimate = document.querySelectorAll('.container > *:not(footer)');
     
-    // Apply slide-down and fade-out animation to these elements
-    elementsToFade.forEach(el => {
-        el.classList.add('guidance-slide-down-fade-out');
+    // Apply slide-down and fade-out animation
+    elementsToAnimate.forEach(el => {
+        el.classList.add('guidance-slide-down-and-fade-out');
     });
 
     // Redirect after the animation ends (1s duration as per your CSS)
