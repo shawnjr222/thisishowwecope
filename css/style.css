@@ -144,15 +144,19 @@ h1[data-splitting] .word .char {
 
 
 
-@keyframes slide-down-fade-out {
+@keyframes slide-down-and-fade-out {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
   to {
-    transform: translateY(100%);
-    opacity: 0;
+    transform: translateY(100%); /* Move down */
+    opacity: 0; /* Fade out */
   }
 }
 
-.guidance-slide-down-fade-out {
-  animation: slide-down-fade-out 1s forwards;
+.guidance-slide-down-and-fade-out {
+  animation: slide-down-and-fade-out 1s forwards;
 }
 
 
