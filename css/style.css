@@ -144,6 +144,16 @@ h1[data-splitting] .word .char {
 
 
 
+@keyframes slide-down-fade-out {
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.guidance-slide-down-fade-out {
+  animation: slide-down-fade-out 1s forwards;
+}
 
 
 
