@@ -13,7 +13,7 @@
       <header>
       <h1 data-splitting>This is How We Cope</h1>
       <p>We're not all dealt a fair hand. Use this card game to consider how to cope under global capitalism. True liberation exists beyond capitalism.</p>
-      <button class="deal" onclick="location.href='game.html'">Deal</button>
+      <button class="deal" onclick="handleDealClick()">Deal</button>
       </header>
       <footer class="homef">
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
@@ -24,6 +24,22 @@
  <script>
  // The text you want to type
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
+
+   function handleDealClick() {
+    // Select all elements except the footer
+    const elementsToFade = document.querySelectorAll('.container > *:not(footer)');
+    
+    // Apply fade-out animation to these elements
+    elementsToFade.forEach(el => {
+        el.classList.add('guidance-fade-out-desktop');
+    });
+
+    // Redirect after the animation ends (1s duration as per your CSS)
+    setTimeout(() => {
+        location.href = 'game.html';
+    }, 1000);
+}
+
 
 // Splitting.js and h1 animation code
 document.addEventListener('DOMContentLoaded', function() {
