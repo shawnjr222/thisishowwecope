@@ -128,6 +128,13 @@ h1[data-splitting] .word .char {
 }
 
 
+
+@keyframes buttonSlideUpDesktopAnimation {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
+
 .guidance-fade-out-desktop {
   animation: guidanceFadeOutDesktopAnimation 1s forwards;
 }
@@ -137,27 +144,7 @@ h1[data-splitting] .word .char {
   to { opacity: 0; }
 }
 
-@keyframes buttonSlideUpDesktopAnimation {
-  from { transform: translateY(0); }
-  to { transform: translateY(-40px); }
-}
 
-
-
-@keyframes slide-down-and-fade-out {
-  from {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(100%); /* Move down */
-    opacity: 0; /* Fade out */
-  }
-}
-
-.guidance-slide-down-and-fade-out {
-  animation: slide-down-and-fade-out 1s forwards;
-}
 
 
 
