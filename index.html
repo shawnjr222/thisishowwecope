@@ -26,12 +26,12 @@
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
 
 function handleDealClick() {
-    // Select all elements except the footer
-    const elementsToFade = document.querySelectorAll('.container > *:not(footer)');
+    // Select all elements to animate
+    const elementsToAnimate = document.querySelectorAll('.container > *:not(footer)');
     
-    // Apply fade-out animation to these elements
-    elementsToFade.forEach(el => {
-        el.classList.add('guidance-fade-out-desktop');
+    // Apply slide-down and fade-out animation
+    elementsToAnimate.forEach(el => {
+        el.classList.add('guidance-slide-down-and-fade-out');
     });
 
     // Redirect after the animation ends (1s duration as per your CSS)
@@ -39,6 +39,7 @@ function handleDealClick() {
         location.href = 'game.html';
     }, 1000);
 }
+
 
 
 
