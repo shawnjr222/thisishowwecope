@@ -144,6 +144,21 @@ h1[data-splitting] .word .char {
   to { opacity: 0; }
 }
 
+@keyframes slide-down-and-fade-out {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%); /* Move down */
+    opacity: 0; /* Fade out */
+  }
+}
+
+.guidance-slide-down-and-fade-out {
+  animation: slide-down-and-fade-out 1s forwards;
+}
+
 
 
 
