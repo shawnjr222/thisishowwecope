@@ -139,24 +139,36 @@
   ];
 
 document.addEventListener("DOMContentLoaded", function() {
-    const mainContent = document.querySelector('.container'); // Main content container
-    mainContent.style.opacity = 0; // Initially hide main content
-
     const loadingBar = document.getElementById("loading-bar");
     const loadingContainer = document.getElementById("loading-container");
-    loadingContainer.style.opacity = 1; // Show loading container
+    const mainContent = document.querySelector('.container');
+    const contentElements = mainContent.querySelectorAll(':not(footer)'); // Select all children except footer
+
+    // Initially hide content elements
+    contentElements.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transition = 'opacity 0.5s ease-in-out';
+    });
+
+    loadingContainer.style.opacity = 1; // Show the loading container immediately
 
     let imagesLoaded = 0;
+    const totalImages = allImages.length;
+
     function imageLoaded() {
         imagesLoaded++;
-        const totalImages = allImages.length;
-        const width = (imagesLoaded / totalImages) * 100;
-        loadingBar.style.width = `${width}%`;
+        let width = (imagesLoaded / totalImages) * 100;
+        loadingBar.style.width = width + '%';
 
+        // When all images are loaded
         if(imagesLoaded === totalImages) {
             setTimeout(() => {
-                loadingContainer.style.opacity = 0; // Hide loader
-                mainContent.style.opacity = 1; // Show main content
+                loadingContainer.style.opacity = 0; // Hide the loading container
+                
+                // Fade in content elements
+                contentElements.forEach(el => {
+                    el.style.opacity = 1;
+                });
             }, 500); // Slight delay for visual effect
         }
     }
@@ -164,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
     allImages.forEach(image => {
         const img = new Image();
         img.onload = imageLoaded;
-        img.onerror = imageLoaded;
+        img.onerror = imageLoaded; // Consider image loading errors as well
         img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${image}`;
     });
 });
