@@ -142,27 +142,27 @@ document.addEventListener("DOMContentLoaded", function() {
     const loadingBar = document.getElementById("loading-bar");
     const loadingContainer = document.getElementById("loading-container");
     const mainContent = document.querySelector('.container');
-    const contentElements = mainContent.querySelectorAll(':not(footer)'); // Select all children except footer
+    const contentElements = mainContent.querySelectorAll(':not(footer.gamef)'); // Select all children except footer to ensure footer remains visible
 
-    // Initially hide content elements
+    // Initially hide content elements except the footer
     contentElements.forEach(el => {
         el.style.opacity = 0;
         el.style.transition = 'opacity 0.5s ease-in-out';
+        gamef.style.opacity = 1;
     });
 
     loadingContainer.style.opacity = 1; // Show the loading container immediately
-    gamef.style.opacity = 1; // Show footer
 
     let imagesLoaded = 0;
-    const totalImages = allImages.length;
+    const imagesToLoadCount = 5; // Adjust to preload only the first 5 images
 
     function imageLoaded() {
         imagesLoaded++;
-        let width = (imagesLoaded / totalImages) * 100;
+        let width = (imagesLoaded / imagesToLoadCount) * 100;
         loadingBar.style.width = width + '%';
 
-        // When all images are loaded
-        if(imagesLoaded === totalImages) {
+        // When the first 5 images are loaded
+        if (imagesLoaded === imagesToLoadCount) {
             setTimeout(() => {
                 loadingContainer.style.opacity = 0; // Hide the loading container
                 
@@ -174,7 +174,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    allImages.forEach(image => {
+    // Load only the first 5 images
+    allImages.slice(0, imagesToLoadCount).forEach(image => {
         const img = new Image();
         img.onload = imageLoaded;
         img.onerror = imageLoaded; // Consider image loading errors as well
