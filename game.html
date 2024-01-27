@@ -156,25 +156,25 @@ document.addEventListener("DOMContentLoaded", function() {
     const imagesToLoadCount = 5; // Only preload the first 5 images
 
     function imageLoaded() {
-        imagesLoaded++;
-        let width = (imagesLoaded / imagesToLoadCount) * 100;
-        loadingBar.style.width = width + '%';
+    imagesLoaded++;
+    let width = (imagesLoaded / imagesToLoadCount) * 100;
+    loadingBar.style.width = `${width}%`;
 
-        // When the first 5 images are loaded
-        if (imagesLoaded === imagesToLoadCount) {
-            // Ensure loading bar reaches full width
-            loadingBar.style.width = '100%';
+    // When the first 5 images are loaded, ensure loading bar completes
+    if (imagesLoaded === imagesToLoadCount) {
+        loadingBar.style.width = '100%'; // Ensure loading bar reaches full width
 
+        setTimeout(() => {
+            loadingContainer.style.opacity = 0; // Fade out the loading container after a 1-second delay
+
+            // Fade in content elements after loading container fades
             setTimeout(() => {
-                loadingContainer.style.opacity = 0; // Hide the loading container after a slight delay
+                contentElements.forEach(el => el.style.opacity = 1);
+            }, 1000); // Start fading in contents 1 second after loading bar fades out
 
-                // Fade in content elements
-                contentElements.forEach(el => {
-                    el.style.opacity = 1;
-                });
-            }, 500); // Delay to ensure loading bar reaches full width
-        }
+        }, 1000); // 1-second delay to ensure loading bar has time to reach full width visually
     }
+}
 
     // Load only the first 5 images
     allImages.slice(0, imagesToLoadCount).forEach(image => {
