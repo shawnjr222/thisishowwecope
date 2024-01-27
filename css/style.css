@@ -222,6 +222,11 @@ a {
 
 /* Desktop */
 @media only screen and (min-width: 1367px) {  
+  footer.gamef {
+    z-index: 1050; // Ensure it's above the loading animation and other content
+    position: relative; // May need to adjust based on your layout
+}
+
 .container {
     display: flex;
     flex-direction: column;
