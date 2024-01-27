@@ -139,61 +139,35 @@
   ];
 
 document.addEventListener("DOMContentLoaded", function() {
+    const mainContent = document.querySelector('.container'); // Main content container
+    mainContent.style.opacity = 0; // Initially hide main content
+
     const loadingBar = document.getElementById("loading-bar");
     const loadingContainer = document.getElementById("loading-container");
-    const mainContent = document.querySelector('.container');
-    const contentElements = mainContent.querySelectorAll(':not(footer.gamef)'); // Select all children except footer
-
-    // Initially hide content elements except the footer
-    contentElements.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transition = 'opacity 0.5s ease-in-out 0.5s'; // Added delay to transition
-    });
-
-    loadingContainer.style.opacity = 1; // Show the loading container immediately
+    loadingContainer.style.opacity = 1; // Show loading container
 
     let imagesLoaded = 0;
-    const imagesToLoadCount = 5; // Only preload the first 5 images
-
     function imageLoaded() {
-    imagesLoaded++;
-    let width = (imagesLoaded / imagesToLoadCount) * 100;
-    loadingBar.style.width = `${width}%`;
+        imagesLoaded++;
+        const totalImages = allImages.length;
+        const width = (imagesLoaded / totalImages) * 100;
+        loadingBar.style.width = `${width}%`;
 
-    // When the first 5 images are loaded, ensure loading bar completes
-    if (imagesLoaded === imagesToLoadCount) {
-        loadingBar.style.width = '100%'; // Ensure loading bar reaches full width
-
-        setTimeout(() => {
-            loadingContainer.style.opacity = 0; // Fade out the loading container after a 1-second delay
-
-            // Fade in content elements after loading container fades
+        if(imagesLoaded === totalImages) {
             setTimeout(() => {
-                contentElements.forEach(el => el.style.opacity = 1);
-            }, 1000); // Start fading in contents 1 second after loading bar fades out
-
-        }, 1000); // 1-second delay to ensure loading bar has time to reach full width visually
+                loadingContainer.style.opacity = 0; // Hide loader
+                mainContent.style.opacity = 1; // Show main content
+            }, 500); // Slight delay for visual effect
+        }
     }
-}
 
-    // Load only the first 5 images
-    allImages.slice(0, imagesToLoadCount).forEach(image => {
+    allImages.forEach(image => {
         const img = new Image();
         img.onload = imageLoaded;
-        img.onerror = imageLoaded; // Consider image loading errors as well
+        img.onerror = imageLoaded;
         img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${image}`;
     });
 });
-
-
-    
-function loadRemainingImages() {
-    allImages.slice(initialLoadImagesCount).forEach(image => {
-        const img = new Image();
-        img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${image}`;
-    });
-}
-
 
     
   // Shuffle array function
