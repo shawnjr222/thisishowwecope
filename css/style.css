@@ -222,10 +222,6 @@ a {
 
 /* Desktop */
 @media only screen and (min-width: 1367px) {  
-  footer.gamef {
-    z-index: 1050; // Ensure it's above the loading animation and other content
-    position: relative; // May need to adjust based on your layout
-}
 
 .container {
     display: flex;
@@ -439,8 +435,15 @@ a {
   width: 100%;
   margin-bottom: 2vh;
   opacity: 1;
+  z-index: 1050; /*Ensure it's above the loading animation and other content*/
+  position: fixed; /*Changed to fixed to ensure visibility*/
+  bottom: 0;
+  width: 100%; /* Ensure full width*/
+  background: #111; /* Match your page background if necessary*/
+  text-align: center; /*For aesthetic alignment of the footer content*/
 }
-  
+
+
   footer p {
     color: #ffffff;
     font-size: 1vw;
