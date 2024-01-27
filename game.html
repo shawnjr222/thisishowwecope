@@ -140,51 +140,35 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const mainContent = document.querySelector('.container'); // Main content container
-    const contentElements = mainContent.querySelectorAll(':not(footer)'); // Select all children except the footer
-
-    // Initially hide content elements
-    contentElements.forEach(el => {
-        el.style.opacity = 0;
-    });
+    mainContent.style.opacity = 0; // Initially hide main content
 
     const loadingBar = document.getElementById("loading-bar");
     const loadingContainer = document.getElementById("loading-container");
     loadingContainer.style.opacity = 1; // Show loading container
 
     let imagesLoaded = 0;
-    const imagesToLoadCount = 110; // Adjust based on how many images you want to load initially
-
     function imageLoaded() {
         imagesLoaded++;
-        const width = (imagesLoaded / imagesToLoadCount) * 100;
+        const totalImages = allImages.length;
+        const width = (imagesLoaded / totalImages) * 100;
         loadingBar.style.width = `${width}%`;
 
-        if(imagesLoaded === imagesToLoadCount) {
-            // Ensure loading bar animation completes
-            loadingBar.style.width = '100%';
-
+        if(imagesLoaded === totalImages) {
             setTimeout(() => {
-                loadingContainer.style.opacity = 0; // Hide the loading container
-
-                // Delay the fade-in of main content elements
-                setTimeout(() => {
-                    contentElements.forEach(el => {
-                        el.style.opacity = 1; // Fade in elements
-                    });
-                }, 1000); // Adjust this delay as needed
-
-            }, 500); // Delay to allow the loading bar to stay full for a bit
+                loadingContainer.style.opacity = 0; // Hide loader
+                mainContent.style.opacity = 1; // Show main content
+            }, 500); // Slight delay for visual effect
         }
     }
 
-    // Load only the first set of images for the loading animation
-    allImages.slice(0, imagesToLoadCount).forEach(image => {
+    allImages.forEach(image => {
         const img = new Image();
         img.onload = imageLoaded;
-        img.onerror = imageLoaded; // Handle image loading errors
+        img.onerror = imageLoaded;
         img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${image}`;
     });
 });
+
 
 
     
