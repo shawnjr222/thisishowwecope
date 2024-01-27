@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.css" />
 </head>
 <body>
+  <div id="loading-container">
+    <div id="loading-bar"></div>
+</div>
+<!-- The rest of your Page 2 content follows -->
   <div class="container">
       <header>
       <h1 data-splitting>This is How We Cope</h1>
@@ -57,6 +61,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+   document.addEventListener("DOMContentLoaded", function() {
+    const mainContent = document.querySelector('.container'); // Main content container
+    mainContent.style.opacity = 0; // Initially hide main content
+
+    const loadingBar = document.getElementById("loading-bar");
+    const loadingContainer = document.getElementById("loading-container");
+    loadingContainer.style.opacity = 1; // Show loading container
+
+    let imagesLoaded = 0;
+    function imageLoaded() {
+        imagesLoaded++;
+        const totalImages = allImages.length;
+        const width = (imagesLoaded / totalImages) * 100;
+        loadingBar.style.width = `${width}%`;
+
+        if(imagesLoaded === totalImages) {
+            setTimeout(() => {
+                loadingContainer.style.opacity = 0; // Hide loader
+                mainContent.style.opacity = 1; // Show main content
+            }, 500); // Slight delay for visual effect
+        }
+    }
+
+    allImages.forEach(image => {
+        const img = new Image();
+        img.onload = imageLoaded;
+        img.onerror = imageLoaded;
+        img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${image}`;
+    });
+});
+
 </script>
 </body>
 </html>
