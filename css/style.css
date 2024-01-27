@@ -433,6 +433,8 @@ a {
   bottom: 0;
   width: 100%;
   margin-bottom: 2vh;
+  z-index: 1050; /* Higher than the loading container */
+  position: relative; /* Ensure z-index is applied */
 }
   
   footer p {
