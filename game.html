@@ -142,18 +142,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const loadingBar = document.getElementById("loading-bar");
     const loadingContainer = document.getElementById("loading-container");
     const mainContent = document.querySelector('.container');
-    const contentElements = mainContent.querySelectorAll(':not(footer.gamef)'); // Select all children except footer to ensure footer remains visible
+    const contentElements = mainContent.querySelectorAll(':not(footer.gamef)'); // Select all children except footer
 
     // Initially hide content elements except the footer
     contentElements.forEach(el => {
         el.style.opacity = 0;
-        el.style.transition = 'opacity 0.5s ease-in-out';
+        el.style.transition = 'opacity 0.5s ease-in-out 0.5s'; // Added delay to transition
     });
 
     loadingContainer.style.opacity = 1; // Show the loading container immediately
 
     let imagesLoaded = 0;
-    const imagesToLoadCount = 5; // Adjust to preload only the first 5 images
+    const imagesToLoadCount = 5; // Only preload the first 5 images
 
     function imageLoaded() {
         imagesLoaded++;
@@ -162,14 +162,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // When the first 5 images are loaded
         if (imagesLoaded === imagesToLoadCount) {
+            // Ensure loading bar reaches full width
+            loadingBar.style.width = '100%';
+
             setTimeout(() => {
-                loadingContainer.style.opacity = 0; // Hide the loading container
-                
+                loadingContainer.style.opacity = 0; // Hide the loading container after a slight delay
+
                 // Fade in content elements
                 contentElements.forEach(el => {
                     el.style.opacity = 1;
                 });
-            }, 500); // Slight delay for visual effect
+            }, 500); // Delay to ensure loading bar reaches full width
         }
     }
 
@@ -181,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
         img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${image}`;
     });
 });
+
 
     
 function loadRemainingImages() {
