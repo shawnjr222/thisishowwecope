@@ -425,6 +425,7 @@ a {
   animation: footer-fade-in 1s ease forwards;
   animation-delay: 1.25s; /* Delay */
   opacity: 0; /* Start with no opacity */
+  z-index: 1100; /*Ensure it's above the loading animation and other content*/
 }
 
  .gamef {
@@ -435,12 +436,7 @@ a {
   width: 100%;
   margin-bottom: 2vh;
   opacity: 1;
-  z-index: 1050; /*Ensure it's above the loading animation and other content*/
-  position: fixed; /*Changed to fixed to ensure visibility*/
-  bottom: 0;
-  width: 100%; /* Ensure full width*/
-  background: #111; /* Match your page background if necessary*/
-  text-align: center; /*For aesthetic alignment of the footer content*/
+  z-index: 1100; /*Ensure it's above the loading animation and other content*/
 }
 
 
