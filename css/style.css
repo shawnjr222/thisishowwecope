@@ -223,10 +223,6 @@ a {
 /* Desktop */
 @media only screen and (min-width: 1367px) {  
 
-  .container > *:not(footer) {
-    transition: opacity 1s ease-in-out; /* Adjust the duration and easing as needed */
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -258,10 +254,9 @@ a {
     width: 0; /* Initial state, will be animated by JS */
     height: 100%;
     background-color: #fff;
+    transition: width 3s linear; /* Adjust if you want the loading bar animation to be faster or slower */
     border-radius: 5px; /* Rounded corners for the loading bar */
-    transition: width 1s ease-in-out; /* Adjust the duration as needed and apply ease-in-out */
 }
-  
 
 
   
