@@ -138,35 +138,47 @@
 '110.png'
   ];
 
-document.addEventListener("DOMContentLoaded", function() {
-    const mainContent = document.querySelector('.container'); // Main content container
-    mainContent.style.opacity = 0; // Initially hide main content
-
+    document.addEventListener("DOMContentLoaded", function() {
     const loadingBar = document.getElementById("loading-bar");
     const loadingContainer = document.getElementById("loading-container");
-    loadingContainer.style.opacity = 1; // Show loading container
-
+    const mainContent = document.querySelector('.container');
+    const imagesToLoadInitially = 5; // Number of images to load during the loading animation
     let imagesLoaded = 0;
+
+    // Function to handle image loading
     function imageLoaded() {
         imagesLoaded++;
-        const totalImages = allImages.length;
-        const width = (imagesLoaded / totalImages) * 100;
-        loadingBar.style.width = `${width}%`;
+        let totalImages = imagesToLoadInitially;
+        let width = (imagesLoaded / totalImages) * 100;
+        loadingBar.style.width = width + '%';
 
-        if(imagesLoaded === totalImages) {
+        // Once initial images are loaded, show content and load remaining images
+        if (imagesLoaded === imagesToLoadInitially) {
             setTimeout(() => {
-                loadingContainer.style.opacity = 0; // Hide loader
+                loadingContainer.style.opacity = 0; // Hide loading container
                 mainContent.style.opacity = 1; // Show main content
-            }, 500); // Slight delay for visual effect
+
+                // Load the remaining images in the background
+                loadRemainingImages();
+            }, 1000); // Delay to let the loading bar stay full for 1 second
         }
     }
 
-    allImages.forEach(image => {
+    // Load the first set of images
+    allImages.slice(0, imagesToLoadInitially).forEach(image => {
         const img = new Image();
         img.onload = imageLoaded;
-        img.onerror = imageLoaded;
+        img.onerror = imageLoaded; // Consider loading error as loaded for the sake of progress
         img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${image}`;
     });
+
+    // Function to load remaining images
+    function loadRemainingImages() {
+        allImages.slice(imagesToLoadInitially).forEach(image => {
+            const img = new Image();
+            img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${image}`;
+        });
+    }
 });
 
 
