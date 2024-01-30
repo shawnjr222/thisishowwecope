@@ -294,9 +294,6 @@ a {
     transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     transform-origin: center;
-    opacity: 0; /* Start fully transparent */
-    transform: translateX(-150%) rotateZ(-10deg); /* Positioned off-screen to the left with a slight rotation */
-    transition: none; /* Ensure no CSS transitions interfere with GSAP animations */
  }
 
   .flip-container {
