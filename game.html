@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <div class="flip-container">
-      <div class="card" id="flipCard" onclick="flipCard()">
+      <div class="card" id="flipCard">
         <div class="front" id="cardFront"></div>
         <div class="back" id="cardBack"></div>
       </div>
@@ -135,7 +135,7 @@
 '110.webp'
   ];
 
-   function shuffle(array) {
+ function shuffle(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -152,12 +152,17 @@
       return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.webp';
     }
 
+    let isFlipped = false;
     function flipCard() {
-      document.getElementById('flipCard').classList.toggle('flipped');
+      // Toggle the flip state
+      isFlipped = !isFlipped;
+      // Use GSAP to animate the flip
+      gsap.to('#flipCard', {duration: 0.9, rotationY: isFlipped ? 180 : 0, ease: 'power2.inOut'});
     }
 
     function dealNewCard() {
-      gsap.to('#flipCard', {duration: 1.2, x: '150%', opacity: 0, rotationZ: '10deg', ease: 'power4.out', onComplete: loadNewCard});
+      // Animate card exit to the right
+      gsap.to('#flipCard', {duration: 0.9, x: '150%', opacity: 0, ease: 'power2.inOut', onComplete: loadNewCard});
     }
 
     function loadNewCard() {
@@ -173,12 +178,12 @@
       document.getElementById('cardFront').style.backgroundImage = `url('img/${frontImageUrl}')`;
       document.getElementById('cardBack').style.backgroundImage = `url('img/${backImageUrl}')`;
 
-      // Reset card position without animation
-      gsap.set('#flipCard', {x: '-150%', opacity: 0, rotationZ: '-10deg'});
+      // Reset card position and flip state without animation
+      gsap.set('#flipCard', {x: '-150%', opacity: 0, rotationY: 0});
+      isFlipped = false;
 
       // Animate new card in from the left
-      gsap.to('#flipCard', {duration: 1.2, x: '0%', opacity: 1, rotationZ: '0deg', ease: 'power4.out'});
-      document.getElementById('flipCard').classList.remove('flipped');
+      gsap.to('#flipCard', {duration: 0.9, x: '0%', opacity: 1, ease: 'power2.inOut'});
     }
   </script>
 
