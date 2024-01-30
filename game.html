@@ -134,67 +134,81 @@
 '110.webp'
   ];
 
- function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
+  // Shuffle array function
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
+  }
 
-    let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
-    shuffle(oddImages);
-    let usedImages = [];
+  // Filter and shuffle odd images
+ let oddImages = shuffle(allImages.filter((img, index) => (index + 1) % 2 !== 0));
+let usedImages = [];
 
-    function loadRandomOddImage() {
-      if (!isCardDisplayed) {
-        displayNewCard();
-        isCardDisplayed = true;
-      } else {
-        gsap.to('#flipCard', { duration: 1.2, x: '100%', ease: 'power4.out', onComplete: displayNewCard });
-      }
-    }
+function loadRandomOddImage() {
+  if (oddImages.length === 0) {
+    oddImages = shuffle(usedImages);
+    usedImages = [];
+  }
 
-    function displayNewCard() {
-      if (oddImages.length === 0) {
-        oddImages = shuffle([...usedImages]);
-        usedImages = [];
-      }
+  let frontImageUrl = oddImages.pop();
+  usedImages.push(frontImageUrl);
+  let backImageUrl = getNextImage(frontImageUrl);
 
-      const frontImageUrl = oddImages.pop();
-      usedImages.push(frontImageUrl);
-      const backImageUrl = getNextImage(frontImageUrl);
+  document.getElementById('cardFront').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${frontImageUrl}')`;
+  document.getElementById('cardBack').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${backImageUrl}')`;
+  document.getElementById('flipCard').classList.remove('flipped');
 
-      document.getElementById('cardFront').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${frontImageUrl}')`;
-      document.getElementById('cardBack').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${backImageUrl}')`;
+  // Preload the next image
+  if (oddImages.length > 0) {
+    let nextFrontImageUrl = oddImages[oddImages.length - 1]; // Get the next image to be used
+    let nextBackImageUrl = getNextImage(nextFrontImageUrl); // Get the following image
 
-      gsap.set('#flipCard', { x: '-100%', opacity: 0 });
-      gsap.to('#flipCard', { duration: 1.2, x: '0%', opacity: 1, ease: 'power4.out' });
-    }
+    // Create new Image objects and set their src to preload
+    let preloadFrontImage = new Image();
+    preloadFrontImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextFrontImageUrl}`;
+    let preloadBackImage = new Image();
+    preloadBackImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextBackImageUrl}`;
+  }
+}
 
-    function getNextImage(currentImage) {
-      let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
-      let nextNumber = currentNumber + 1;
-      return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.png';
-    }
+function shuffle(array) {
+  let currentIndex = array.length, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // Swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+function getNextImage(currentImage) {
+  let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
+  let nextNumber = currentNumber + 1;
+  return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.png';
+}
 
     let flipCount = 0;
 
-    function flipCard() {
-      document.getElementById('flipCard').classList.toggle('flipped');
-      flipCount++;
+function flipCard() {
+  document.getElementById('flipCard').classList.toggle('flipped');
+  flipCount++;
+  console.log("Flip count: ", flipCount); // Debugging line
 
-      if (flipCount >= 2) {
-        document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
-        document.querySelector('.deal2').classList.add('button-slide-up-desktop');
-      }
-    }
+  if (flipCount >= 2) {
+    document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
+    document.querySelector('.deal2').classList.add('button-slide-up-desktop');
+  }
+}
 
-    let isCardDisplayed = false;
-
-    window.onload = () => {
-      gsap.to('.deal2', { duration: 1.5, opacity: 1, ease: 'power4.out' });
-      loadRandomOddImage();
-    };
+window.onload = loadRandomOddImage;
+    
 </script>
 
 </body>
