@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Is How We Cope - Game</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <div class="flip-container">
+    <div class="flip-container" onclick="flipCard()">
       <div class="card" id="flipCard">
         <div class="front" id="cardFront"></div>
         <div class="back" id="cardBack"></div>
       </div>
     </div>
     <p id="guidanceText" class="guidance-text-desktop">tap card to view guidance</p>
-    <button class="deal2" onclick="dealNewCard()">Deal New Card</button>
+    <button class="deal2" onclick="loadRandomOddImage()">Deal New Card</button>
     <footer class="gamef">
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2023</a></p>
     </footer>
@@ -135,7 +134,7 @@
 '110.webp'
   ];
 
-   function shuffle(array) {
+ function shuffle(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -152,17 +151,7 @@
       return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.webp';
     }
 
-    function flipCard() {
-      // Use GSAP to animate the flip with correct centering
-      gsap.to('#flipCard', {duration: 0.6, rotationY: '+=180', ease: 'power2.inOut', clearProps: 'transform'});
-    }
-
-    function dealNewCard() {
-      // Animate card exit to the right and reset rotationY to ensure it starts from the front side for the next card
-      gsap.to('#flipCard', {duration: 0.6, x: '100%', opacity: 0, ease: 'power2.inOut', onComplete: loadNewCard, clearProps: 'x,opacity'});
-    }
-
-    function loadNewCard() {
+    function loadRandomOddImage() {
       if (oddImages.length === 0) {
         oddImages = shuffle(usedImages);
         usedImages = [];
@@ -174,13 +163,20 @@
 
       document.getElementById('cardFront').style.backgroundImage = `url('img/${frontImageUrl}')`;
       document.getElementById('cardBack').style.backgroundImage = `url('img/${backImageUrl}')`;
-
-      // Reset card position without animation and ensure no tilt
-      gsap.set('#flipCard', {x: '-100%', opacity: 0, rotationY: 0});
-
-      // Animate new card in from the left
-      gsap.to('#flipCard', {duration: 0.6, x: '0%', opacity: 1, ease: 'power2.inOut', clearProps: 'x,opacity'});
+      document.getElementById('flipCard').classList.remove('flipped');
     }
+
+    let flipCount = 0;
+    function flipCard() {
+      document.getElementById('flipCard').classList.toggle('flipped');
+      flipCount++;
+      if (flipCount >= 2) {
+        document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
+        document.querySelector('.deal2').classList.add('button-slide-up-desktop');
+      }
+    }
+
+    window.onload = loadRandomOddImage;
   </script>
 
 </body>
