@@ -159,6 +159,18 @@ function loadRandomOddImage() {
   document.getElementById('cardFront').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${frontImageUrl}')`;
   document.getElementById('cardBack').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${backImageUrl}')`;
   document.getElementById('flipCard').classList.remove('flipped');
+
+  // Preload the next image
+  if (oddImages.length > 0) {
+    let nextFrontImageUrl = oddImages[oddImages.length - 1]; // Get the next image to be used
+    let nextBackImageUrl = getNextImage(nextFrontImageUrl); // Get the following image
+
+    // Create new Image objects and set their src to preload
+    let preloadFrontImage = new Image();
+    preloadFrontImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextFrontImageUrl}`;
+    let preloadBackImage = new Image();
+    preloadBackImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextBackImageUrl}`;
+  }
 }
 
 function shuffle(array) {
