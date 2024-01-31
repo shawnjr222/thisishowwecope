@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Is How We Cope - Game</title>
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="container">
-   <div class="flip-container" onclick="flipCard()">
-  <div class="card" id="flipCard">
-    <div class="front" id="cardFront"></div>
-    <div class="back" id="cardBack"></div>
-  </div>
-  </div>
+    <div class="flip-container" onclick="flipCard()">
+      <div class="card" id="flipCard">
+        <div class="front" id="cardFront"></div>
+        <div class="back" id="cardBack"></div>
+      </div>
+    </div>
     <p id="guidanceText" class="guidance-text-desktop">tap card to view guidance</p>
     <button class="deal2" onclick="loadRandomOddImage()">Deal New Card</button>
     <footer class="gamef">
@@ -135,79 +135,44 @@
   ];
 
   // Shuffle array function
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
-
-  // Filter and shuffle odd images
- let oddImages = shuffle(allImages.filter((img, index) => (index + 1) % 2 !== 0));
-let usedImages = [];
-
-function loadRandomOddImage() {
-  if (oddImages.length === 0) {
-    oddImages = shuffle(usedImages);
-    usedImages = [];
-  }
-
-  let frontImageUrl = oddImages.pop();
-  usedImages.push(frontImageUrl);
-  let backImageUrl = getNextImage(frontImageUrl);
-
-  document.getElementById('cardFront').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${frontImageUrl}')`;
-  document.getElementById('cardBack').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${backImageUrl}')`;
-  document.getElementById('flipCard').classList.remove('flipped');
-
-  // Preload the next image
-  if (oddImages.length > 0) {
-    let nextFrontImageUrl = oddImages[oddImages.length - 1]; // Get the next image to be used
-    let nextBackImageUrl = getNextImage(nextFrontImageUrl); // Get the following image
-
-    // Create new Image objects and set their src to preload
-    let preloadFrontImage = new Image();
-    preloadFrontImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextFrontImageUrl}`;
-    let preloadBackImage = new Image();
-    preloadBackImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextBackImageUrl}`;
-  }
-}
-
 function shuffle(array) {
-  let currentIndex = array.length, randomIndex;
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
 
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
+    let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
+    shuffle(oddImages);
+    let usedImages = [];
 
-    // Swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-  }
+    function loadRandomOddImage() {
+      if (oddImages.length === 0) {
+        oddImages = shuffle(usedImages);
+        usedImages = [];
+      }
 
-  return array;
-}
+      let frontImageUrl = oddImages.pop();
+      usedImages.push(frontImageUrl);
+      let backImageUrl = getNextImage(frontImageUrl);
 
-function getNextImage(currentImage) {
-  let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
-  let nextNumber = currentNumber + 1;
-  return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.png';
-}
+      document.getElementById('cardFront').style.backgroundImage = `url('img/${frontImageUrl}')`;
+      document.getElementById('cardBack').style.backgroundImage = `url('img/${backImageUrl}')`;
+      document.getElementById('flipCard').classList.remove('flipped', 'cardExit');
+      document.getElementById('flipCard').classList.add('cardEnter');
+    }
 
-    let flipCount = 0;
+    function getNextImage(currentImage) {
+      let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
+      let nextNumber = currentNumber + 1;
+      return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.webp';
+    }
 
-function flipCard() {
-  document.getElementById('flipCard').classList.toggle('flipped');
-  flipCount++;
-  console.log("Flip count: ", flipCount); // Debugging line
+    function flipCard() {
+      document.getElementById('flipCard').classList.toggle('flipped');
+    }
 
-  if (flipCount >= 2) {
-    document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
-    document.querySelector('.deal2').classList.add('button-slide-up-desktop');
-  }
-}
-
-window.onload = loadRandomOddImage;
+    window.onload = loadRandomOddImage;
     
 </script>
 
