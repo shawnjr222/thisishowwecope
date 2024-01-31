@@ -173,7 +173,6 @@ h1[data-splitting] .word .char {
 
 
 
-
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-100%);
@@ -195,7 +194,6 @@ h1[data-splitting] .word .char {
     opacity: 0;
   }
 }
-
 
 
 
