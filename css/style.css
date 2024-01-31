@@ -169,6 +169,23 @@ h1[data-splitting] .word .char {
   animation: quick-fade-out 0.5s forwards; /* Quick fade out in 0.5 seconds */
 }
 
+.cardEnter {
+  animation: cardEnter 1.2s ease forwards;
+}
+
+.cardExit {
+  animation: cardExit 1.2s ease forwards;
+}
+
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateX(-50%) rotateY(-10deg); }
+  to { opacity: 1; transform: translateX(0) rotateY(0deg); }
+}
+
+@keyframes cardExit {
+  from { opacity: 1; transform: translateX(0) rotateY(0deg); }
+  to { opacity: 0; transform: translateX(50%) rotateY(10deg); }
+}
 
 
 
@@ -294,6 +311,7 @@ a {
     transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     transform-origin: center;
+    transition: transform 1s;
  }
 
   .flip-container {
