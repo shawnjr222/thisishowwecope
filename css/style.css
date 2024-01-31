@@ -173,31 +173,6 @@ h1[data-splitting] .word .char {
 
 
 
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutToRight {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-
-
-
 
 /* Foundation */
 @font-face {
@@ -301,14 +276,6 @@ a {
     animation: buttonSlideUpDesktopAnimation 1s forwards;
   }
 
-  .card-wrapper {
-  display: flex;
-  justify-content: center;
-  overflow: hidden; /* Hide the card when it moves outside the wrapper */
-  width: 100%; /* Adjust as necessary */
-  height: 553px; /* Adjust based on card height */
-}
-
  .card {
     width: 283px; /* responsive width */
     height: 553px; /* responsive height based on viewport height */
@@ -327,9 +294,6 @@ a {
     transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     transform-origin: center;
-    will-change: transform, opacity; /* Optimize for animations */
-  /* Keep your existing .card styles, ensure it doesn't have a fixed position */
-   transition: transform 0.8s, opacity 0.8s; /* For smooth flipping */
  }
 
   .flip-container {
