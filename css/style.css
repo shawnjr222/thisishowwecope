@@ -306,7 +306,7 @@ a {
   justify-content: center;
   overflow: hidden; /* Hide the card when it moves outside the wrapper */
   width: 100%; /* Adjust as necessary */
-  height: 300px; /* Adjust based on card height */
+  height: 553px; /* Adjust based on card height */
 }
 
  .card {
@@ -329,6 +329,7 @@ a {
     transform-origin: center;
     will-change: transform, opacity; /* Optimize for animations */
   /* Keep your existing .card styles, ensure it doesn't have a fixed position */
+   transition: transform 0.8s, opacity 0.8s; /* For smooth flipping */
  }
 
   .flip-container {
