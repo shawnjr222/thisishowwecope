@@ -9,9 +9,11 @@
 <body>
   <div class="container">
    <div class="flip-container" onclick="flipCard()">
+  <div class="card-wrapper">
   <div class="card" id="flipCard">
     <div class="front" id="cardFront"></div>
     <div class="back" id="cardBack"></div>
+  </div>
   </div>
   </div>
     <p id="guidanceText" class="guidance-text-desktop">tap card to view guidance</p>
@@ -146,6 +148,8 @@
  let oddImages = shuffle(allImages.filter((img, index) => (index + 1) % 2 !== 0));
 let usedImages = [];
 
+let isFirstCard = true;
+    
 function loadRandomOddImage() {
   if (oddImages.length === 0) {
     oddImages = shuffle(usedImages);
@@ -171,6 +175,24 @@ function loadRandomOddImage() {
     let preloadBackImage = new Image();
     preloadBackImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextBackImageUrl}`;
   }
+
+    const card = document.getElementById('flipCard');
+  if (isFirstCard) {
+    // Apply the slide-in animation to the first card
+    card.style.animation = 'slideInFromLeft 0.5s forwards ease-out';
+    isFirstCard = false;
+  } else {
+    // Apply the slide-out animation, then load the next card and apply the slide-in animation
+    card.style.animation = 'slideOutToRight 0.5s forwards ease-out';
+    card.addEventListener('animationend', () => {
+      // Here, load the new card content before sliding it in
+      // Your logic to update the card's content
+
+      // Apply the slide-in animation to the new card
+      card.style.animation = 'slideInFromLeft 0.5s forwards ease-out';
+    }, { once: true }); // Ensure the listener is removed after execution
+  }
+  
 }
 
 function shuffle(array) {
