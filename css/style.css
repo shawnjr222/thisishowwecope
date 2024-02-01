@@ -175,19 +175,15 @@ h1[data-splitting] .word .char {
 
 
 @keyframes swoop-in {
-  0% {
-    /* Start from off-screen, top left, with a slight rotation */
-    transform: translate(-50vw, -50vh) rotateZ(-30deg) rotateY(-20deg);
+  from {
+    transform: translate(-100%, -100%) rotateZ(-20deg) rotateY(-15deg);
     opacity: 0;
   }
-  100% {
-    /* End at the center, with rotations corrected */
+  to {
     transform: translate(0, 0) rotateZ(0deg) rotateY(0deg);
     opacity: 1;
   }
 }
-
-
 
 
 
@@ -320,6 +316,7 @@ a {
   height: 553px; /* responsive height based on viewport height */
   position: relative;
   margin-bottom: 80px;
+  opacity: 0; /* Start invisible */
 }
 
   .front, .back {
