@@ -155,6 +155,17 @@ function loadRandomOddImage() {
   let frontImageUrl = oddImages.pop();
   usedImages.push(frontImageUrl);
   let backImageUrl = getNextImage(frontImageUrl);
+
+
+  let frontImage = new Image();
+  frontImage.onload = function() {
+    // Set the background image for the card
+    document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
+
+    // Apply the swoop-in animation with the initial slight flip
+    document.querySelector('.flip-container').style.animation = 'swoop-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards';
+  };
+  frontImage.src = frontImageUrl; // This triggers the loading of the image and the onload event
   
   
 
