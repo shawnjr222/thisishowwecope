@@ -172,20 +172,20 @@ h1[data-splitting] .word .char {
 
 
 
+
+
 @keyframes swoop-in {
-  from {
-    /* Start from off-screen, tilted and rotated for a "dealing" effect */
-    transform: translate(-50vw, -50vh) rotateZ(-20deg) rotateY(-15deg);
-    opacity: 0; /* Start invisible */
+  0% {
+    /* Start from off-screen, top left, with a slight rotation */
+    transform: translate(-50vw, -50vh) rotateZ(-30deg) rotateY(-20deg);
+    opacity: 0;
   }
-  to {
-    /* End at center, no tilt or rotation */
+  100% {
+    /* End at the center, with rotations corrected */
     transform: translate(0, 0) rotateZ(0deg) rotateY(0deg);
-    opacity: 1; /* Fully visible */
+    opacity: 1;
   }
 }
-
-
 
 
 
@@ -320,7 +320,7 @@ a {
   height: 553px; /* responsive height based on viewport height */
   position: relative;
   margin-bottom: 80px;
-  animation: swoop-in 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation: swoop-in 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
   .front, .back {
