@@ -134,21 +134,21 @@
 '110.webp'
   ];
 
- // Use a single, efficient shuffle function
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  // Shuffle array function
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
-}
 
-let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
-shuffle(oddImages);
+  // Filter and shuffle odd images
+ let oddImages = shuffle(allImages.filter((img, index) => (index + 1) % 2 !== 0));
 let usedImages = [];
 
 function loadRandomOddImage() {
   if (oddImages.length === 0) {
-    oddImages = shuffle([...usedImages]);
+    oddImages = shuffle(usedImages);
     usedImages = [];
   }
 
@@ -160,26 +160,46 @@ function loadRandomOddImage() {
   document.getElementById('cardBack').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${backImageUrl}')`;
   document.getElementById('flipCard').classList.remove('flipped');
 
-  preloadImages(oddImages.slice(-2)); // Preload the last two images for smoother transitions
+  // Preload the next image
+  if (oddImages.length > 0) {
+    let nextFrontImageUrl = oddImages[oddImages.length - 1]; // Get the next image to be used
+    let nextBackImageUrl = getNextImage(nextFrontImageUrl); // Get the following image
+
+    // Create new Image objects and set their src to preload
+    let preloadFrontImage = new Image();
+    preloadFrontImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextFrontImageUrl}`;
+    let preloadBackImage = new Image();
+    preloadBackImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextBackImageUrl}`;
+  }
+}
+
+function shuffle(array) {
+  let currentIndex = array.length, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // Swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
 }
 
 function getNextImage(currentImage) {
   let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
   let nextNumber = currentNumber + 1;
-  return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.webp'; // Corrected fallback to '01.webp'
+  return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.png';
 }
 
-function preloadImages(imageUrls) {
-  imageUrls.forEach(url => {
-    let img = new Image();
-    img.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${url}`;
-  });
-}
+    let flipCount = 0;
 
 function flipCard() {
-  let card = document.getElementById('flipCard');
-  card.classList.toggle('flipped');
+  document.getElementById('flipCard').classList.toggle('flipped');
   flipCount++;
+  console.log("Flip count: ", flipCount); // Debugging line
 
   if (flipCount >= 2) {
     document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
@@ -187,12 +207,7 @@ function flipCard() {
   }
 }
 
-// Attach event listeners
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.flip-container').addEventListener('click', flipCard);
-  document.querySelector('.deal2').addEventListener('click', loadRandomOddImage);
-  loadRandomOddImage(); // Initial load
-});
+window.onload = loadRandomOddImage;
     
 </script>
 
