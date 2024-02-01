@@ -157,20 +157,17 @@ function loadRandomOddImage() {
   let backImageUrl = getNextImage(frontImageUrl);
   
 
-    // Create a new Image object for preloading the front image
-  let frontImage = new Image();
-  frontImage.onload = function() {
-    // Once the front image is loaded, set it as the background
-    document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
 
-    // Apply the animation to the flip container now that the image is ready
+ let frontImage = new Image();
+  frontImage.onload = function() {
+    document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
+    // Directly apply the animation to the flip-container once the image is loaded
+    document.querySelector('.flip-container').style.opacity = '1'; // Make sure the container is visible
     document.querySelector('.flip-container').style.animation = 'swoop-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards';
   };
   frontImage.src = frontImageUrl; // Start loading the front image
-
-  // Optionally preload the back image in a similar way if needed
-  let backImage = new Image();
-  backImage.src = backImageUrl;
+}
+  
   
 
   document.getElementById('cardFront').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${frontImageUrl}')`;
