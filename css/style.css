@@ -320,7 +320,6 @@ a {
   height: 553px; /* responsive height based on viewport height */
   position: relative;
   margin-bottom: 80px;
-  animation: swoop-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
   .front, .back {
