@@ -173,17 +173,24 @@ h1[data-splitting] .word .char {
 
 
 
-
 @keyframes swoop-in {
   from {
-    transform: translate(-100%, -100%) rotateZ(-20deg) rotateY(-15deg);
+    /* Start off-screen with a slight Y-axis rotation for the "slightly flipped" effect */
+    transform: translate(-100%, -100%) rotateY(-15deg) rotateZ(-20deg);
     opacity: 0;
   }
   to {
-    transform: translate(0, 0) rotateZ(0deg) rotateY(0deg);
+    /* End at the center with no Y-axis rotation, "unflipping" the card */
+    transform: translate(0, 0) rotateY(0deg) rotateZ(0deg);
     opacity: 1;
   }
 }
+
+
+
+
+
+
 
 
 
