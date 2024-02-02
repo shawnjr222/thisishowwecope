@@ -159,16 +159,16 @@ function loadRandomOddImage() {
 
 
   
- let frontImage = new Image();
+let frontImage = new Image();
   frontImage.onload = function() {
     document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
-
-    // Make the card visible and start the animation
+    // Ensure the flip container is visible before starting the animation
     const flipContainer = document.querySelector('.flip-container');
     flipContainer.style.opacity = '1';
+    // Apply the swoop-in animation only after the image has loaded
     flipContainer.style.animation = 'swoop-in 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
   };
-  frontImage.src = frontImageUrl; // Start loading the front image
+  frontImage.src = frontImageUrl;
 
   
 
@@ -214,16 +214,18 @@ function getNextImage(currentImage) {
 
 function flipCard() {
   document.getElementById('flipCard').classList.toggle('flipped');
-  flipCount++;
-  console.log("Flip count: ", flipCount); // Debugging line
-
-  if (flipCount >= 2) {
     document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
     document.querySelector('.deal2').classList.add('button-slide-up-desktop');
-  }
 }
 
-window.onload = loadRandomOddImage;
+document.addEventListener('DOMContentLoaded', function () {
+  // Trigger fade-in animations for guidance text and button on page load
+  document.getElementById('guidanceText').classList.add('fade-in-animation');
+  document.querySelector('.deal2').classList.add('fade-in-animation');
+  
+  // Load the first card image
+  loadRandomOddImage();
+});
     
 </script>
 
