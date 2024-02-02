@@ -161,14 +161,14 @@ function loadRandomOddImage() {
   
 let frontImage = new Image();
   frontImage.onload = function() {
-    // Set the background image for the card
     document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
-    
-    // Start the animation after the image is loaded
-    document.querySelector('.flip-container').style.opacity = '1'; // Ensure it's visible
-    document.querySelector('.flip-container').style.animation = 'swoop-in 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s forwards';
+
+    // Make the container visible and start the animation
+    const flipContainer = document.querySelector('.flip-container');
+    flipContainer.style.opacity = '1';
+    flipContainer.style.animation = 'swoop-in 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s forwards';
   };
-  frontImage.src = frontImageUrl; // This triggers the loading of the image and the onload event
+  frontImage.src = frontImageUrl; // Start loading the front image
 
 
   
