@@ -207,15 +207,14 @@ function shuffle(array) {
 function getNextImage(currentImage) {
   let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
   let nextNumber = currentNumber + 1;
-  return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.png';
+  return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.webp';
 }
 
-    let flipCount = 0;
 
 function flipCard() {
   document.getElementById('flipCard').classList.toggle('flipped');
-    document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
-    document.querySelector('.deal2').classList.add('button-slide-up-desktop');
+  document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
+  document.querySelector('.deal2').classList.add('button-slide-up-desktop');
 }
 
 document.addEventListener('DOMContentLoaded', function () {
