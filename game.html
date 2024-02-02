@@ -220,11 +220,24 @@ function flipCard() {
       document.querySelector('.deal2').classList.add('button-slide-up-desktop');
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('guidanceText').classList.add('fade-in-animation');
-      document.querySelector('.deal2').classList.add('fade-in-animation');
-      loadRandomOddImage();
-    });
+  document.addEventListener('DOMContentLoaded', function () {
+  const guidanceText = document.getElementById('guidanceText');
+  const dealButton = document.querySelector('.deal2');
+
+  // Add fade-in animation classes
+  guidanceText.classList.add('fade-in-animation');
+  dealButton.classList.add('fade-in-animation');
+
+  // Set up an event listener to remove the fade-in class after the animation ends
+  function handleAnimationEnd(event) {
+    event.target.classList.remove('fade-in-animation');
+  }
+
+  guidanceText.addEventListener('animationend', handleAnimationEnd);
+  dealButton.addEventListener('animationend', handleAnimationEnd);
+
+  loadRandomOddImage(); // Load the first card image on page load
+});
     
 </script>
 
