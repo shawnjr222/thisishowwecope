@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Is How We Cope - Game</title>
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="container">
-   <div class="flip-container" onclick="flipCard()">
-  <div class="card" id="flipCard">
-    <div class="front" id="cardFront"></div>
-    <div class="back" id="cardBack"></div>
-  </div>
-  </div>
+    <div class="flip-container" onclick="flipCard()">
+      <div class="card" id="flipCard">
+        <div class="front" id="cardFront"></div>
+        <div class="back" id="cardBack"></div>
+      </div>
+    </div>
     <p id="guidanceText" class="guidance-text-desktop">tap card to view guidance</p>
     <button class="deal2" onclick="loadRandomOddImage()">Deal New Card</button>
     <footer class="gamef">
@@ -159,16 +159,16 @@ function loadRandomOddImage() {
 
 
   
-  let frontImage = new Image();
-  frontImage.onload = function() {
-    document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
-    // Ensure the flip container is visible before starting the animation
-    const flipContainer = document.querySelector('.flip-container');
-    flipContainer.style.opacity = '1';
-    // Apply the swoop-in animation only after the image has loaded
-    flipContainer.style.animation = 'swoop-in 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
-  };
-  frontImage.src = frontImageUrl;
+let frontImage = new Image();
+      frontImage.onload = function() {
+        document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
+        const flipContainer = document.querySelector('.flip-container');
+        flipContainer.style.opacity = '1';
+        flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
+      };
+      frontImage.src = frontImageUrl;
+
+
 
   
 
@@ -176,6 +176,8 @@ function loadRandomOddImage() {
   document.getElementById('cardBack').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${backImageUrl}')`;
   document.getElementById('flipCard').classList.remove('flipped');
 
+
+  
   // Preload the next image
   if (oddImages.length > 0) {
     let nextFrontImageUrl = oddImages[oddImages.length - 1]; // Get the next image to be used
@@ -212,19 +214,13 @@ function getNextImage(currentImage) {
 
 
 function flipCard() {
-  document.getElementById('flipCard').classList.toggle('flipped');
-  document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
-  document.querySelector('.deal2').classList.add('button-slide-up-desktop');
-}
+      document.getElementById('flipCard').classList.toggle('flipped');
+      document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
+    }
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Trigger fade-in animations for guidance text and button on page load
-  document.getElementById('guidanceText').classList.add('fade-in-animation');
-  document.querySelector('.deal2').classList.add('fade-in-animation');
-  
-  // Load the first card image
-  loadRandomOddImage();
-});
+    document.addEventListener('DOMContentLoaded', function () {
+      loadRandomOddImage();
+    });
     
 </script>
 
