@@ -164,7 +164,7 @@ let frontImage = new Image();
         document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
         const flipContainer = document.querySelector('.flip-container');
         flipContainer.style.opacity = '1';
-        flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s forwards';
+        flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) 1.0s forwards';
       };
       frontImage.src = frontImageUrl;
 
