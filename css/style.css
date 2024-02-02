@@ -187,6 +187,12 @@ h1[data-splitting] .word .char {
 }
 
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
 
 
 
@@ -291,6 +297,7 @@ a {
     margin-bottom: 0vh;
     text-align: center;
     color: #ffffff;
+    animation: fade-in 1.5s ease forwards; /* Apply the fade-in animation */
 }
 
   .button-slide-up-desktop {
@@ -323,7 +330,7 @@ a {
   height: 553px; /* responsive height based on viewport height */
   position: relative;
   margin-bottom: 80px;
-  animation: swoop-in 2.22s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s forwards;
+  animation: swoop-in 1.75s cubic-bezier(0.165, 0.84, 0.44, 1) 1.5s forwards;
   opacity: 0; /* Make the container invisible initially */
 }
 
@@ -436,6 +443,7 @@ a {
     margin-top: 3vh;
     border: none;
     outline: none;
+    animation: fade-in 1.5s ease forwards; /* Apply the fade-in animation */
   }
 
 .homef {
