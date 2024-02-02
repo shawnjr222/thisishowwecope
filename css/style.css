@@ -324,6 +324,7 @@ a {
   position: relative;
   margin-bottom: 80px;
   animation: swoop-in 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s forwards; /* Adds a 0.5s delay */
+  opacity: 0; /* Make the container invisible initially */
 }
 
   .front, .back {
