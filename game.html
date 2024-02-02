@@ -164,7 +164,7 @@ let frontImage = new Image();
         document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
         const flipContainer = document.querySelector('.flip-container');
         flipContainer.style.opacity = '1';
-        flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
+        flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s forwards';
       };
       frontImage.src = frontImageUrl;
 
@@ -216,6 +216,7 @@ function getNextImage(currentImage) {
 function flipCard() {
       document.getElementById('flipCard').classList.toggle('flipped');
       document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
+      document.querySelector('.deal2').classList.add('fade-in-animation');
     }
 
     document.addEventListener('DOMContentLoaded', function () {
