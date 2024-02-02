@@ -178,6 +178,7 @@ let frontImage = new Image();
 
 
   
+  
   // Preload the next image
   if (oddImages.length > 0) {
     let nextFrontImageUrl = oddImages[oddImages.length - 1]; // Get the next image to be used
@@ -216,7 +217,7 @@ function getNextImage(currentImage) {
 function flipCard() {
       document.getElementById('flipCard').classList.toggle('flipped');
       document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
-      document.querySelector('.deal2').classList.add('fade-in-animation');
+      document.querySelector('.deal2').classList.add('button-slide-up-desktop');
     }
 
     document.addEventListener('DOMContentLoaded', function () {
