@@ -135,14 +135,19 @@ h1[data-splitting] .word .char {
 }
 
 
+
+
 .guidance-fade-out-desktop {
-  animation: guidanceFadeOutDesktopAnimation 1s forwards;
+  animation: guidanceFadeOutDesktopAnimation 1s ease forwards;
 }
 
 @keyframes guidanceFadeOutDesktopAnimation {
   from { opacity: 1; }
   to { opacity: 0; }
 }
+
+
+
 
 @keyframes slide-down-and-fade-out {
   from {
@@ -331,7 +336,7 @@ a {
   height: 553px; /* responsive height based on viewport height */
   position: relative;
   margin-bottom: 80px;
-  animation: swoop-in 1.75s cubic-bezier(0.165, 0.84, 0.44, 1) 1.5s forwards;
+  animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
 }
 
