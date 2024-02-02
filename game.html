@@ -159,17 +159,16 @@ function loadRandomOddImage() {
 
 
   
-let frontImage = new Image();
+ let frontImage = new Image();
   frontImage.onload = function() {
     document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
 
-    // Make the container visible and start the animation
+    // Make the card visible and start the animation
     const flipContainer = document.querySelector('.flip-container');
     flipContainer.style.opacity = '1';
-    flipContainer.style.animation = 'swoop-in 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s forwards';
+    flipContainer.style.animation = 'swoop-in 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
   };
   frontImage.src = frontImageUrl; // Start loading the front image
-
 
   
 
