@@ -157,16 +157,20 @@ function loadRandomOddImage() {
   let backImageUrl = getNextImage(frontImageUrl);
 
 
-  let frontImage = new Image();
+
+  
+let frontImage = new Image();
   frontImage.onload = function() {
     // Set the background image for the card
     document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
-
-    // Apply the swoop-in animation with the initial slight flip
-    document.querySelector('.flip-container').style.animation = 'swoop-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards';
+    
+    // Start the animation after the image is loaded
+    document.querySelector('.flip-container').style.opacity = '1'; // Ensure it's visible
+    document.querySelector('.flip-container').style.animation = 'swoop-in 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s forwards';
   };
   frontImage.src = frontImageUrl; // This triggers the loading of the image and the onload event
-  
+
+
   
 
   document.getElementById('cardFront').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${frontImageUrl}')`;
