@@ -159,7 +159,7 @@ function loadRandomOddImage() {
 
 
   
-let frontImage = new Image();
+  let frontImage = new Image();
   frontImage.onload = function() {
     document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
     // Ensure the flip container is visible before starting the animation
