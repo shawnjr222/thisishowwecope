@@ -225,7 +225,7 @@ function handleDealNewCard() {
   const flipContainer = document.querySelector('.flip-container');
 
   // Apply the "swoop-out" animation to the current card
-  flipContainer.style.animation = 'swoop-out 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
+  flipContainer.style.animation = 'swoop-out 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
 
   // Wait for the "swoop-out" animation to finish
   flipContainer.addEventListener('animationend', function() {
@@ -241,8 +241,8 @@ function handleDealNewCard() {
   // and ensures the card remains invisible until the swoop-in animation starts
   setTimeout(() => {
     flipContainer.style.opacity = '1'; // Make sure the container is visible
-    flipContainer.style.animation = 'swoop-in 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
-  } 500); // This delay should match the duration of the swoop-out animation
+    flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
+  } 1500); // This delay should match the duration of the swoop-out animation
 }
 
 
