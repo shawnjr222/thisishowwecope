@@ -203,6 +203,17 @@ h1[data-splitting] .word .char {
 }
 
 
+@keyframes swoop-out {
+  from {
+    transform: translate(0, 0) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translate(100%, -100%) rotateY(-15deg) rotateZ(20deg);
+    opacity: 0;
+  }
+}
+
 
 
 
