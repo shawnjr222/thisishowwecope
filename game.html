@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>This Is How We Cope - Game</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Is How We Cope - Game</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="flip-container" onclick="flipCard()">
-      <div class="card" id="flipCard">
-        <div class="front" id="cardFront"></div>
-        <div class="back" id="cardBack"></div>
-      </div>
+    <div class="container">
+        <div class="flip-container" onclick="flipCard()">
+            <div class="card" id="flipCard">
+                <div class="front" id="cardFront"></div>
+                <div class="back" id="cardBack"></div>
+            </div>
+        </div>
+        <p id="guidanceText" class="guidance-text-desktop">Tap card to view guidance</p>
+        <button class="deal2" onclick="handleDealNewCard()">Deal New Card</button>
+        <footer class="gamef">
+            <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2024</a></p>
+        </footer>
     </div>
-    <p id="guidanceText" class="guidance-text-desktop">tap card to view guidance</p>
-    <button class="deal2" onclick="handleDealNewCard()">Deal New Card</button>
-    <footer class="gamef">
-      <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2024</a></p>
-    </footer>
-  </div>
-  <script>
+    <script>
   const allImages = [
    '01.webp', 
 '02.webp', 
@@ -134,131 +134,68 @@
 '110.webp'
   ];
 
-  // Shuffle array function
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
+ function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
 
-  // Filter and shuffle odd images
- let oddImages = shuffle(allImages.filter((img, index) => (index + 1) % 2 !== 0));
-let usedImages = [];
+        let oddImages = allImages.filter((img, index) => (index + 1) % 2 !== 0);
+        shuffle(oddImages);
+        let usedImages = [];
 
-function loadRandomOddImage() {
-  if (oddImages.length === 0) {
-    oddImages = shuffle(usedImages);
-    usedImages = [];
-  }
+        function loadRandomOddImage() {
+            if (oddImages.length === 0) {
+                oddImages = shuffle(usedImages);
+                usedImages = [];
+            }
 
-  let frontImageUrl = oddImages.pop();
-  usedImages.push(frontImageUrl);
-  let backImageUrl = getNextImage(frontImageUrl);
+            const frontImageUrl = oddImages.pop();
+            usedImages.push(frontImageUrl);
 
+            const frontImage = new Image();
+            frontImage.onload = function() {
+                document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
+                document.getElementById('cardBack').style.backgroundImage = `url('${getNextImage(frontImageUrl)}')`;
+                document.getElementById('flipCard').classList.remove('flipped');
+            };
+            frontImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${frontImageUrl}`;
+        }
 
+        function getNextImage(currentImage) {
+            let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
+            let nextNumber = currentNumber + 1;
+            return `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${String(nextNumber).padStart(2, '0')}.webp`;
+        }
 
-  
-let frontImage = new Image();
-      frontImage.onload = function() {
-        document.getElementById('cardFront').style.backgroundImage = `url('${frontImageUrl}')`;
-        const flipContainer = document.querySelector('.flip-container');
-        flipContainer.style.opacity = '1';
-        flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards';
-      };
-      frontImage.src = frontImageUrl;
+        function flipCard() {
+            document.getElementById('flipCard').classList.toggle('flipped');
+            document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
+            document.querySelector('.deal2').classList.add('button-slide-up-desktop');
+        }
 
+        function handleDealNewCard() {
+            const flipContainer = document.querySelector('.flip-container');
+            flipContainer.style.animation = 'swoop-out 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
 
+            flipContainer.addEventListener('animationend', () => {
+                flipContainer.style.opacity = '0';
+                loadRandomOddImage();
+            }, { once: true });
 
-  
+            setTimeout(() => {
+                flipContainer.style.opacity = '1';
+                flipContainer.style.animation = 'swoop-in 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
+            }, 1000); // This delay is to ensure the new image is loaded before starting the animation.
+        }
 
-  document.getElementById('cardFront').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${frontImageUrl}')`;
-  document.getElementById('cardBack').style.backgroundImage = `url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${backImageUrl}')`;
-  document.getElementById('flipCard').classList.remove('flipped');
-
-
-  
-  
-  // Preload the next image
-  if (oddImages.length > 0) {
-    let nextFrontImageUrl = oddImages[oddImages.length - 1]; // Get the next image to be used
-    let nextBackImageUrl = getNextImage(nextFrontImageUrl); // Get the following image
-
-    // Create new Image objects and set their src to preload
-    let preloadFrontImage = new Image();
-    preloadFrontImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextFrontImageUrl}`;
-    let preloadBackImage = new Image();
-    preloadBackImage.src = `https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/${nextBackImageUrl}`;
-  }
-}
-
-function shuffle(array) {
-  let currentIndex = array.length, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // Swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
-
-function getNextImage(currentImage) {
-  let currentNumber = parseInt(currentImage.match(/\d+/)[0], 10);
-  let nextNumber = currentNumber + 1;
-  return allImages.find(img => img.startsWith(String(nextNumber).padStart(2, '0'))) || '01.webp';
-}
-
-
-function flipCard() {
-      document.getElementById('flipCard').classList.toggle('flipped');
-      document.getElementById('guidanceText').classList.add('guidance-fade-out-desktop');
-      document.querySelector('.deal2').classList.add('button-slide-up-desktop');
-    }
-
-
-function handleDealNewCard() {
-      const flipContainer = document.querySelector('.flip-container');
-      flipContainer.style.animation = 'swoop-out 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
-
-      flipContainer.addEventListener('animationend', function() {
-        flipContainer.style.opacity = '0';
-        loadRandomOddImage();
-      }, { once: true });
-
-      setTimeout(() => {
-        flipContainer.style.opacity = '1';
-        flipContainer.style.animation = 'swoop-in 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
-      }, 1000); // Adjusted to match the duration of the swoop-out animation
-    }
-
-
-    
-
-  document.addEventListener('DOMContentLoaded', function () {
-  const guidanceText = document.getElementById('guidanceText');
-  const dealButton = document.querySelector('.deal2');
-
-  // Add fade-in animation classes
-  guidanceText.classList.add('fade-in-animation');
-  dealButton.classList.add('fade-in-animation');
-
-  // Set up an event listener to remove the fade-in class after the animation ends
-  function handleAnimationEnd(event) {
-    event.target.classList.remove('fade-in-animation');
-  }
-
-  guidanceText.addEventListener('animationend', handleAnimationEnd);
-  dealButton.addEventListener('animationend', handleAnimationEnd);
-
-  loadRandomOddImage(); // Load the first card image on page load
-});
-    
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('guidanceText').classList.add('fade-in-animation');
+            document.querySelector('.deal2').classList.add('fade-in-animation');
+            loadRandomOddImage();
+        });
+    </script>
 
 </body>
 </html>
