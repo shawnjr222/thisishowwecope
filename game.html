@@ -229,20 +229,22 @@ function handleDealNewCard() {
 
   // Wait for the "swoop-out" animation to finish
   flipContainer.addEventListener('animationend', function() {
-    // Clear the previous animation
-    flipContainer.style.animation = '';
+    // After the swoop-out, set the opacity to 0 to hide the card
+    flipContainer.style.opacity = '0';
 
-    // Load the new card image and apply the "swoop-in" animation
+    // Load the new card image
     loadRandomOddImage();
-
-    // Ensure the next card "swoops in" after the current card has swooped out
-    setTimeout(() => {
-      flipContainer.style.opacity = '1'; // Make sure the container is visible
-      flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
-    }, 100); // Small delay to ensure the animation resets properly
-
   }, { once: true });
+
+  // Set a timeout to delay the start of the swoop-in animation slightly
+  // This allows the loadRandomOddImage function to potentially complete image loading
+  // and ensures the card remains invisible until the swoop-in animation starts
+  setTimeout(() => {
+    flipContainer.style.opacity = '1'; // Make sure the container is visible
+    flipContainer.style.animation = 'swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
+  }, 1500); // This delay should match the duration of the swoop-out animation
 }
+
 
     
 
