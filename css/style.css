@@ -259,6 +259,9 @@ a {
 
 
 
+  .button-slide-up-desktop {
+    animation: buttonSlideUpDesktopAnimation 1s forwards;
+  }
 
 
 
@@ -279,7 +282,6 @@ a {
 
   body {
     overflow: hidden; /* Hide scrollbars */
-    transition: background-color 0.5s ease; /* Smooth transition for background color change */
 }
   
 #loading-container {
@@ -318,9 +320,6 @@ a {
     color: #ffffff;
 }
 
-  .button-slide-up-desktop {
-    animation: buttonSlideUpDesktopAnimation 1s forwards;
-  }
 
  .card {
     width: 283px; /* responsive width */
