@@ -166,6 +166,8 @@ let frontImage = new Image();
         const flipContainer = document.querySelector('.flip-container');
         flipContainer.style.opacity = '1';
         flipContainer.style.animation = 'swoop-in 1s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards';
+        // Set the background color to the dominant color of the current card
+        setBackgroundColorForCard(frontImageUrl); // Ensure this is called here
       };
       frontImage.src = frontImageUrl;
 
