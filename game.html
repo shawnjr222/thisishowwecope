@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This Is How We Cope - Game</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/color-thief@2.3.0/dist/color-thief.umd.js"></script>
 </head>
 <body>
     <div class="container">
@@ -254,6 +255,59 @@ function flipCard() {
   dealButton.addEventListener('animationend', handleAnimationEnd);
 
   loadRandomOddImage(); // Load the first card image on page load
+
+
+
+
+
+      
+const dominantColors = {}; // Object to store dominant colors for each image
+
+// Function to load all images and extract dominant colors
+function preloadImagesAndColors() {
+  allImages.forEach(imagePath => {
+    const img = new Image();
+    img.src = imagePath;
+    img.onload = () => {
+      const color = getDominantColor(img);
+      dominantColors[imagePath] = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+    };
+  });
+}
+
+// Function to get the dominant color of an image
+function getDominantColor(img) {
+  const colorThief = new ColorThief();
+  return colorThief.getColor(img);
+}
+
+// Function to set the background color based on the current card
+function setBackgroundColorForCard(imagePath) {
+  const color = dominantColors[imagePath];
+  if (color && isColorAccessible(color)) {
+    document.body.style.transition = 'background-color 0.5s ease';
+    document.body.style.backgroundColor = color;
+  }
+}
+
+// Function to check if a color is accessible (placeholder, implement your logic)
+function isColorAccessible(color) {
+  // Implement accessibility check here
+  return true; // Placeholder
+}
+
+// Call this function when the page loads
+preloadImagesAndColors();
+
+// Later, when displaying a card, call this function with the path of the current card's image
+// Example: setBackgroundColorForCard('path/to/current/card/image');
+
+
+
+      
+
+
+      
 });
     
 </script>
