@@ -5,95 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Is How We Cope</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- Include Splitting CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.css" />
 </head>
 <body>
   <div class="container">
-      <div class="content-layer"> <!-- Ensures content is above the globe -->
-          <header>
-              <h1 data-splitting>This is How We Cope</h1>
-              <p>We're not all dealt a fair hand. Use this card game to consider how to cope under global capitalism. True liberation exists beyond capitalism.</p>
-              <button class="deal" onclick="handleDealClick()">Deal</button>
-          </header>
-          <footer class="homef">
-              <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2024</a></p>
-          </footer>
-      </div>
-      <div class="globe-wrapper"> <!-- Positioned behind the content -->
-          <canvas id="globe-3d"></canvas>
-          <canvas id="globe-2d-overlay"></canvas>
-          <div id="globe-popup-overlay">
-              <div class="globe-popup"></div>
-          </div>
-      </div>
+      <header>
+      <h1 data-splitting>This is How We Cope</h1>
+      <p>We're not all dealt a fair hand. Use this card game to consider how to cope under global capitalism. True liberation exists beyond capitalism.</p>
+      <button class="deal" onclick="handleDealClick()">Deal</button>
+      </header>
+      <footer class="homef">
+      <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2024</a></p>
+      </footer>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
-  <script>
-    const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
+  <!-- Include Splitting.js before your closing body tag -->
+ <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
+ <script>
+ // The text you want to type
+const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
 
-    function handleDealClick() {
-        const elementsToFadeOut = document.querySelectorAll('.container > .content-layer > *:not(footer)');
-        
-        elementsToFadeOut.forEach(el => {
-            el.classList.add('quick-fade-out');
-        });
-
-        setTimeout(() => {
-            location.href = 'game.html';
-        }, 500);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      Splitting();
+function handleDealClick() {
+    // Select all elements to fade out, excluding the footer
+    const elementsToFadeOut = document.querySelectorAll('.container > *:not(footer)');
+    
+    // Apply quick fade-out animation
+    elementsToFadeOut.forEach(el => {
+        el.classList.add('quick-fade-out');
     });
-  </script>
-  <script type="x-shader/x-fragment" id="fragment-shader-map">
-    // Fragment shader code
-  </script>
-  <script type="x-shader/x-vertex" id="vertex-shader-map">
-    // Vertex shader code
-  </script>
-  <script type="module">
-    import * as THREE from "https://cdn.skypack.dev/three@0.133.1/build/three.module.js";
-    import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js";
 
-    const containerEl = document.querySelector(".globe-wrapper");
-    const canvas3D = containerEl.querySelector("#globe-3d");
+    // Redirect after the animation ends (0.5s duration as per your CSS)
+    setTimeout(() => {
+        location.href = 'game.html';
+    }, 500); // 500 milliseconds
+}
 
-    let renderer, scene, camera, controls;
 
-    initScene();
-    window.addEventListener("resize", updateSize);
 
-    function initScene() {
-      renderer = new THREE.WebGLRenderer({ canvas: canvas3D, alpha: true });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(containerEl.clientWidth, containerEl.clientHeight);
 
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, containerEl.clientWidth / containerEl.clientHeight, 0.1, 1000);
-      camera.position.z = 5;
 
-      controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
+// Splitting.js and h1 animation code
+document.addEventListener('DOMContentLoaded', function() {
+  const results = Splitting(); // Initialize Splitting
 
-      const light = new THREE.AmbientLight(0xffffff);
-      scene.add(light);
+  let lineDelay = 0; // Define lineDelay
+  // Animate h1 
+  results[0].lines.forEach((line) => {
+    line.forEach((char) => {
+      char.style.animationDelay = `${lineDelay}s`;
+      lineDelay += 0.1; // Increment delay for each character in h1
+    });
+  });
+});
 
-      animate();
-    }
+  
 
-    function updateSize() {
-      renderer.setSize(containerEl.clientWidth, containerEl.clientHeight);
-      camera.aspect = containerEl.clientWidth / containerEl.clientHeight;
-      camera.updateProjectionMatrix();
-    }
-
-    function animate() {
-      requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(scene, camera);
-    }
-  </script>
+</script>
 </body>
 </html>
