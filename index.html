@@ -5,140 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Is How We Cope</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Include Splitting CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.css" />
 </head>
 <body>
   <div class="container">
-      <header>
-      <h1 data-splitting>This is How We Cope</h1>
-      <p>We're not all dealt a fair hand. Use this card game to consider how to cope under global capitalism. True liberation exists beyond capitalism.</p>
-      <button class="deal" onclick="handleDealClick()">Deal</button>
-      </header>
-      <footer class="homef">
-      <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2024</a></p>
-      </footer>
-  </div>
-   <div class="globe-wrapper">
-      <canvas id="globe-3d"></canvas>
-      <canvas id="globe-2d-overlay"></canvas>
-      <div id="globe-popup-overlay">
-        <div class="globe-popup"></div>
+      <div class="content-layer"> <!-- Ensures content is above the globe -->
+          <header>
+              <h1 data-splitting>This is How We Cope</h1>
+              <p>We're not all dealt a fair hand. Use this card game to consider how to cope under global capitalism. True liberation exists beyond capitalism.</p>
+              <button class="deal" onclick="handleDealClick()">Deal</button>
+          </header>
+          <footer class="homef">
+              <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2024</a></p>
+          </footer>
       </div>
-    </div>
-  <!-- Include Splitting.js before your closing body tag -->
- <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
- <script>
- // The text you want to type
-const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
+      <div class="globe-wrapper"> <!-- Positioned behind the content -->
+          <canvas id="globe-3d"></canvas>
+          <canvas id="globe-2d-overlay"></canvas>
+          <div id="globe-popup-overlay">
+              <div class="globe-popup"></div>
+          </div>
+      </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
+  <script>
+    const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
 
-function handleDealClick() {
-    // Select all elements to fade out, excluding the footer
-    const elementsToFadeOut = document.querySelectorAll('.container > *:not(footer)');
-    
-    // Apply quick fade-out animation
-    elementsToFadeOut.forEach(el => {
-        el.classList.add('quick-fade-out');
-    });
+    function handleDealClick() {
+        const elementsToFadeOut = document.querySelectorAll('.container > .content-layer > *:not(footer)');
+        
+        elementsToFadeOut.forEach(el => {
+            el.classList.add('quick-fade-out');
+        });
 
-    // Redirect after the animation ends (0.5s duration as per your CSS)
-    setTimeout(() => {
-        location.href = 'game.html';
-    }, 500); // 500 milliseconds
-}
-
-
-
-
-
-// Splitting.js and h1 animation code
-document.addEventListener('DOMContentLoaded', function() {
-  const results = Splitting(); // Initialize Splitting
-
-  let lineDelay = 0; // Define lineDelay
-  // Animate h1 
-  results[0].lines.forEach((line) => {
-    line.forEach((char) => {
-      char.style.animationDelay = `${lineDelay}s`;
-      lineDelay += 0.1; // Increment delay for each character in h1
-    });
-  });
-});
-
-  
-
-</script>
-
-   <script type="x-shader/x-fragment" id="fragment-shader-map">
-    uniform sampler2D u_map_tex;
-
-    varying float vOpacity;
-    varying vec2 vUv;
-
-    void main() {
-        vec3 color = texture2D(u_map_tex, vUv).rgb;
-        color -= 0.2 * length(gl_PointCoord.xy - vec2(0.5));
-        float dot = 1.0 - smoothstep(0.38, 0.4, length(gl_PointCoord.xy - vec2(0.5)));
-        if (dot < 0.5) discard;
-        gl_FragColor = vec4(0.5, 0.5, 0.5, vOpacity); // This will make the globe more grayish
+        setTimeout(() => {
+            location.href = 'game.html';
+        }, 500);
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      Splitting();
+    });
+  </script>
+  <script type="x-shader/x-fragment" id="fragment-shader-map">
+    // Fragment shader code
   </script>
   <script type="x-shader/x-vertex" id="vertex-shader-map">
-    uniform sampler2D u_map_tex;
-    uniform float u_dot_size;
-    uniform float u_time_since_click;
-    uniform vec3 u_pointer;
-
-    #define PI 3.14159265359
-
-    varying float vOpacity;
-    varying vec2 vUv;
-
-    void main() {
-        vUv = uv;
-
-        // mask with world map
-        float visibility = step(0.2, texture2D(u_map_tex, uv).r);
-        gl_PointSize = visibility * u_dot_size;
-
-        // make back dots semi-transparent
-        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-        vOpacity = (1.0 / length(mvPosition.xyz) - 0.7);
-        vOpacity = clamp(vOpacity, 0.03, 1.0);
-
-        // add ripple
-        float t = u_time_since_click - 0.1;
-        t = max(0.0, t);
-        float max_amp = 0.15;
-        float dist = 1.0 - 0.5 * length(position - u_pointer); // 0 .. 1
-        float damping = 1.0 / (1.0 + 20.0 * t); // 1 .. 0
-        float delta = max_amp * damping * sin(5.0 * t * (1.0 + 2.0 * dist) - PI);
-        delta *= 1.0 - smoothstep(0.8, 1.0, dist);
-        vec3 pos = position;
-        pos *= (1.0 + delta);
-
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-    }
+    // Vertex shader code
   </script>
-  <!-- Globe functionality JavaScript -->
   <script type="module">
     import * as THREE from "https://cdn.skypack.dev/three@0.133.1/build/three.module.js";
     import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js";
 
     const containerEl = document.querySelector(".globe-wrapper");
     const canvas3D = containerEl.querySelector("#globe-3d");
-    const canvas2D = containerEl.querySelector("#globe-2d-overlay");
-    const popupEl = containerEl.querySelector(".globe-popup");
 
-    let renderer, scene, camera, rayCaster, controls;
-    let overlayCtx = canvas2D.getContext("2d");
-    let pointerPos;
-    let clock, mouse, pointer, globe, globeMesh;
-    let popupVisible;
-    let earthTexture, mapMaterial;
-    let popupOpenTl, popupCloseTl;
-
-    let dragged = false;
+    let renderer, scene, camera, controls;
 
     initScene();
     window.addEventListener("resize", updateSize);
@@ -155,10 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
 
-      const light = new THREE.AmbientLight(0xffffff); // soft white light
+      const light = new THREE.AmbientLight(0xffffff);
       scene.add(light);
 
-      // Additional globe setup and event listeners here
+      animate();
     }
 
     function updateSize() {
@@ -169,14 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function animate() {
       requestAnimationFrame(animate);
-
-      // Globe and controls update logic here
-
+      controls.update();
       renderer.render(scene, camera);
     }
-
-    animate();
   </script>
-  
 </body>
 </html>
