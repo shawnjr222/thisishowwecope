@@ -19,6 +19,13 @@
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2024</a></p>
       </footer>
   </div>
+   <div class="globe-wrapper">
+      <canvas id="globe-3d"></canvas>
+      <canvas id="globe-2d-overlay"></canvas>
+      <div id="globe-popup-overlay">
+        <div class="globe-popup"></div>
+      </div>
+    </div>
   <!-- Include Splitting.js before your closing body tag -->
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script>
@@ -61,5 +68,115 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
 </script>
+
+   <script type="x-shader/x-fragment" id="fragment-shader-map">
+    uniform sampler2D u_map_tex;
+
+    varying float vOpacity;
+    varying vec2 vUv;
+
+    void main() {
+        vec3 color = texture2D(u_map_tex, vUv).rgb;
+        color -= 0.2 * length(gl_PointCoord.xy - vec2(0.5));
+        float dot = 1.0 - smoothstep(0.38, 0.4, length(gl_PointCoord.xy - vec2(0.5)));
+        if (dot < 0.5) discard;
+        gl_FragColor = vec4(0.5, 0.5, 0.5, vOpacity); // This will make the globe more grayish
+    }
+  </script>
+  <script type="x-shader/x-vertex" id="vertex-shader-map">
+    uniform sampler2D u_map_tex;
+    uniform float u_dot_size;
+    uniform float u_time_since_click;
+    uniform vec3 u_pointer;
+
+    #define PI 3.14159265359
+
+    varying float vOpacity;
+    varying vec2 vUv;
+
+    void main() {
+        vUv = uv;
+
+        // mask with world map
+        float visibility = step(0.2, texture2D(u_map_tex, uv).r);
+        gl_PointSize = visibility * u_dot_size;
+
+        // make back dots semi-transparent
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        vOpacity = (1.0 / length(mvPosition.xyz) - 0.7);
+        vOpacity = clamp(vOpacity, 0.03, 1.0);
+
+        // add ripple
+        float t = u_time_since_click - 0.1;
+        t = max(0.0, t);
+        float max_amp = 0.15;
+        float dist = 1.0 - 0.5 * length(position - u_pointer); // 0 .. 1
+        float damping = 1.0 / (1.0 + 20.0 * t); // 1 .. 0
+        float delta = max_amp * damping * sin(5.0 * t * (1.0 + 2.0 * dist) - PI);
+        delta *= 1.0 - smoothstep(0.8, 1.0, dist);
+        vec3 pos = position;
+        pos *= (1.0 + delta);
+
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+    }
+  </script>
+  <!-- Globe functionality JavaScript -->
+  <script type="module">
+    import * as THREE from "https://cdn.skypack.dev/three@0.133.1/build/three.module.js";
+    import { OrbitControls } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js";
+
+    const containerEl = document.querySelector(".globe-wrapper");
+    const canvas3D = containerEl.querySelector("#globe-3d");
+    const canvas2D = containerEl.querySelector("#globe-2d-overlay");
+    const popupEl = containerEl.querySelector(".globe-popup");
+
+    let renderer, scene, camera, rayCaster, controls;
+    let overlayCtx = canvas2D.getContext("2d");
+    let pointerPos;
+    let clock, mouse, pointer, globe, globeMesh;
+    let popupVisible;
+    let earthTexture, mapMaterial;
+    let popupOpenTl, popupCloseTl;
+
+    let dragged = false;
+
+    initScene();
+    window.addEventListener("resize", updateSize);
+
+    function initScene() {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas3D, alpha: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(containerEl.clientWidth, containerEl.clientHeight);
+
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, containerEl.clientWidth / containerEl.clientHeight, 0.1, 1000);
+      camera.position.z = 5;
+
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+
+      const light = new THREE.AmbientLight(0xffffff); // soft white light
+      scene.add(light);
+
+      // Additional globe setup and event listeners here
+    }
+
+    function updateSize() {
+      renderer.setSize(containerEl.clientWidth, containerEl.clientHeight);
+      camera.aspect = containerEl.clientWidth / containerEl.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Globe and controls update logic here
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+  
 </body>
 </html>
