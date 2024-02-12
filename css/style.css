@@ -4,7 +4,6 @@
 h1[data-splitting] span {
   display: inline-block;
   white-space: pre;
-  opacity: 0; /* Start invisible */
 
 }
 
