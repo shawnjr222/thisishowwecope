@@ -72,10 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function init() {
     scene = new THREE.Scene();
     globeWrapper = document.querySelector('.globe-wrapper');
-
-    // Initially hide the globe using opacity
-    globeWrapper.style.opacity = 1;
-
+    
     // Camera setup
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 5;
@@ -87,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Texture and globe creation
     new THREE.TextureLoader().load(
-      'https://ksenia-k.com/img/earth-map-colored.png',
+      'https://www.solarsystemscope.com/textures/download/8k_earth_daymap.jpg',
       (texture) => {
         const geometry = new THREE.SphereGeometry(2, 32, 32);
         const material = new THREE.MeshBasicMaterial({ map: texture });
