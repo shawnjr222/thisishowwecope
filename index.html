@@ -61,28 +61,23 @@ function handleDealClick() {
 
 
   // Splitting.js and h1 animation code
-document.addEventListener('globeLoaded', function() {
+function animateTextAndElements() {
+  // Splitting.js and h1 animation logic
   const results = Splitting(); // Initialize Splitting
-  console.log('Splitting results:', results); // Debug: Check Splitting results
 
   if (results.length > 0 && results[0].lines) {
     let lineDelay = 0; // Initialize lineDelay
 
-    results[0].lines.forEach((line, lineIndex) => {
-      line.forEach((char, charIndex) => {
+    results[0].lines.forEach((line) => {
+      line.forEach((char) => {
         // Apply the animation styles directly to each character
         char.style.opacity = '0'; // Ensure starting state is invisible
         char.style.transform = 'translateY(100%)'; // Start below the baseline
-        // Define the animation with all parameters explicitly
         char.style.animation = `slide-up 0.77s cubic-bezier(0.34, 1.56, 0.64, 1) ${lineDelay}s forwards`;
-
-        console.log(`Animating char ${charIndex} of line ${lineIndex}`, char); // Debug: Log each animated character
 
         lineDelay += 0.1; // Increment delay for each character
       });
     });
-  } else {
-    console.error('Splitting did not find elements to animate. Ensure your h1 has the data-splitting attribute.');
   }
 
   // Animation for paragraphs, buttons, and footer
@@ -93,7 +88,8 @@ document.addEventListener('globeLoaded', function() {
   paragraphs.forEach(p => p.classList.add('fade-in'));
   buttons.forEach(button => button.classList.add('fade-in'));
   footer.classList.add('fade-in');
-} 2000);
+}
+
 
   
 
@@ -130,6 +126,7 @@ document.addEventListener('globeLoaded', function() {
 
         // Add the fade-in class once the globe is ready
         globeWrapper.classList.add('fade-in-animation');
+        setTimeout(animateTextAndElements, 2500); // Adjust the time to match your fade-in animation duration
       }
     );
 
@@ -158,12 +155,6 @@ document.addEventListener('globeLoaded', function() {
 
   init(); // Initialize the globe
 
-   init(startOtherAnimations);
-
-  function startOtherAnimations() {
-    // Now we start the other animations, ensuring they begin after the globe's animation
-    document.dispatchEvent(new Event('globeLoaded'));
-  }
 </script>
 
 
