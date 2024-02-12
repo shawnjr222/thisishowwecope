@@ -19,28 +19,9 @@
       <p><a href="https://copingwithcapitalism.com">Coping With Capitalism ©2024</a></p>
       </footer>
   </div>
-
-  
-  <div class="globe-section">
-  <div class="globe-wrapper">
-    <canvas id="globe-3d"></canvas>
-    <canvas id="globe-2d-overlay"></canvas>
-    <div id="globe-popup-overlay">
-      <div class="globe-popup"></div>
-    </div>
-  </div>
-</div>
-
- <script src="https://cdn.skypack.dev/three@0.133.1/build/three.module.js"></script>
-  <script src="https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js"></script>
-  <script src="https://cdn.skypack.dev/gsap@3.7.0/all"></script>
-  
-
-  
   <!-- Include Splitting.js before your closing body tag -->
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script>
-   
  // The text you want to type
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
 
@@ -60,30 +41,25 @@ function handleDealClick() {
 }
 
 
-  // Splitting.js and h1 animation code
+
+
+
+// Splitting.js and h1 animation code
 document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting
 
-  let lineDelay = 0;
+  let lineDelay = 0; // Define lineDelay
   // Animate h1 
   results[0].lines.forEach((line) => {
     line.forEach((char) => {
-      char.style.opacity = 1; // Ensure character is visible when animated
       char.style.animationDelay = `${lineDelay}s`;
-      lineDelay += 0.1;
+      lineDelay += 0.1; // Increment delay for each character in h1
     });
   });
-
-  // Make the h1 element fade in smoothly before the character animations start
-  const h1 = document.querySelector('h1[data-splitting]');
-  h1.style.transition = 'opacity 0.5s ease';
-  h1.style.opacity = 1;
 });
 
   
 
 </script>
-
-
 </body>
 </html>
