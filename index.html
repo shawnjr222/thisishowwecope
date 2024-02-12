@@ -63,21 +63,26 @@ function handleDealClick() {
   // Splitting.js and h1 animation code
 document.addEventListener('globeLoaded', function() {
   const results = Splitting(); // Initialize Splitting
+  console.log('Splitting results:', results); // Debug: Check Splitting results
 
-  // Check if Splitting returned results for the h1
   if (results.length > 0 && results[0].lines) {
     let lineDelay = 0; // Initialize lineDelay
 
-    // Animate h1 characters
-    results[0].lines.forEach((line) => {
-      line.forEach((char) => {
+    results[0].lines.forEach((line, lineIndex) => {
+      line.forEach((char, charIndex) => {
         // Apply the animation styles directly to each character
-        char.style.opacity = 0; // Start invisible
-        char.style.transform = 'translateY(100%)'; // Start below
-        char.style.animation = `slide-up 0.77s cubic-bezier(0.34, 1.56, 0.64, 1) forwards ${lineDelay}s`;
-        lineDelay += 0.1; // Increment delay for each character in h1
+        char.style.opacity = '0'; // Ensure starting state is invisible
+        char.style.transform = 'translateY(100%)'; // Start below the baseline
+        // Define the animation with all parameters explicitly
+        char.style.animation = `slide-up 0.77s cubic-bezier(0.34, 1.56, 0.64, 1) ${lineDelay}s forwards`;
+
+        console.log(`Animating char ${charIndex} of line ${lineIndex}`, char); // Debug: Log each animated character
+
+        lineDelay += 0.1; // Increment delay for each character
       });
     });
+  } else {
+    console.error('Splitting did not find elements to animate. Ensure your h1 has the data-splitting attribute.');
   }
 
   // Animation for paragraphs, buttons, and footer
@@ -88,7 +93,7 @@ document.addEventListener('globeLoaded', function() {
   paragraphs.forEach(p => p.classList.add('fade-in'));
   buttons.forEach(button => button.classList.add('fade-in'));
   footer.classList.add('fade-in');
-});
+} 2000);
 
   
 
