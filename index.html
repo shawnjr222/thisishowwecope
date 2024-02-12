@@ -62,7 +62,7 @@ function handleDealClick() {
 
   // Splitting.js and h1 animation code
 function animateTextAndElements() {
-  // Splitting.js and h1 animation logic
+  // Animate h1 using Splitting.js
   const results = Splitting(); // Initialize Splitting
 
   if (results.length > 0 && results[0].lines) {
@@ -70,9 +70,8 @@ function animateTextAndElements() {
 
     results[0].lines.forEach((line) => {
       line.forEach((char) => {
-        // Apply the animation styles directly to each character
-        char.style.opacity = '0'; // Ensure starting state is invisible
-        char.style.transform = 'translateY(100%)'; // Start below the baseline
+        char.style.opacity = '1'; // Make characters visible
+        char.style.transform = 'translateY(0%)'; // Move to final position
         char.style.animation = `slide-up 0.77s cubic-bezier(0.34, 1.56, 0.64, 1) ${lineDelay}s forwards`;
 
         lineDelay += 0.1; // Increment delay for each character
@@ -80,15 +79,25 @@ function animateTextAndElements() {
     });
   }
 
-  // Animation for paragraphs, buttons, and footer
+  // Animate paragraphs, buttons, and footer
   const paragraphs = document.querySelectorAll('p');
   const buttons = document.querySelectorAll('button');
   const footer = document.querySelector('.homef');
 
-  paragraphs.forEach(p => p.classList.add('fade-in'));
-  buttons.forEach(button => button.classList.add('fade-in'));
-  footer.classList.add('fade-in');
+  // Function to add fade-in class with a delay
+  const addFadeInClass = (elements, delay) => {
+    elements.forEach((element) => {
+      setTimeout(() => {
+        element.classList.add('fade-in');
+      }, delay);
+      delay += 100; // Increment delay for each element
+    });
+  };
+
+  // Add fade-in class with delay to stagger the animations
+  addFadeInClass([...paragraphs, ...buttons, footer], lineDelay * 1000 + 500); // Start after the last h1 animation + an additional delay
 }
+
 
 
   
@@ -125,8 +134,8 @@ function animateTextAndElements() {
         scene.add(globeMesh);
 
         // Add the fade-in class once the globe is ready
-        globeWrapper.classList.add('fade-in-animation');
-        setTimeout(animateTextAndElements, 1000); // Adjust the time to match your fade-in animation duration
+       globeWrapper.classList.add('fade-in-animation');
+       setTimeout(animateTextAndElements, 2500); // Adjust the time to match your fade-in animation duration
       }
     );
 
