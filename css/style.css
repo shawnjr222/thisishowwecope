@@ -340,7 +340,14 @@ canvas {
 
 
 
+.fade-in-animation {
+  animation: fade-in 2.5s ease forwards;
+}
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 
 
