@@ -354,38 +354,12 @@ a {
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    position: relative;
-    z-index: 2;
   }
 
   body {
     overflow: hidden; /* Hide scrollbars */
 }
-  
-#loading-container {
-    width: 33%; /* Set width to 33% of the screen size */
-    height: 5px;
-    background-color: #777;
-    position: fixed; /* Use fixed to position it relative to the viewport */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Offset the container by half its width and height to center it */
-    border-radius: 8px; /* Maintain rounded corners */
-    opacity: 1; /* Start visible, will be hidden by JS after loading */
-    transition: opacity 0.5s ease-in-out;
-    z-index: 1000; /* Ensure it's above other content */
-}
-
-#loading-bar {
-    width: 0; /* Initial state, will be animated by JS */
-    height: 100%;
-    background-color: #fff;
-    transition: width 3s linear; /* Adjust if you want the loading bar animation to be faster or slower */
-    border-radius: 5px; /* Rounded corners for the loading bar */
-}
-
-
-  
+    
   .guidance-text-desktop {
     font-size: 1vw;
     font-family: 'Courier', Courier, monospace;
@@ -474,6 +448,7 @@ a {
     text-align: center;
     /* Additional overflow visible to ensure characters animate in properly */
     overflow: visible;
+     z-index: 10;
   }
   
   
@@ -492,6 +467,7 @@ a {
     animation-delay: .6s; /* Delay of 2 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-90%); /* Start shifted up */
+    z-index: 10;
   }
   
   .deal {
@@ -514,6 +490,7 @@ a {
     animation-delay: .82s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-75%); /* Start shifted up */
+    z-index: 10;
   }
 
 .deal:hover {
