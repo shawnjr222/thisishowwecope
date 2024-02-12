@@ -270,12 +270,12 @@ a {
 
 
 .globe-section {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 1;
+   z-index: -1;
   overflow: hidden;
 }
 
@@ -327,6 +327,11 @@ a {
   left: 0;
 }
 
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block; /* Remove extra space below canvas */
+}
 
 
 
@@ -354,10 +359,12 @@ a {
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    background: none; /* Ensure the background doesn't cover the globe */
   }
 
   body {
     overflow: hidden; /* Hide scrollbars */
+    background: none; /* Ensure the background doesn't cover the globe */
 }
     
   .guidance-text-desktop {
