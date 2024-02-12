@@ -77,6 +77,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
+  <script type="module">
+  import * as THREE from 'https://cdn.skypack.dev/three@0.133.1/build/three.module.js';
+  import { OrbitControls } from 'https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js';
+
+  let scene, camera, renderer, globeMesh, controls, globeWrapper;
+
+  function init() {
+    scene = new THREE.Scene();
+    globeWrapper = document.querySelector('.globe-wrapper');
+
+    // Camera, Renderer, and Globe setup...
+
+    new THREE.TextureLoader().load(
+      'https://ksenia-k.com/img/earth-map-colored.png',
+      (texture) => {
+        // Globe Mesh setup...
+
+        // Delay the fade-in animation
+        setTimeout(() => {
+          globeWrapper.classList.add('fade-in-animation');
+        }, 3000); // 3000ms = 3s delay
+      }
+    );
+
+    // Continue with the rest of your globe setup...
+    animate();
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    // Globe animation logic...
+  }
+
+  // Resize event listener...
+  function onWindowResize() {
+    // Resize logic...
+  }
+
+  window.addEventListener('resize', onWindowResize, false);
+
+  init(); // Initialize the globe
+</script>
+
 
 
 
