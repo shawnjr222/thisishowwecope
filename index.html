@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     globeWrapper = document.querySelector('.globe-wrapper');
 
     // Initially hide the globe using opacity
-    globeWrapper.style.opacity = 0;
+    globeWrapper.style.opacity = 1;
 
     // Camera setup
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -93,9 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const material = new THREE.MeshBasicMaterial({ map: texture });
         globeMesh = new THREE.Mesh(geometry, material);
         scene.add(globeMesh);
-
-        // Apply the fade-in animation once the globe is ready
-        globeWrapper.classList.add('fade-in-animation');
       }
     );
 
