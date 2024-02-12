@@ -64,15 +64,19 @@ function handleDealClick() {
 document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting
 
-  let lineDelay = 0; // Define lineDelay
+  let lineDelay = 0;
   // Animate h1 
   results[0].lines.forEach((line) => {
     line.forEach((char) => {
       char.style.animationDelay = `${lineDelay}s`;
-      lineDelay += 0.1; // Increment delay for each character in h1
+      lineDelay += 0.1;
     });
   });
+
+  // Make the h1 element visible after initializing Splitting.js
+  document.querySelector('h1[data-splitting]').style.visibility = 'visible';
 });
+
   
 
 </script>
