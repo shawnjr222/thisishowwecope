@@ -68,13 +68,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Animate h1 
   results[0].lines.forEach((line) => {
     line.forEach((char) => {
+      char.style.opacity = 1; // Ensure character is visible when animated
       char.style.animationDelay = `${lineDelay}s`;
       lineDelay += 0.1;
     });
   });
 
-  // Make the h1 element visible after initializing Splitting.js
-  document.querySelector('h1[data-splitting]').style.visibility = 'visible';
+  // Make the h1 element fade in smoothly before the character animations start
+  const h1 = document.querySelector('h1[data-splitting]');
+  h1.style.transition = 'opacity 0.5s ease';
+  h1.style.opacity = 1;
 });
 
   
