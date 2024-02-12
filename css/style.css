@@ -4,7 +4,7 @@
 h1[data-splitting] span {
   display: inline-block;
   white-space: pre;
-
+  visibility: hidden;
 }
 
 h1[data-splitting] .word {
@@ -25,6 +25,8 @@ h1[data-splitting] .word .char {
   transform: translateY(100%); /* Start below */
   opacity: 0; /* Start invisible */
   animation: slide-up .77s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  visibility: visible; /* Make characters visible when they start animating */
+  animation: slide-up 0.77s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 @keyframes slide-up {
