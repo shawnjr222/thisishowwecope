@@ -456,7 +456,6 @@ canvas {
     /* Additional overflow visible to ensure characters animate in properly */
     overflow: visible;
      z-index: 10;
-   opacity: 0;
   }
   
   
