@@ -61,38 +61,35 @@ function handleDealClick() {
 
 
   // Splitting.js and h1 animation code
-  document.addEventListener('globeLoaded', function() {
-    const results = Splitting(); // Initialize Splitting
+document.addEventListener('globeLoaded', function() {
+  const results = Splitting(); // Initialize Splitting
 
-    let lineDelay = 0; // Define lineDelay
-    // Animate h1 
+  // Check if Splitting returned results for the h1
+  if (results.length > 0 && results[0].lines) {
+    let lineDelay = 0; // Initialize lineDelay
+
+    // Animate h1 characters
     results[0].lines.forEach((line) => {
       line.forEach((char) => {
-        char.style.animationDelay = `${lineDelay}s`;
+        // Apply the animation styles directly to each character
+        char.style.opacity = 0; // Start invisible
+        char.style.transform = 'translateY(100%)'; // Start below
+        char.style.animation = `slide-up 0.77s cubic-bezier(0.34, 1.56, 0.64, 1) forwards ${lineDelay}s`;
         lineDelay += 0.1; // Increment delay for each character in h1
       });
     });
- // Select the elements you want to animate
+  }
+
+  // Animation for paragraphs, buttons, and footer
   const paragraphs = document.querySelectorAll('p');
   const buttons = document.querySelectorAll('button');
-  const footer = document.querySelector('.homef'); // Adjust the selector based on your footer's class or ID
+  const footer = document.querySelector('.homef');
 
-  // Add the 'fade-in' class to paragraphs
-  paragraphs.forEach(p => {
-    p.classList.add('fade-in');
-  });
-
-  // Add the 'fade-in' class to buttons
-  buttons.forEach(button => {
-    button.classList.add('fade-in');
-  });
-
-  // Add the 'fade-in' class to the footer
+  paragraphs.forEach(p => p.classList.add('fade-in'));
+  buttons.forEach(button => button.classList.add('fade-in'));
   footer.classList.add('fade-in');
+});
 
-  // If you have other specific animations or timing considerations, you can add them here
-    // Add any additional animation triggers here, similar to the h1 animation
-  });
   
 
 </script>
