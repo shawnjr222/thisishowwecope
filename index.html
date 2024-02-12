@@ -40,60 +40,6 @@
   <!-- Include Splitting.js before your closing body tag -->
  <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.5/dist/splitting.min.js"></script>
  <script>
-
-import * as THREE from 'https://cdn.skypack.dev/three@0.133.1/build/three.module.js';
-import { OrbitControls } from 'https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js';
-
-let scene, camera, renderer, globe, controls;
-
-function init() {
-  // Scene setup
-  scene = new THREE.Scene();
-  const element = document.querySelector('.globe-wrapper'); // Get the globe wrapper element
-
-  // Camera setup
-  camera = new THREE.PerspectiveCamera(75, element.offsetWidth / element.offsetHeight, 0.1, 1000);
-  camera.position.z = 5;
-
-  // Renderer setup
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize(element.offsetWidth, element.offsetHeight);
-  element.appendChild(renderer.domElement); // Append the renderer to the globe wrapper
-
-  // Globe creation
-  const geometry = new THREE.SphereGeometry(2, 32, 32);
-  const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
-  globe = new THREE.Mesh(geometry, material);
-  scene.add(globe);
-
-  // Controls setup
-  controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-
-  // Handle window resize
-  window.addEventListener('resize', onWindowResize, false);
-
-  // Start the animation loop
-  animate();
-}
-
-function animate() {
-  requestAnimationFrame(animate);
-  controls.update(); // Only required if controls.enableDamping = true, or if controls.autoRotate = true
-  renderer.render(scene, camera);
-}
-
-function onWindowResize() {
-  camera.aspect = element.offsetWidth / element.offsetHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(element.offsetWidth, element.offsetHeight);
-}
-
-init(); // Initialize the globe
-
-
-
-
    
  // The text you want to type
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
@@ -114,9 +60,6 @@ function handleDealClick() {
 }
 
 
-
-
-
 // Splitting.js and h1 animation code
 document.addEventListener('DOMContentLoaded', function() {
   const results = Splitting(); // Initialize Splitting
@@ -134,5 +77,58 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
 </script>
+  <script type="module">
+  // Import Three.js and OrbitControls
+  import * as THREE from 'https://cdn.skypack.dev/three@0.133.1/build/three.module.js';
+  import { OrbitControls } from 'https://cdn.skypack.dev/three@0.133.1/examples/jsm/controls/OrbitControls.js';
+
+  let scene, camera, renderer, globe, controls;
+
+  function init() {
+    // Scene setup
+    scene = new THREE.Scene();
+    const element = document.querySelector('.globe-wrapper'); // Ensure this element exists in your HTML
+
+    // Camera setup
+    camera = new THREE.PerspectiveCamera(75, element.offsetWidth / element.offsetHeight, 0.1, 1000);
+    camera.position.z = 5;
+
+    // Renderer setup
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(element.offsetWidth, element.offsetHeight);
+    element.appendChild(renderer.domElement); // Append the renderer to the globe wrapper
+
+    // Globe creation
+    const geometry = new THREE.SphereGeometry(2, 32, 32);
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+    globe = new THREE.Mesh(geometry, material);
+    scene.add(globe);
+
+    // Controls setup
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    // Handle window resize
+    window.addEventListener('resize', onWindowResize, false);
+
+    // Start the animation loop
+    animate();
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update(); // Only required if controls.enableDamping = true, or if controls.autoRotate = true
+    renderer.render(scene, camera);
+  }
+
+  function onWindowResize() {
+    camera.aspect = element.offsetWidth / element.offsetHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(element.offsetWidth, element.offsetHeight);
+  }
+
+  init(); // Initialize the globe
+</script>
+
 </body>
 </html>
