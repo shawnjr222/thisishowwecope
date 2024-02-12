@@ -105,8 +105,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const material = new THREE.MeshBasicMaterial({ map: texture });
         globeMesh = new THREE.Mesh(geometry, material);
         scene.add(globeMesh);
-
-
+        setTimeout(() => {
+          globeWrapper.classList.add('fade-in-animation');
+        }, 1000); // Adjust the delay as needed, here it's set to 1 second
       }
     );
 
