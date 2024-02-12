@@ -62,17 +62,28 @@ function handleDealClick() {
 
 // Splitting.js and h1 animation code
 document.addEventListener('DOMContentLoaded', function() {
-  const results = Splitting(); // Initialize Splitting
+  // Initialize Splitting for text animations
+  const results = Splitting();
 
-  let lineDelay = 0; // Define lineDelay
-  // Animate h1 
-  results[0].lines.forEach((line) => {
-    line.forEach((char) => {
-      char.style.animationDelay = `${lineDelay}s`;
-      lineDelay += 0.1; // Increment delay for each character in h1
+  // Delay the start of animations for header, paragraphs, buttons, etc.
+  setTimeout(() => {
+    // Animate the header (h1)
+    let lineDelay = 0;
+    results[0].lines.forEach((line) => {
+      line.forEach((char) => {
+        char.style.animationDelay = `${lineDelay}s`;
+        lineDelay += 0.1; // Increment delay for each character in h1
+      });
     });
-  });
+
+    // Start animations for paragraphs, buttons, etc.
+    // For each element that you want to animate, add a class or modify the style here
+    // Example:
+    // document.querySelector('.your-element-class').classList.add('your-animation-class');
+
+  }, 2500); // 2500ms = 2.5s, matching the globe's fade-in animation duration
 });
+
 
   
 
