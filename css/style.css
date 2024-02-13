@@ -371,7 +371,6 @@ canvas {
     text-align: center;
     min-height: 100vh;
     background: none; /* Ensure the background doesn't cover the globe */
-    line-height: .75;
   }
 
   body {
