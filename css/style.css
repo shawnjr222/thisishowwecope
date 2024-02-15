@@ -1,6 +1,12 @@
 /* Animation */
 .game-background {
   background-color: #111111; /* Desired background color */
+  background-size: contain;
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  overflow: hidden; /* Hide scrollbars */
+  height: 100%;
+  width: 100%;
 }
 
 /*Header*/
