@@ -2,11 +2,11 @@
 
 .index-background {
   background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globaility.gif'); /* Path to your GIF */
-  background-size: cover; /* Cover the entire page */
+  background-size: 50%; /* Cover the entire page */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
 }
 
 /*Header*/
