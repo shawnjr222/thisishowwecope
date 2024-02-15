@@ -1,4 +1,7 @@
 /* Animation */
+.game-background {
+  background-color: #111111; /* Desired background color */
+}
 
 /*Header*/
 h1[data-splitting] span {
