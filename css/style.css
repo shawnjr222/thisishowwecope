@@ -1,5 +1,14 @@
 /* Animation */
 
+.index-background {
+  background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globaility.gif'); /* Path to your GIF */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  height: 100%;
+  width: 100%;
+}
+
 /*Header*/
 h1[data-splitting] span {
   display: inline-block;
@@ -378,10 +387,6 @@ canvas {
     height: 100%;
     width: 100%;
     background-color: #111111; /* Fallback color */
-    background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globaility.gif'); /* Path to your GIF */
-    background-size: contain;
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the image */
 }
     
   .guidance-text-desktop {
