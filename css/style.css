@@ -5,6 +5,8 @@
   background-size: cover; /* Cover the entire page */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
+  height: 50%;
+  width: 50%;
 }
 
 /*Header*/
