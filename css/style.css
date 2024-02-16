@@ -8,11 +8,6 @@
   width: 100%;
   background-color: #111111;
   transition: background-image 3s ease-out;
-  animation-name: fadeInBackground;
-  animation-duration: 3s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 3s; /* Delay before the animation starts */
 }
 
 .fade-in-background-color {
