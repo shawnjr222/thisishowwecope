@@ -60,6 +60,22 @@ document.addEventListener('DOMContentLoaded', function() {
       lineDelay += 0.1; // Increment delay for each character in h1
     });
   });
+
+// Wait for 3 seconds before starting the fade-in effect
+    setTimeout(function() {
+        const bg = document.querySelector('.index-background');
+        let opacity = 0; // Start with opacity 0
+        const interval = setInterval(function() {
+            if (opacity < 1) {
+                opacity += 0.05; // Increase opacity
+                bg.style.opacity = opacity;
+            } else {
+                clearInterval(interval); // Stop the interval when opacity reaches 1
+            }
+        }, 500); // Adjust the speed of the fade-in by changing the interval time
+    }, 3000); // 3-second delay
+  
+  
 });
 
   
