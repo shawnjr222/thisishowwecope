@@ -9,6 +9,7 @@
   width: 100%;
   background-color: #111111;
   transition: background-image 0.5s ease-out;
+  opacity: 0;
 }
 
 .fade-in-background-color {
