@@ -7,13 +7,6 @@
   background-repeat: no-repeat; /* Do not repeat the image */
   height: 100%;
   width: 100%;
-  animation: background-fade-out 0.5s forwards; /* Use this animation when you want to fade out the background */
-}
-
-@keyframes background-fade-out {
-  to {
-    opacity: 0; /* Fade out to transparent */
-  }
 }
 
 
