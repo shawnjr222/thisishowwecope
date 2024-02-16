@@ -1,6 +1,6 @@
 /* Animation */
 
-.index-background {
+.index-background::before {
   background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
   background-size: 50%; /* Cover the entire page */
   background-position: center; /* Center the background image */
