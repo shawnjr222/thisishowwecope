@@ -26,23 +26,20 @@
 const text = "Dealt cards emphasize an experience under capitalism. Consider how to cope and overcome each experience.";
 
 function handleDealClick() {
-    // Select all elements to fade out, excluding the footer
-    const elementsToFadeOut = document.querySelectorAll('.container > *:not(.homef):not(.gamef)');
-    
-    // Apply quick fade-out animation
+    const elementsToFadeOut = document.querySelectorAll('.container > *');
+
     elementsToFadeOut.forEach(el => {
-        el.classList.add('quick-fade-out');
+        // Check if the current element is not the footer before adding the fade-out class
+        if (!el.classList.contains('homef') && !el.classList.contains('gamef')) {
+            el.classList.add('quick-fade-out');
+        }
     });
 
-   // Fade out the background by adding a class that triggers the animation
-    document.querySelector('.index-background').classList.add('quick-fade-out');
-
-  
-    // Redirect after the animation ends (0.5s duration as per your CSS)
     setTimeout(() => {
         location.href = 'game.html';
     }, 500); // 500 milliseconds
 }
+
 
 
 
