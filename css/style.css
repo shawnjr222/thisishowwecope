@@ -9,6 +9,7 @@
   width: 100%;
   background-color: #111111;
   transition: background-image 2s ease-out;
+  animation: fadeInBackground 2s ease forwards; /* Animation to fade in */
 }
 
 .fade-in-background-color {
@@ -16,6 +17,14 @@
    background-image: url(''); /* Path to your GIF */
 }
 
+@keyframes fadeInBackground {
+from {
+    opacity: 0;
+}
+  to {
+    opacity: 1; /* End with the background fully visible */
+  }
+}
 
 
 /*Header*/
