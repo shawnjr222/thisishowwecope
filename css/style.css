@@ -9,7 +9,6 @@
   width: 100%;
   background-color: #111111;
   transition: background-image 3s ease-out;
-  animation: fadeInBackground 3s ease forwards; /* Animation to fade in */
 }
 
 .fade-in-background-color {
