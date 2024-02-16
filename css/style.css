@@ -7,8 +7,13 @@
   background-repeat: no-repeat; /* Do not repeat the image */
   height: 100%;
   width: 100%;
+  background-color: #111111;
+  transition: background-color 0.5s ease-out;
 }
 
+.fade-in-background-color {
+  background-color: #111111; /* Target background color */
+}
 
 
 /*Header*/
