@@ -50,6 +50,21 @@ function handleDealClick() {
 
 // Splitting.js and h1 animation code
 document.addEventListener('DOMContentLoaded', function() {
+
+ const gb = document.getElementById('.index-background');
+
+  // Add fade-in animation classes
+  gb.classList.add('fade-in-animation');
+
+  // Set up an event listener to remove the fade-in class after the animation ends
+  function handleAnimationEnd(event) {
+    event.target.classList.remove('fade-in-animation');
+  }
+
+  gb.addEventListener('animationend', handleAnimationEnd);
+
+
+  
   const results = Splitting(); // Initialize Splitting
 
   let lineDelay = 0; // Define lineDelay
