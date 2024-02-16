@@ -34,6 +34,10 @@ function handleDealClick() {
         el.classList.add('quick-fade-out');
     });
 
+   // Fade out the background by adding a class that triggers the animation
+    document.querySelector('.index-background').classList.add('fade-out-background');
+
+  
     // Redirect after the animation ends (0.5s duration as per your CSS)
     setTimeout(() => {
         location.href = 'game.html';
