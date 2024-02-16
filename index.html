@@ -64,6 +64,20 @@ document.addEventListener('DOMContentLoaded', function() {
   
 });
 
+
+   document.addEventListener('DOMContentLoaded', function() {
+  // Get the element with the background
+  const background = document.querySelector('.index-background');
+
+  // Function to add the fade-in animation class
+  function addFadeInAnimation() {
+    background.classList.add('fade-in-animation');
+  }
+
+  // Wait for 3 seconds before adding the fade-in class
+  setTimeout(addFadeInAnimation, 3000); // 3000 milliseconds = 3 seconds
+});
+
   
 
 </script>
