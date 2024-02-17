@@ -501,7 +501,7 @@ canvas {
  
  header h1 {
     width: 77%;
-    padding-top: 22vh;
+    padding-top: 24vh;
     padding-bottom: 0vh;
     color: #ffffff;
     font-size: 20vh;
@@ -513,7 +513,7 @@ canvas {
     /* Additional overflow visible to ensure characters animate in properly */
     overflow: visible;
     z-index: 10;
-    line-height: .5;
+    line-height: .6;
    position: relative;
   }
   
