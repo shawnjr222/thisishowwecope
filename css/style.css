@@ -506,7 +506,7 @@ canvas {
     /* Additional overflow visible to ensure characters animate in properly */
     overflow: visible;
     z-index: 10;
-    line-height: .2;
+    line-height: .5;
    position: relative;
   }
   
