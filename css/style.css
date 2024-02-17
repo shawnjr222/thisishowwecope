@@ -63,6 +63,8 @@ h1[data-splitting] .word .char {
   animation: slide-up .77s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   visibility: visible; /* Make characters visible when they start animating */
   animation: slide-up 0.77s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  vertical-align: middle; /* Or try 'top', 'bottom' */
+  overflow: visible; /* Ensures no part of the text is visible outside */
 }
 
 @keyframes slide-up {
@@ -409,6 +411,7 @@ canvas {
     width: 100%;
     position: relative; /* Establishes a stacking context */
     z-index: 0; /* Ensures .container is in a higher stacking context */
+  overflow: visible; /* Adjust as needed */
   }
 
   body {
