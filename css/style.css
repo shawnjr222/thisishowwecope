@@ -10,7 +10,6 @@
   transition: background-image 3s ease-out;
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
-  animation: fadeInBackground 3s ease forwards;
 }
 
 .fade-in-background-color {
