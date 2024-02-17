@@ -396,7 +396,8 @@ canvas {
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    background: none; /* Ensure the background doesn't cover the globe */
+    height: 100%;
+    width: 100%;
   }
 
   body {
