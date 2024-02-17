@@ -8,6 +8,8 @@
   width: 100%;
   background-color: #111111;
   transition: background-image 3s ease-out;
+  z-index: -1; /* Ensures it's behind other content */
+  position: absolute; /* Takes it out of the normal document flow */
 }
 
 .fade-in-background-color {
@@ -398,6 +400,8 @@ canvas {
     min-height: 100vh;
     height: 100%;
     width: 100%;
+    position: relative; /* Establishes a stacking context */
+    z-index: 0; /* Ensures .container is in a higher stacking context */
   }
 
   body {
@@ -496,6 +500,7 @@ canvas {
     overflow: visible;
     z-index: 10;
     line-height: .9;
+   position: relative;
   }
   
   
@@ -515,6 +520,7 @@ canvas {
     opacity: 0; /* Start with no opacity */
     transform: translateY(-90%); /* Start shifted up */
     z-index: 10;
+    position: relative;
   }
   
   .deal {
@@ -538,6 +544,7 @@ canvas {
     opacity: 0; /* Start with no opacity */
     transform: translateY(-75%); /* Start shifted up */
     z-index: 10;
+    position: relative;
   }
 
 .deal:hover {
@@ -581,6 +588,7 @@ canvas {
   animation-delay: 1.25s; /* Delay */
   opacity: 0; /* Start with no opacity */
   z-index: 1100; /*Ensure it's above the loading animation and other content*/
+  position: relative;
 }
 
  .gamef {
@@ -592,6 +600,7 @@ canvas {
   margin-bottom: 2vh;
   opacity: 1;
   z-index: 1100; /*Ensure it's above the loading animation and other content*/
+   position: relative;
 }
 
 
@@ -600,6 +609,7 @@ canvas {
     font-size: 1vw;
     font-family: 'courier', sans-serif;
     font-weight: normal;
+    position: relative;
   }
   
 }
