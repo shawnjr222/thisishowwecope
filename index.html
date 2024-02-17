@@ -29,6 +29,9 @@ const text = "Dealt cards emphasize an experience under capitalism. Consider how
 function handleDealClick() {
     const elementsToFadeOut = document.querySelectorAll('.container > *');
 
+   // Add the fade-out class to the index-background
+    indexBackground.classList.add('fade-out');
+  
     elementsToFadeOut.forEach(el => {
         // Check if the current element is not the footer before adding the fade-out class
         if (!el.classList.contains('homef') && !el.classList.contains('gamef')) {
