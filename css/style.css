@@ -1216,7 +1216,7 @@ canvas {
  
  header h1 {
     width: 77%;
-    padding-top: 20vh;
+    padding-top: 16vh;
     padding-bottom: 0vh;
     color: #ffffff;
     font-size: 10vh;
@@ -1238,7 +1238,7 @@ canvas {
     font-size: 2vh;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 10vh;
     margin-bottom: 0vh;
@@ -1258,14 +1258,16 @@ canvas {
     font-family: 'futura', sans-serif;
     text-align: center;
     display: inline-block;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 36px;
-    padding-left: 36px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 24px;
+    padding-left: 24px;
     cursor: pointer;
     border-radius: 64px; 
-    font-size: 20px;
-    margin-top: .5vh;
+    font-size: 8px;
+    margin-top: 0vh;
+    margin-left: auto;
+    margin-right: auto;
     border: none;
     outline: none;
     animation: b-desktop 1.5s ease forwards;
