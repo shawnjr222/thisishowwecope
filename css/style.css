@@ -853,13 +853,469 @@ canvas {
 }
 
 
+
+
+
+
+
+
+
+
   
 /* Tablet */
 @media only screen and (min-width: 1040px) and (max-width: 1366px) {
+
+ .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    position: relative; /* Establishes a stacking context */
+    z-index: 0; /* Ensures .container is in a higher stacking context */
+  overflow: visible; /* Adjust as needed */
+  }
+
+  body {
+    overflow: hidden; /* Hide scrollbars */
+    height: 100%;
+    width: 100%;
+    background-color: #111111; /* Fallback color */
+}
+    
+  .guidance-text-desktop {
+    font-size: 1vw;
+    font-family: 'Courier', Courier, monospace;
+    font-weight: normal;
+    width: 55%;
+    margin: 0 auto;
+    padding-top: 24px;
+    margin-bottom: 0vh;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+ .card {
+    width: 283px; /* responsive width */
+    height: 553px; /* responsive height based on viewport height */
+    margin-top: 10vh; /* Adjust padding, consider using % for responsiveness */
+    background-color: #ffffff; /* white background */
+    padding-bottom: 0vh;
+    border-radius: 22px; /* rounded corners with a radius of 22px */
+    background-size: cover;
+    background-position: center;
+    background-image: url('path/to/image.png'); /* This will be set by JS */
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    backface-visibility: visible;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    transform-origin: center;
+ }
+
+  .flip-container {
+  perspective: 800px;
+  width: 283px; /* responsive width */
+  height: 553px; /* responsive height based on viewport height */
+  position: relative;
+  margin-bottom: 80px;
+  animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
+  opacity: 0; /* Make the container invisible initially */
+}
+
+  .front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px; /* rounded corners with a radius of 22px */
+  background: #fff;
+  color: #fff;
+  background-size: cover; /* Cover the entire area of the div */
+  background-position: center; /* Center the image */
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: #ffffff;
+  color: white;
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image within the div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+}
+
+.card.flipped {
+   transform: rotateY(180deg);
+}
+ 
+ header h1 {
+    width: 77%;
+    padding-top: 22vh;
+    padding-bottom: 0vh;
+    color: #ffffff;
+    font-size: 20vh;
+    font-family: 'blaue-milch', sans-serif;
+    margin: 0 auto;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    text-align: center;
+    /* Additional overflow visible to ensure characters animate in properly */
+    overflow: visible;
+    z-index: 10;
+    line-height: .5;
+   position: relative;
+  }
+  
+  
+  header p {
+    color: #ffffff;
+    font-size: 2.5vh;
+    font-family: 'Courier', Courier, monospace;
+    font-weight: normal;
+    width: 52%;
+    margin: 0 auto;
+    margin-top: 4.5vh;
+    margin-bottom: 0vh;
+    text-align: center;
+    padding-top: 0vh;
+    animation: p-desktop 1.25s ease forwards;
+    animation-delay: .6s; /* Delay of 2 seconds */
+    opacity: 0; /* Start with no opacity */
+    transform: translateY(-90%); /* Start shifted up */
+    z-index: 10;
+    position: relative;
+  }
+  
+  .deal {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'futura', sans-serif;
+    text-align: center;
+    display: inline-block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 36px;
+    padding-left: 36px;
+    cursor: pointer;
+    border-radius: 64px; 
+    font-size: 20px;
+    margin-top: .5vh;
+    border: none;
+    outline: none;
+    animation: b-desktop 1.5s ease forwards;
+    animation-delay: .82s; /* Delay of 1.85 seconds */
+    opacity: 0; /* Start with no opacity */
+    transform: translateY(-75%); /* Start shifted up */
+    z-index: 10;
+    position: relative;
+  }
+
+.deal:hover {
+    background-color: #111111; /* Inverted background color */
+    color: #ffffff; /* Inverted text color */
+    border: 2px solid white;
+}
+
+.deal2:hover {
+    background-color: #111111; /* Inverted background color */
+    color: #ffffff; /* Inverted text color */
+    border: 2px solid white;
+}
+
+  .deal2 {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'futura', sans-serif;
+    text-align: center;
+    display: inline-block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 36px;
+    padding-left: 36px;
+    cursor: pointer;
+    border-radius: 64px; 
+    font-size: 20px;
+    margin-top: 3vh;
+    border: none;
+    outline: none;
+  }
+
+.homef {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.25s; /* Delay */
+  opacity: 0; /* Start with no opacity */
+  z-index: 1100; /*Ensure it's above the loading animation and other content*/
+}
+
+ .gamef {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+  opacity: 1;
+  z-index: 1100; /*Ensure it's above the loading animation and other content*/
+}
+
+
+  footer p {
+    color: #ffffff;
+    font-size: 1vw;
+    font-family: 'courier', sans-serif;
+    font-weight: normal;
+  }
  
 }
 
+
+
+
+
+
+
+
+
+
+
+
 /* Mobile */
 @media only screen and (max-width: 573px) {
+ .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    position: relative; /* Establishes a stacking context */
+    z-index: 0; /* Ensures .container is in a higher stacking context */
+  overflow: visible; /* Adjust as needed */
+  }
+
+  body {
+    overflow: hidden; /* Hide scrollbars */
+    height: 100%;
+    width: 100%;
+    background-color: #111111; /* Fallback color */
+}
+    
+  .guidance-text-desktop {
+    font-size: 1vw;
+    font-family: 'Courier', Courier, monospace;
+    font-weight: normal;
+    width: 55%;
+    margin: 0 auto;
+    padding-top: 24px;
+    margin-bottom: 0vh;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+ .card {
+    width: 283px; /* responsive width */
+    height: 553px; /* responsive height based on viewport height */
+    margin-top: 10vh; /* Adjust padding, consider using % for responsiveness */
+    background-color: #ffffff; /* white background */
+    padding-bottom: 0vh;
+    border-radius: 22px; /* rounded corners with a radius of 22px */
+    background-size: cover;
+    background-position: center;
+    background-image: url('path/to/image.png'); /* This will be set by JS */
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    backface-visibility: visible;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    transform-origin: center;
+ }
+
+  .flip-container {
+  perspective: 800px;
+  width: 283px; /* responsive width */
+  height: 553px; /* responsive height based on viewport height */
+  position: relative;
+  margin-bottom: 80px;
+  animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
+  opacity: 0; /* Make the container invisible initially */
+}
+
+  .front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px; /* rounded corners with a radius of 22px */
+  background: #fff;
+  color: #fff;
+  background-size: cover; /* Cover the entire area of the div */
+  background-position: center; /* Center the image */
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: #ffffff;
+  color: white;
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image within the div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+}
+
+.card.flipped {
+   transform: rotateY(180deg);
+}
+ 
+ header h1 {
+    width: 77%;
+    padding-top: 22vh;
+    padding-bottom: 0vh;
+    color: #ffffff;
+    font-size: 20vh;
+    font-family: 'blaue-milch', sans-serif;
+    margin: 0 auto;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    text-align: center;
+    /* Additional overflow visible to ensure characters animate in properly */
+    overflow: visible;
+    z-index: 10;
+    line-height: .5;
+   position: relative;
+  }
+  
+  
+  header p {
+    color: #ffffff;
+    font-size: 2.5vh;
+    font-family: 'Courier', Courier, monospace;
+    font-weight: normal;
+    width: 52%;
+    margin: 0 auto;
+    margin-top: 4.5vh;
+    margin-bottom: 0vh;
+    text-align: center;
+    padding-top: 0vh;
+    animation: p-desktop 1.25s ease forwards;
+    animation-delay: .6s; /* Delay of 2 seconds */
+    opacity: 0; /* Start with no opacity */
+    transform: translateY(-90%); /* Start shifted up */
+    z-index: 10;
+    position: relative;
+  }
+  
+  .deal {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'futura', sans-serif;
+    text-align: center;
+    display: inline-block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 36px;
+    padding-left: 36px;
+    cursor: pointer;
+    border-radius: 64px; 
+    font-size: 20px;
+    margin-top: .5vh;
+    border: none;
+    outline: none;
+    animation: b-desktop 1.5s ease forwards;
+    animation-delay: .82s; /* Delay of 1.85 seconds */
+    opacity: 0; /* Start with no opacity */
+    transform: translateY(-75%); /* Start shifted up */
+    z-index: 10;
+    position: relative;
+  }
+
+.deal:hover {
+    background-color: #111111; /* Inverted background color */
+    color: #ffffff; /* Inverted text color */
+    border: 2px solid white;
+}
+
+.deal2:hover {
+    background-color: #111111; /* Inverted background color */
+    color: #ffffff; /* Inverted text color */
+    border: 2px solid white;
+}
+
+  .deal2 {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'futura', sans-serif;
+    text-align: center;
+    display: inline-block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 36px;
+    padding-left: 36px;
+    cursor: pointer;
+    border-radius: 64px; 
+    font-size: 20px;
+    margin-top: 3vh;
+    border: none;
+    outline: none;
+  }
+
+.homef {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+  animation: footer-fade-in 1s ease forwards;
+  animation-delay: 1.25s; /* Delay */
+  opacity: 0; /* Start with no opacity */
+  z-index: 1100; /*Ensure it's above the loading animation and other content*/
+}
+
+ .gamef {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2vh;
+  opacity: 1;
+  z-index: 1100; /*Ensure it's above the loading animation and other content*/
+}
+
+
+  footer p {
+    color: #ffffff;
+    font-size: 1vw;
+    font-family: 'courier', sans-serif;
+    font-weight: normal;
+  }
 
 }
