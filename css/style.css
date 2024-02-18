@@ -1,6 +1,37 @@
 /* Animation */
 
+ .index-background {
+  background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  height: 100%;
+  width: 100%;
+  background-color: #111111;
+  transition: quick-fade-out 4s forwards;
+  z-index: -1; /* Ensures it's behind other content */
+  position: absolute; /* Takes it out of the normal document flow */
+  animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
+  opacity:0;
+}
 
+.fade-in-background-color {
+  background-color: #111111; /* Target background color */
+   background-image: url(''); /* Path to your GIF */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards; /* Adjust duration as needed */
+}
 
 /*Header*/
 h1[data-splitting] span {
@@ -369,38 +400,6 @@ canvas {
 
 /* Desktop */
 @media only screen and (min-width: 1367px) {  
-  .index-background {
-  background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  height: 100%;
-  width: 100%;
-  background-color: #111111;
-  transition: quick-fade-out 4s forwards;
-  z-index: -1; /* Ensures it's behind other content */
-  position: absolute; /* Takes it out of the normal document flow */
-  animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
-  opacity:0;
-}
-
-.fade-in-background-color {
-  background-color: #111111; /* Target background color */
-   background-image: url(''); /* Path to your GIF */
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-.fade-out {
-    animation: fadeOut 0.5s forwards; /* Adjust duration as needed */
-}
 
   
 .container {
@@ -632,38 +631,6 @@ canvas {
 /* Desktop Split */
 @media only screen and (min-width: 574px) and (max-width: 1039px) {
 
-  .index-background {
-  background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  height: 100%;
-  width: 100%;
-  background-color: #111111;
-  transition: quick-fade-out 4s forwards;
-  z-index: -1; /* Ensures it's behind other content */
-  position: absolute; /* Takes it out of the normal document flow */
-  animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
-  opacity:0;
-}
-
-.fade-in-background-color {
-  background-color: #111111; /* Target background color */
-   background-image: url(''); /* Path to your GIF */
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-.fade-out {
-    animation: fadeOut 0.5s forwards; /* Adjust duration as needed */
-}
 
   .container {
     display: flex;
