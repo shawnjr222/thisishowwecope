@@ -401,6 +401,10 @@ canvas {
 /* Desktop */
 @media only screen and (min-width: 1367px) {  
 
+ .index-background {
+    /* Reiterate or adjust properties if necessary */
+    background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif');
+  }
   
 .container {
     display: flex;
@@ -630,6 +634,11 @@ canvas {
 
 /* Desktop Split */
 @media only screen and (min-width: 574px) and (max-width: 1039px) {
+
+ .index-background {
+    /* Reiterate or adjust properties if necessary */
+    background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif');
+  }
 
 .container {
     display: flex;
@@ -865,6 +874,11 @@ canvas {
 /* Tablet */
 @media only screen and (min-width: 1040px) and (max-width: 1366px) {
 
+ .index-background {
+    /* Reiterate or adjust properties if necessary */
+    background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif');
+  }
+
  .container {
     display: flex;
     flex-direction: column;
@@ -1099,6 +1113,12 @@ canvas {
 
 /* Mobile */
 @media only screen and (max-width: 573px) {
+
+.index-background {
+    /* Reiterate or adjust properties if necessary */
+    background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif');
+  }
+ 
  .container {
     display: flex;
     flex-direction: column;
