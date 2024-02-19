@@ -1257,17 +1257,15 @@ canvas {
     color: #111111;
     font-family: 'futura', sans-serif;
     text-align: center;
-    display: inline-block;
+    display: block;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-right: 24px;
     padding-left: 24px;
     cursor: pointer;
     border-radius: 64px; 
-    font-size: 8px;
-    margin-top: 0vh;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 16px;
+    margin: 0 auto;
     border: none;
     outline: none;
     animation: b-desktop 1.5s ease forwards;
@@ -1276,6 +1274,7 @@ canvas {
     transform: translateY(-75%); /* Start shifted up */
     z-index: 10;
     position: relative;
+   justify-content: center;
   }
 
 .deal:hover {
