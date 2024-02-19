@@ -312,64 +312,6 @@ a {
 
 
 
-.globe-section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.globe-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  opacity: 1;
-}
-
-#globe-3d, #globe-2d-overlay {
-  width: 100%;
-  height: 100%;
-}
-
-
-/* Globe Popup Styles */
-#globe-popup-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.globe-popup {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  color: #ffffff;
-  font-family: sans-serif;
-  padding: 5px 10px;
-  font-size: 15px;
-  border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  filter: drop-shadow(0px 0px 3px #555555);
-  transition: opacity 0.3s; /* Smooth transition for popup appearance */
-}
-
-/* Adjustments for specific globe elements */
-#globe-3d {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#globe-2d-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 canvas {
   width: 100%;
   height: 100%;
@@ -412,12 +354,11 @@ canvas {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
     height: 100%;
     width: 100%;
     position: relative; /* Establishes a stacking context */
     z-index: 0; /* Ensures .container is in a higher stacking context */
-  overflow: visible; /* Adjust as needed */
+    overflow: visible; /* Adjust as needed */
   }
 
   body {
@@ -667,6 +608,11 @@ canvas {
 /* Mobile */
 @media only screen and (max-width: 573px) {
 
+  .index-background {
+    /* Reiterate or adjust properties if necessary */
+    background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif');
+  }
+
 header h1 {
   padding-top: 14vh; /* Changed from 22vh to 14vh */
   font-size: 10vh; /* Changed from 20vh to 10vh */
@@ -676,6 +622,7 @@ header p {
   font-size: 2vh; /* Changed from 2.5vh to 2vh */
   width: 80%; /* Changed from 52% to 80% */
   margin-top: 8vh; /* Changed from 4.5vh to 8vh */
+  margin-bottom: 0vh; 
 }
 
 .deal {
