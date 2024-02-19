@@ -399,7 +399,7 @@ canvas {
 
 
 /* Desktop */
-@media only screen and (min-width: 1367px) {  
+@media only screen and (min-width: 1440px) {  
 
  .index-background {
     /* Reiterate or adjust properties if necessary */
@@ -667,7 +667,7 @@ canvas {
 
 
 /* Mobile */
-@media only screen and (max-width: 573px) {
+@media only screen and (min-width: 01px) and (max-width: 573px) {
 
 .index-background {
     /* Reiterate or adjust properties if necessary */
