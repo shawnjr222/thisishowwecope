@@ -762,6 +762,16 @@ footer p {
   justify-content: center; /* Added property */
   }
 
+ .deal:hover {
+    background-color: #ffffff; 
+    color: #111111; 
+}
+
+.deal2:hover {
+    background-color: #ffffff; 
+    color: #111111; 
+}
+
 
  
 
