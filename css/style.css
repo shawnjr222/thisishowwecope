@@ -669,6 +669,17 @@ footer p {
   font-size: 4vw; /* Changed from 1vw to 3.5vw */
 }
 
+  .guidance-text-desktop {
+    font-size: 1vw;
+    font-family: 'Courier', Courier, monospace;
+    font-weight: normal;
+    width: 55%;
+    margin: 0 auto;
+    padding-top: 24px;
+    margin-bottom: 0vh;
+    text-align: center;
+    color: #ffffff;
+}
 
 
 
