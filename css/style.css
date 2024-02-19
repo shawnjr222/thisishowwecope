@@ -658,7 +658,7 @@ header p {
   padding-right: 24px; /* Changed from 36px to 24px */
   padding-left: 24px; /* Changed from 36px to 24px */
   font-size: 20px; /* Changed from 20px to 16px */
-  margin-top: -2vh; 
+  margin-top: -3vh; 
   margin-bottom: 0vh;
   margin-right: auto;
   margin-left: auto;
@@ -744,7 +744,7 @@ footer p {
   padding-right: 24px; /* Changed from 36px to 24px */
   padding-left: 24px; /* Changed from 36px to 24px */
   font-size: 20px; /* Changed from 20px to 16px */
-  margin-top: -2vh; 
+  margin-top: 3vh; 
   margin-bottom: 0vh;
   margin-right: auto;
   margin-left: auto;
