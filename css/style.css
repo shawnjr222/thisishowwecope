@@ -403,7 +403,7 @@ canvas {
 
   .flip-container {
   perspective: 800px;
-  margin-bottom: 12vh;
+  margin-bottom: 4vh;
   width: 283px; /* responsive width */
   height: 553px; /* responsive height based on viewport height */
   position: relative;
