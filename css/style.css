@@ -608,10 +608,19 @@ canvas {
 /* Mobile */
 @media only screen and (max-width: 573px) {
 
-  .index-background {
-    /* Reiterate or adjust properties if necessary */
-    background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif');
-  }
+ .index-background {
+  background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  height: 100%;
+  width: 100%;
+  background-color: #111111;
+  transition: quick-fade-out 4s forwards;
+  z-index: -1; /* Ensures it's behind other content */
+  position: absolute; /* Takes it out of the normal document flow */
+  animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
+  opacity:0;
+}
 
 header h1 {
   padding-top: 16vh; /* Changed from 22vh to 16vh */
@@ -633,8 +642,8 @@ header p {
   font-size: 16px; /* Changed from 20px to 16px */
   margin-top: 0; 
   margin-bottom: 0;
-  margin-right: 0;
-  margin-left: 0;
+  margin-right: auto;
+  margin-left: auto;
   justify-content: center; /* Added property */
 }
 
