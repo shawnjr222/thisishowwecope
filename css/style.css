@@ -575,20 +575,7 @@ canvas {
 
 /* Desktop Split */
 @media only screen and (min-width: 574px) and (max-width: 1039px) {
- .index-background {
-  background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: 100%;
-  height: 100%;
-  width: 100%;
-  background-color: #111111;
-  z-index: -1; /* Ensures it's behind other content */
-  position: absolute; /* Takes it out of the normal document flow */
-  animation: fadeIn 1.5s ease-out 2s forwards;
-  transition: quick-fade-out 4s ease-in-out forwards;
-  opacity:0;
-}
+
 
 }
 
@@ -605,20 +592,7 @@ canvas {
 /* Tablet */
 @media only screen and (min-width: 1040px) and (max-width: 1366px) {
 
-  .index-background {
-  background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: 100%;
-  height: 100%;
-  width: 100%;
-  background-color: #111111;
-  z-index: -1; /* Ensures it's behind other content */
-  position: absolute; /* Takes it out of the normal document flow */
-  animation: fadeIn 1.5s ease-out 2s forwards;
-  transition: quick-fade-out 4s ease-in-out forwards;
-  opacity:0;
-}
+
  
 }
 
@@ -644,9 +618,13 @@ canvas {
   background-color: #111111;
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
-  transition: quick-fade-out 4s ease-in-out forwards;
+  transition: opacity .5s ease-in-out;
   animation: fadeIn 1.5s ease-out 2s forwards;
   opacity:0;
+}
+
+ .index-background.fade-out {
+  opacity: 0;
 }
 
   .container {
