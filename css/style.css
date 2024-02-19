@@ -628,7 +628,7 @@ canvas {
   }
 
 header h1 {
-  padding-top: 25vh; /* Changed from 22vh to 16vh */
+  padding-top: 24vh; /* Changed from 22vh to 16vh */
   font-size: 16vh; /* Changed from 20vh to 10vh */
 }
 
@@ -658,7 +658,7 @@ footer p {
 }
 
   .guidance-text-desktop {
-    font-size: 4vw;
+    font-size: 1.5vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
     width: 88%;
@@ -675,9 +675,9 @@ footer p {
  
 
  .card {
-    width: 222px; /* responsive width */
-    height: 434px; /* responsive height based on viewport height */
-    margin-top: 6vh; /* Adjust padding, consider using % for responsiveness */
+    width: 283px; /* responsive width */
+    height: 553px; /* responsive height based on viewport height */
+    margin-top: 12vh; /* Adjust padding, consider using % for responsiveness */
     margin-bottom: 8vh; /* Adjust padding, consider using % for responsiveness */
     background-color: #ffffff; /* white background */
     padding-bottom: 0vh;
@@ -697,8 +697,8 @@ footer p {
 
   .flip-container {
   perspective: 800px;
-  width: 222px; /* responsive width */
-  height: 434px; /* responsive height based on viewport height */
+  width: 283px; /* responsive width */
+  height: 553px; /* responsive height based on viewport height */
   position: relative;
   margin-bottom: 5vh;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
