@@ -727,7 +727,6 @@ footer p {
   justify-content: center;
   align-items: center;
 }
-}
 
 .card.flipped {
    transform: rotateY(180deg);
