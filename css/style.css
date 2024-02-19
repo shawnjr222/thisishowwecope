@@ -628,7 +628,7 @@ canvas {
   }
 
 header h1 {
-  padding-top: 24vh; /* Changed from 22vh to 16vh */
+  padding-top: 25vh; /* Changed from 22vh to 16vh */
   font-size: 16vh; /* Changed from 20vh to 10vh */
 }
 
@@ -641,10 +641,10 @@ header p {
 
 .deal {
   display: block; /* Changed from inline-block to block */
-  padding-top: 8px; /* Changed from 12px to 8px */
-  padding-bottom: 8px; /* Changed from 12px to 8px */
-  padding-right: 24px; /* Changed from 36px to 24px */
-  padding-left: 24px; /* Changed from 36px to 24px */
+  padding-top: 12px; /* Changed from 12px to 8px */
+  padding-bottom: 12px; /* Changed from 12px to 8px */
+  padding-right: 36px; /* Changed from 36px to 24px */
+  padding-left: 36px; /* Changed from 36px to 24px */
   font-size: 24px; /* Changed from 20px to 16px */
   margin-top: 0vh; 
   margin-bottom: 0vh;
