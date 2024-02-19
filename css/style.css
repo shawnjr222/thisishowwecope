@@ -677,7 +677,7 @@ footer p {
  .card {
     width: 283px; /* responsive width */
     height: 553px; /* responsive height based on viewport height */
-    margin-top: 13vh; /* Adjust padding, consider using % for responsiveness */
+    margin-top: 12vh; /* Adjust padding, consider using % for responsiveness */
     margin-bottom: 8vh; /* Adjust padding, consider using % for responsiveness */
     background-color: #ffffff; /* white background */
     padding-bottom: 0vh;
@@ -700,7 +700,7 @@ footer p {
   width: 283px; /* responsive width */
   height: 553px; /* responsive height based on viewport height */
   position: relative;
-  margin-bottom: 13vh;
+  margin-bottom: 12vh;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
 }
