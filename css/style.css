@@ -609,11 +609,11 @@ canvas {
 
 header h1 {
   padding-top: 24vh; /* Changed from 22vh to 16vh */
-  font-size: 16vh; /* Changed from 20vh to 10vh */
+  font-size: 12vh; /* Changed from 20vh to 10vh */
 }
 
 header p {
-  font-size: 2.5vh; /* Changed from 2.5vh to 2vh */
+  font-size: 2vh; /* Changed from 2.5vh to 2vh */
   width: 60%; /* Changed from 52% to 80% */
   margin-top: 6vh; /* Changed from 4.5vh to 8vh */
   margin-bottom: 0vh; /* Changed from 4.5vh to 8vh */
@@ -634,7 +634,7 @@ header p {
 }
 
 footer p {
-  font-size: 1.5vw; /* Changed from 1vw to 3.5vw */
+  font-size: 2vw; /* Changed from 1vw to 3.5vw */
 }
 
   .guidance-text-desktop {
