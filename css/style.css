@@ -628,8 +628,8 @@ canvas {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 50%;
     position: relative; /* Establishes a stacking context */
     z-index: 0; /* Ensures .container is in a higher stacking context */
     overflow: visible; /* Adjust as needed */
@@ -643,7 +643,7 @@ header h1 {
 header p {
   font-size: 2vh; /* Changed from 2.5vh to 2vh */
   width: 80%; /* Changed from 52% to 80% */
-  margin-top: 12vh; /* Changed from 4.5vh to 8vh */
+  margin-top: 8vh; /* Changed from 4.5vh to 8vh */
   margin-bottom: 0vh; /* Changed from 4.5vh to 8vh */
 }
 
