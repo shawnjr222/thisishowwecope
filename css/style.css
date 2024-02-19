@@ -612,7 +612,7 @@ canvas {
   background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: 50%;
+  background-size: 100%;
   height: 100%;
   width: 100%;
   background-color: #111111;
@@ -655,7 +655,7 @@ header p {
   padding-right: 24px; /* Changed from 36px to 24px */
   padding-left: 24px; /* Changed from 36px to 24px */
   font-size: 16px; /* Changed from 20px to 16px */
-  margin-top: 0vh; 
+  margin-top: -4vh; 
   margin-bottom: 0vh;
   margin-right: auto;
   margin-left: auto;
