@@ -657,8 +657,8 @@ header p {
   padding-bottom: 8px; /* Changed from 12px to 8px */
   padding-right: 24px; /* Changed from 36px to 24px */
   padding-left: 24px; /* Changed from 36px to 24px */
-  font-size: 16px; /* Changed from 20px to 16px */
-  margin-top: -2vh; 
+  font-size: 20px; /* Changed from 20px to 16px */
+  margin-top: -3vh; 
   margin-bottom: 0vh;
   margin-right: auto;
   margin-left: auto;
