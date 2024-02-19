@@ -1216,7 +1216,7 @@ canvas {
  
  header h1 {
     width: 77%;
-    padding-top: 16vh;
+    padding-top: 14vh;
     padding-bottom: 0vh;
     color: #ffffff;
     font-size: 10vh;
@@ -1240,8 +1240,8 @@ canvas {
     font-weight: normal;
     width: 80%;
     margin: 0 auto;
-    margin-top: 10vh;
-    margin-bottom: 0vh;
+    margin-top: 8vh;
+    margin-bottom: -8vh;
     text-align: center;
     padding-top: 0vh;
     animation: p-desktop 1.25s ease forwards;
@@ -1264,7 +1264,7 @@ canvas {
     padding-left: 24px;
     cursor: pointer;
     border-radius: 64px; 
-    font-size: 16px;
+    font-size: 24px;
     margin: 0 auto;
     border: none;
     outline: none;
@@ -1274,7 +1274,7 @@ canvas {
     transform: translateY(-75%); /* Start shifted up */
     z-index: 10;
     position: relative;
-   justify-content: center;
+    justify-content: center;
   }
 
 .deal:hover {
