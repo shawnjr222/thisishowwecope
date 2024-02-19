@@ -678,10 +678,10 @@ canvas {
  
  header h1 {
     width: 77%;
-    padding-top: 22vh;
+    padding-top: 12vh;
     padding-bottom: 0vh;
     color: #ffffff;
-    font-size: 20vh;
+    font-size: 12vh;
     font-family: 'blaue-milch', sans-serif;
     margin: 0 auto;
     margin-top: 0vh;
@@ -700,7 +700,7 @@ canvas {
     font-size: 2.5vh;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
-    width: 52%;
+    width: 75%;
     margin: 0 auto;
     margin-top: 4.5vh;
     margin-bottom: 0vh;
@@ -728,6 +728,10 @@ canvas {
     border-radius: 64px; 
     font-size: 20px;
     margin-top: .5vh;
+    margin-bottom: 0vh;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center; /* Added property */
     border: none;
     outline: none;
     animation: b-desktop 1.5s ease forwards;
