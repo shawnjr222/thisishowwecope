@@ -577,12 +577,25 @@ canvas {
 @media only screen and (min-width: 574px) and (max-width: 1039px) {
 
 
-  .index-background {
-    /* Reiterate or adjust properties if necessary */
-    background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif');
-  }
-  
-.container {
+ .index-background {
+  background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 100%;
+  height: 100%;
+  width: 100%;
+  background-color: #111111;
+  z-index: -1; /* Ensures it's behind other content */
+  position: absolute; /* Takes it out of the normal document flow */
+  animation: fadeIn 1.5s ease-out 2s forwards;
+  opacity:0;
+}
+
+ .index-background.fade-out {
+  animation: quick-fade-out .5s ease-out forwards;
+}
+
+  .container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -595,29 +608,57 @@ canvas {
     overflow: visible; /* Adjust as needed */
   }
 
-  body {
-    overflow: hidden; /* Hide scrollbars */
-    height: 100%;
-    width: 100%;
-    background-color: #111111; /* Fallback color */
+header h1 {
+  padding-top: 16vh; /* Changed from 22vh to 16vh */
+  font-size: 10vh; /* Changed from 20vh to 10vh */
 }
-    
+
+header p {
+  font-size: 2vh; /* Changed from 2.5vh to 2vh */
+  width: 80%; /* Changed from 52% to 80% */
+  margin-top: 8vh; /* Changed from 4.5vh to 8vh */
+  margin-bottom: 0vh; /* Changed from 4.5vh to 8vh */
+}
+
+.deal {
+  display: block; /* Changed from inline-block to block */
+  padding-top: 8px; /* Changed from 12px to 8px */
+  padding-bottom: 8px; /* Changed from 12px to 8px */
+  padding-right: 24px; /* Changed from 36px to 24px */
+  padding-left: 24px; /* Changed from 36px to 24px */
+  font-size: 20px; /* Changed from 20px to 16px */
+  margin-top: -3vh; 
+  margin-bottom: 0vh;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center; /* Added property */
+}
+
+footer p {
+  font-size: 4vw; /* Changed from 1vw to 3.5vw */
+}
+
   .guidance-text-desktop {
-    font-size: 1vw;
+    font-size: 4vw;
     font-family: 'Courier', Courier, monospace;
     font-weight: normal;
-    width: 55%;
+    width: 88%;
+    margin: 0 auto;
+    padding-top: 2vh;
+    margin-top: 2vh;
     margin-bottom: 2vh;
-    margin-top: 8vh;
     text-align: center;
     color: #ffffff;
 }
 
 
+
+ 
+
  .card {
-    width: 283px; /* responsive width */
-    height: 553px; /* responsive height based on viewport height */
-    margin-top: 10vh; /* Adjust padding, consider using % for responsiveness */
+    width: 222px; /* responsive width */
+    height: 434px; /* responsive height based on viewport height */
+    margin-top: 6vh; /* Adjust padding, consider using % for responsiveness */
     margin-bottom: 8vh; /* Adjust padding, consider using % for responsiveness */
     background-color: #ffffff; /* white background */
     padding-bottom: 0vh;
@@ -637,10 +678,10 @@ canvas {
 
   .flip-container {
   perspective: 800px;
-  margin-bottom: 5vh;
-  width: 283px; /* responsive width */
-  height: 553px; /* responsive height based on viewport height */
+  width: 222px; /* responsive width */
+  height: 434px; /* responsive height based on viewport height */
   position: relative;
+  margin-bottom: 5vh;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
 }
@@ -670,76 +711,24 @@ canvas {
   justify-content: center;
   align-items: center;
 }
-}
 
 .card.flipped {
    transform: rotateY(180deg);
 }
- 
- header h1 {
-    width: 77%;
-    padding-top: 12vh;
-    padding-bottom: 0vh;
-    color: #ffffff;
-    font-size: 12vh;
-    font-family: 'blaue-milch', sans-serif;
-    margin: 0 auto;
-    margin-top: 0vh;
-    margin-bottom: 0vh;
-    text-align: center;
-    /* Additional overflow visible to ensure characters animate in properly */
-    overflow: visible;
-    z-index: 10;
-    line-height: .5;
-    position: relative;
-  }
-  
-  
-  header p {
-    color: #ffffff;
-    font-size: 2.5vh;
-    font-family: 'Courier', Courier, monospace;
-    font-weight: normal;
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 4.5vh;
-    margin-bottom: 0vh;
-    text-align: center;
-    padding-top: 0vh;
-    animation: p-desktop 1.25s ease forwards;
-    animation-delay: .6s; /* Delay of 2 seconds */
-    opacity: 0; /* Start with no opacity */
-    transform: translateY(-90%); /* Start shifted up */
-    z-index: 10;
-    position: relative;
-  }
-  
-  .deal {
-    background-color: #ffffff;
-    color: #111111;
-    font-family: 'futura', sans-serif;
-    text-align: center;
-    display: inline-block;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 36px;
-    padding-left: 36px;
-    cursor: pointer;
-    border-radius: 64px; 
-    font-size: 20px;
-    margin-top: .5vh;
-    margin-bottom: 0vh;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: center; /* Added property */
-    border: none;
-    outline: none;
-    animation: b-desktop 1.5s ease forwards;
-    animation-delay: .82s; /* Delay of 1.85 seconds */
-    opacity: 0; /* Start with no opacity */
-    transform: translateY(-75%); /* Start shifted up */
-    z-index: 10;
-    position: relative;
+
+
+
+
+  .deal2 {
+  display: block; /* Changed from inline-block to block */
+  padding-top: 8px; /* Changed from 12px to 8px */
+  padding-bottom: 8px; /* Changed from 12px to 8px */
+  padding-right: 24px; /* Changed from 36px to 24px */
+  padding-left: 24px; /* Changed from 36px to 24px */
+  font-size: 20px; /* Changed from 20px to 16px */
+  margin-right: auto;
+  margin: 0 auto;
+  justify-content: center; /* Added property */
   }
 
 .deal:hover {
@@ -754,55 +743,6 @@ canvas {
     border: 2px solid white;
 }
 
-  .deal2 {
-    background-color: #ffffff;
-    color: #111111;
-    font-family: 'futura', sans-serif;
-    text-align: center;
-    display: inline-block;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 36px;
-    padding-left: 36px;
-    cursor: pointer;
-    border-radius: 64px; 
-    font-size: 20px;
-    margin: 0 auto;
-    border: none;
-    outline: none;
-  }
-
-.homef {
-  text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 2vh;
-  animation: footer-fade-in 1s ease forwards;
-  animation-delay: 1.25s; /* Delay */
-  opacity: 0; /* Start with no opacity */
-  z-index: 1100; /*Ensure it's above the loading animation and other content*/
-}
-
- .gamef {
-  text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 2vh;
-  opacity: 1;
-  z-index: 1100; /*Ensure it's above the loading animation and other content*/
-}
-
-
-  footer p {
-    color: #ffffff;
-    font-size: 1vw;
-    font-family: 'courier', sans-serif;
-    font-weight: normal;
-  }
 
 
 }
