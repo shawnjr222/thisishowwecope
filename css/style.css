@@ -620,7 +620,8 @@ canvas {
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards;
-    /* Remove transition property if using animations for consistency */
+  transition: quick-fade-out 4s forwards;
+  -webkit-transition: quick-fade-out 4s forwards;
   opacity:0;
 }
 
