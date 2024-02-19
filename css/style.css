@@ -612,8 +612,8 @@ canvas {
   background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  height: 100%;
-  width: 100%;
+  height: 50%;
+  width: 50%;
   background-color: #111111;
   transition: quick-fade-out 4s forwards;
   z-index: -1; /* Ensures it's behind other content */
@@ -628,8 +628,8 @@ canvas {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     position: relative; /* Establishes a stacking context */
     z-index: 0; /* Ensures .container is in a higher stacking context */
     overflow: visible; /* Adjust as needed */
