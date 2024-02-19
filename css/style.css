@@ -341,7 +341,7 @@ canvas {
 
 
 /* Desktop */
-@media only screen and (min-width: 1440px) {  
+@media only screen and (min-width: 1367px) {  
 
  .index-background {
     /* Reiterate or adjust properties if necessary */
