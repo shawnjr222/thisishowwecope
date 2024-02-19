@@ -628,8 +628,8 @@ canvas {
   }
 
 header h1 {
-  padding-top: 24vh; /* Changed from 22vh to 16vh */
-  font-size: 20vh; /* Changed from 20vh to 10vh */
+  padding-top: 10vh; /* Changed from 22vh to 16vh */
+  font-size: 16vh; /* Changed from 20vh to 10vh */
 }
 
 header p {
@@ -646,7 +646,7 @@ header p {
   padding-right: 24px; /* Changed from 36px to 24px */
   padding-left: 24px; /* Changed from 36px to 24px */
   font-size: 24px; /* Changed from 20px to 16px */
-  margin-top: -3vh; 
+  margin-top: 0vh; 
   margin-bottom: 0vh;
   margin-right: auto;
   margin-left: auto;
@@ -654,7 +654,7 @@ header p {
 }
 
 footer p {
-  font-size: 2vw; /* Changed from 1vw to 3.5vw */
+  font-size: 1.5vw; /* Changed from 1vw to 3.5vw */
 }
 
   .guidance-text-desktop {
