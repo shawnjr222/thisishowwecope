@@ -619,7 +619,7 @@ canvas {
   background-color: #111111;
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
-   animation: fadeIn 1.5s ease-out 2s, quick-fade-out 4s forwards;
+  animation: fadeIn 1.5s ease-out 2s forwards;
     /* Remove transition property if using animations for consistency */
   opacity:0;
 }
