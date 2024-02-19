@@ -689,7 +689,7 @@ footer p {
  .card {
     width: 222px; /* responsive width */
     height: 434px; /* responsive height based on viewport height */
-    margin-top: 8vh; /* Adjust padding, consider using % for responsiveness */
+    margin-top: 6vh; /* Adjust padding, consider using % for responsiveness */
     margin-bottom: 8vh; /* Adjust padding, consider using % for responsiveness */
     background-color: #ffffff; /* white background */
     padding-bottom: 0vh;
@@ -712,7 +712,7 @@ footer p {
   width: 222px; /* responsive width */
   height: 434px; /* responsive height based on viewport height */
   position: relative;
-  margin-bottom: 40px; 
+  margin-bottom: 5vh;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
 }
@@ -757,10 +757,8 @@ footer p {
   padding-right: 24px; /* Changed from 36px to 24px */
   padding-left: 24px; /* Changed from 36px to 24px */
   font-size: 20px; /* Changed from 20px to 16px */
-  margin-top: 0vh; 
-  margin-bottom: 0vh;
   margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   justify-content: center; /* Added property */
   }
 
