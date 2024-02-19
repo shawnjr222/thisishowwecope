@@ -406,7 +406,7 @@ canvas {
   width: 283px; /* responsive width */
   height: 553px; /* responsive height based on viewport height */
   position: relative;
-  margin-bottom: 64px;
+  margin-bottom: 80px;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
 }
@@ -710,7 +710,7 @@ footer p {
   width: 222px; /* responsive width */
   height: 434px; /* responsive height based on viewport height */
   position: relative;
-  margin-bottom: 32px;
+  margin-bottom: 56px;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
 }
