@@ -7,8 +7,7 @@
   height: 100%;
   width: 100%;
   background-color: #111111;
-  transition: quick-fade-out 4s forwards;
-  -webkit-transition: quick-fade-out 4s forwards;
+  transition: quick-fade-out 4s ease-in-out forwards;
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
@@ -587,8 +586,7 @@ canvas {
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards;
-  transition: quick-fade-out 4s forwards;
-  -webkit-transition: quick-fade-out 4s forwards;
+  transition: quick-fade-out 4s ease-in-out forwards;
   opacity:0;
 }
 
@@ -618,8 +616,7 @@ canvas {
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards;
-  transition: quick-fade-out 4s forwards;
-  -webkit-transition: quick-fade-out 4s forwards;
+  transition: quick-fade-out 4s ease-in-out forwards;
   opacity:0;
 }
  
@@ -647,8 +644,7 @@ canvas {
   background-color: #111111;
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
-  transition: quick-fade-out 4s forwards;
-  -webkit-transition: quick-fade-out 4s forwards;
+  transition: quick-fade-out 4s ease-in-out forwards;
   animation: fadeIn 1.5s ease-out 2s forwards;
   opacity:0;
 }
