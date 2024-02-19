@@ -8,6 +8,7 @@
   width: 100%;
   background-color: #111111;
   transition: quick-fade-out 4s forwards;
+  -webkit-transition: quick-fade-out 4s forwards;
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
@@ -617,6 +618,7 @@ canvas {
   width: 100%;
   background-color: #111111;
   transition: quick-fade-out 4s forwards;
+  -webkit-transition: quick-fade-out 4s forwards;
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
