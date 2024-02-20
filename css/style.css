@@ -607,12 +607,12 @@ canvas {
 
 header h1 {
   padding-top: 18vh; /* Changed from 22vh to 16vh */
-  font-size: 16vh; /* Changed from 20vh to 10vh */
+  font-size: 18vh; /* Changed from 20vh to 10vh */
 }
 
 header p {
   font-size: 2.5vh; /* Changed from 2.5vh to 2vh */
-  width: 75%; /* Changed from 52% to 80% */
+  width: 70%; /* Changed from 52% to 80% */
   margin-top: 7vh; /* Changed from 4.5vh to 8vh */
   margin-bottom: 0vh; /* Changed from 4.5vh to 8vh */
 }
@@ -742,7 +742,7 @@ footer p {
 /* Desktop Split 2 */
 @media only screen and (min-width: 574px) and (max-width: 1039px)  {
 
- .index-background {
+.index-background {
   background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -775,12 +775,12 @@ footer p {
 
 header h1 {
   padding-top: 18vh; /* Changed from 22vh to 16vh */
-  font-size: 16vh; /* Changed from 20vh to 10vh */
+  font-size: 18vh; /* Changed from 20vh to 10vh */
 }
 
 header p {
   font-size: 2.5vh; /* Changed from 2.5vh to 2vh */
-  width: 75%; /* Changed from 52% to 80% */
+  width: 70%; /* Changed from 52% to 80% */
   margin-top: 7vh; /* Changed from 4.5vh to 8vh */
   margin-bottom: 0vh; /* Changed from 4.5vh to 8vh */
 }
