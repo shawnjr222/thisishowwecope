@@ -341,7 +341,7 @@ canvas {
 
 
 /* Desktop */
-@media only screen and (min-width: 1367px) {  
+@media only screen and (min-width: 1440px) {  
 
  .index-background {
     /* Reiterate or adjust properties if necessary */
@@ -753,7 +753,7 @@ footer p {
 
   
 /* Tablet */
-@media only screen and (min-width: 1040px) and (max-width: 1366px) {
+@media only screen and (min-width: 1040px) and (max-width: 1439px) {
 
  .index-background {
   background-image: url('https://raw.githubusercontent.com/shawnjr222/thisishowwecope/main/img/globetrot.gif'); /* Path to your GIF */
