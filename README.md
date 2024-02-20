@@ -1,3 +1,3 @@
-# An online card game that builds equity for our lived experiences under global capitalism. 
+# An online card game designed to build equity for our lived experiences under global capitalism. 
 
 Design + Code by Shawn Jr. 
