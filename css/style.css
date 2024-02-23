@@ -1144,6 +1144,7 @@ footer p {
   position: relative;
   z-index: 0;
   overflow: visible;
+ margin: 0 auto;
 }
 
 header h1 {
@@ -1158,7 +1159,7 @@ header h1 {
 header p {
   font-size: 2vh;
   width: 80%;
-  margin-top: 10vh;
+  margin-top: 8vh;
   margin-bottom: 0vh;
 }
 
