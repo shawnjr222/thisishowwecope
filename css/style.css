@@ -1159,7 +1159,7 @@ header h1 {
 header p {
   font-size: 2vh;
   width: 80%;
-  margin-top: 8vh;
+  margin-top: 9vh;
   margin-bottom: 0vh;
 }
 
@@ -1170,7 +1170,7 @@ header p {
   padding-right: 24px;
   padding-left: 24px;
   font-size: 20px;
-  margin-top: 0vh;
+  margin-top: -2vh;
   margin-bottom: 0vh;
   margin-right: auto;
   margin-left: auto;
