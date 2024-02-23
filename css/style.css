@@ -1147,7 +1147,7 @@ footer p {
 }
 
 header h1 {
-  padding-top: 14vh;
+  padding-top: 16vh;
   font-size: 9vh;
  justify-content: center;
    align-items: center;
@@ -1158,7 +1158,7 @@ header h1 {
 header p {
   font-size: 2vh;
   width: 80%;
-  margin-top: 12vh;
+  margin-top: 10vh;
   margin-bottom: 0vh;
 }
 
