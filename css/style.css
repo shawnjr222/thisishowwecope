@@ -1152,6 +1152,7 @@ header h1 {
  justify-content: center;
    align-items: center;
   text-align: center;
+ margin-left: 2vh;
 }
 
 header p {
