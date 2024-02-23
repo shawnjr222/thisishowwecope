@@ -8,11 +8,9 @@
   width: 100%;
   background-color: #111111;
   transition: quick-fade-out .5s ease-in-out forwards;
-  -webkit-transition: quick-fade-out .5s ease-in-out forwards;
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
-  -webkit-animation: fadeIn 1.5s ease-out 2s forwards; /* Apply the fadeIn animation with 1s duration and 3s delay */
   opacity:0;
 }
 
@@ -26,29 +24,13 @@
   to { opacity: 1; }
 }
 
-@-webkit-keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 @keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-@-webkit-keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
 }
 
 .fade-out {
     animation: fadeOut 0.5s forwards; /* Adjust duration as needed */
-    -webkit-animation: fadeOut 0.5s forwards; /* Adjust duration as needed */
-}
-
-
-@-webkit-keyframes quick-fade-out {
-  to { opacity: 0; }
 }
 
 /*Header*/
@@ -200,7 +182,6 @@ h1[data-splitting] .word .char {
 
 .guidance-fade-out-desktop {
   animation: guidanceFadeOutDesktopAnimation 1s ease forwards;
-  -webkit-animation: guidanceFadeOutDesktopAnimation 1s ease forwards;
 }
 
 @keyframes guidanceFadeOutDesktopAnimation {
@@ -224,7 +205,6 @@ h1[data-splitting] .word .char {
 
 .guidance-slide-down-and-fade-out {
   animation: slide-down-and-fade-out 1s forwards;
-  -webkit-animation: slide-down-and-fade-out 1s forwards;
 }
 
 @keyframes quick-fade-out {
@@ -235,7 +215,6 @@ h1[data-splitting] .word .char {
 
 .quick-fade-out {
   animation: quick-fade-out 0.5s forwards; /* Quick fade out in 0.5 seconds */
-  -webkit-animation: quick-fade-out 0.5s forwards; /* Quick fade out in 0.5 seconds */
 }
 
 
@@ -251,19 +230,6 @@ h1[data-splitting] .word .char {
   to {
     /* End at the center with no Y-axis rotation, "unflipping" the card */
     transform: translate(0, 0) rotateY(0deg) rotateZ(0deg);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes swoop-in {
-  from {
-    /* Start off-screen with a slight Y-axis rotation for the "slightly flipped" effect */
-    -webkit-transform: translate(-100%, -100%) rotateY(-15deg) rotateZ(-20deg);
-    opacity: 0;
-  }
-  to {
-    /* End at the center with no Y-axis rotation, "unflipping" the card */
-    -webkit-transform: translate(0, 0) rotateY(0deg) rotateZ(0deg);
     opacity: 1;
   }
 }
@@ -291,16 +257,7 @@ h1[data-splitting] .word .char {
   }
 }
 
-@-webkit-keyframes swoop-out {
-  from {
-    -webkit-transform: translate(0, 0) rotateY(0deg) rotateZ(0deg);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translate(100%, -100%) rotateY(-15deg) rotateZ(20deg);
-    opacity: 0;
-  }
-}
+
 
 
 
@@ -347,7 +304,6 @@ a {
 
   .button-slide-up-desktop {
     animation: buttonSlideUpDesktopAnimation 1s forwards;
-    -webkit-animation: buttonSlideUpDesktopAnimation 1s forwards;
   }
 
 
@@ -370,7 +326,6 @@ canvas {
 
 .fade-in-animation {
   animation: fade-in 2.5s ease forwards;
-  -webkit-animation: fade-in 2.5s ease forwards;
 }
 
 @keyframes fade-in {
@@ -442,25 +397,17 @@ canvas {
     position: absolute;
     transform-style: preserve-3d;
     transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transform-origin: center;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform-origin: center center;
-    -webkit-backface-visibility: visible;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-    -webkit-transform-origin: center;
     cursor: pointer;
+    transform-origin: center;
  }
 
   .flip-container {
   perspective: 800px;
-  -webkit-perspective: 800px;
   margin-bottom: 5vh;
   width: 283px; /* responsive width */
   height: 553px; /* responsive height based on viewport height */
   position: relative;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
-  -webkit-animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
 }
 
@@ -469,7 +416,6 @@ canvas {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -482,7 +428,6 @@ canvas {
 
 .back {
   transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
   background: #ffffff;
   color: white;
   background-size: cover; /* Ensures the image covers the entire div */
@@ -491,10 +436,10 @@ canvas {
   justify-content: center;
   align-items: center;
 }
+}
 
 .card.flipped {
    transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
 }
  
  header h1 {
@@ -528,11 +473,9 @@ canvas {
     text-align: center;
     padding-top: 0vh;
     animation: p-desktop 1.25s ease forwards;
-    -webkit-animation: p-desktop 1.25s ease forwards;
     animation-delay: .6s; /* Delay of 2 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-90%); /* Start shifted up */
-    -webkit-transform: translateY(-90%); /* Start shifted up */
     z-index: 10;
     position: relative;
   }
@@ -554,11 +497,9 @@ canvas {
     border: none;
     outline: none;
     animation: b-desktop 1.5s ease forwards;
-    -webkit-animation: b-desktop 1.5s ease forwards;
     animation-delay: .82s; /* Delay of 1.85 seconds */
     opacity: 0; /* Start with no opacity */
     transform: translateY(-75%); /* Start shifted up */
-    -webkit-transform: translateY(-75%); /* Start shifted up */
     z-index: 10;
     position: relative;
   }
@@ -601,7 +542,6 @@ canvas {
   width: 100%;
   margin-bottom: 2vh;
   animation: footer-fade-in 1s ease forwards;
-  -webkit-animation: footer-fade-in 1s ease forwards;
   animation-delay: 1.25s; /* Delay */
   opacity: 0; /* Start with no opacity */
   z-index: 1100; /*Ensure it's above the loading animation and other content*/
@@ -645,13 +585,11 @@ canvas {
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards;
-   -webkit-animation: fadeIn 1.5s ease-out 2s forwards;
-  opacity: 0;
+  opacity:0;
 }
 
  .index-background.fade-out {
   animation: quick-fade-out .5s ease-out forwards;
-  -webkit-animation: quick-fade-out .5s ease-out forwards;
 }
 
   .container {
@@ -729,24 +667,16 @@ footer p {
     transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     transform-origin: center;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform-origin: center center;
-  -webkit-backface-visibility: visible;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transform-origin: center;
  }
 
   .flip-container {
   perspective: 800px;
-   -webkit-perspective: 800px;
   width: 283px; /* responsive width */
   height: 553px; /* responsive height based on viewport height */
   position: relative;
   margin-bottom: 10.5vh;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
- -webkit-animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
-   opacity: 0; /* Make the container invisible initially */
+  opacity: 0; /* Make the container invisible initially */
 }
 
   .front, .back {
@@ -754,7 +684,6 @@ footer p {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -767,7 +696,6 @@ footer p {
 
 .back {
   transform: rotateY(180deg);
- -webkit-transform: rotateY(180deg);
   background: #ffffff;
   color: white;
   background-size: cover; /* Ensures the image covers the entire div */
@@ -779,7 +707,6 @@ footer p {
 
 .card.flipped {
    transform: rotateY(180deg);
-   -webkit-transform: rotateY(180deg);
 }
 
   .deal2 {
@@ -826,14 +753,11 @@ footer p {
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards;
-   -webkit-animation: fadeIn 1.5s ease-out 2s forwards;
-  opacity: 0;
+  opacity:0;
 }
 
  .index-background.fade-out {
   animation: quick-fade-out .5s ease-out forwards;
-    -webkit-animation: quick-fade-out .5s ease-out forwards;
-
 }
 
   .container {
@@ -911,13 +835,6 @@ footer p {
     transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     transform-origin: center;
-    -webkit-transform-style: preserve-3d;
-  -webkit-transform-origin: center center;
-  -webkit-backface-visibility: visible;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transform-origin: center;
-
  }
 
   .flip-container {
@@ -928,8 +845,6 @@ footer p {
   margin-bottom: 10.5vh;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
-  -webkit-perspective: 800px;
-  -webkit-animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
 }
 
   .front, .back {
@@ -945,12 +860,10 @@ footer p {
   color: #fff;
   background-size: cover; /* Cover the entire area of the div */
   background-position: center; /* Center the image */
-   -webkit-backface-visibility: hidden;
 }
 
 .back {
   transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
   background: #ffffff;
   color: white;
   background-size: cover; /* Ensures the image covers the entire div */
@@ -962,7 +875,6 @@ footer p {
 
 .card.flipped {
    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
 }
 
   .deal2 {
@@ -1017,13 +929,11 @@ footer p {
   z-index: -1; /* Ensures it's behind other content */
   position: absolute; /* Takes it out of the normal document flow */
   animation: fadeIn 1.5s ease-out 2s forwards;
-  opacity: 0;
-   -webkit-animation: fadeIn 1.5s ease-out 2s forwards;
+  opacity:0;
 }
 
  .index-background.fade-out {
   animation: quick-fade-out .5s ease-out forwards;
-    -webkit-animation: quick-fade-out .5s ease-out forwards;
 }
 
   .container {
@@ -1105,13 +1015,6 @@ footer p {
     transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     transform-origin: center;
-    -webkit-transform-style: preserve-3d;
-  -webkit-transform-origin: center center;
-  -webkit-backface-visibility: visible;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transform-origin: center;
-
  }
 
   .flip-container {
@@ -1122,9 +1025,6 @@ footer p {
   margin-bottom: 10.5vh;
   animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
   opacity: 0; /* Make the container invisible initially */
-   -webkit-perspective: 800px;
- -webkit-animation: swoop-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) .75s forwards; /* Reduced from 2.5s to 1.5s */
-
 }
 
   .front, .back {
@@ -1140,7 +1040,6 @@ footer p {
   color: #fff;
   background-size: cover; /* Cover the entire area of the div */
   background-position: center; /* Center the image */
-   -webkit-backface-visibility: hidden;
 }
 
 .back {
@@ -1152,12 +1051,10 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-transform: rotateY(180deg);
 }
 
 .card.flipped {
    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
 }
 
   .deal2 {
