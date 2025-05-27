@@ -296,7 +296,8 @@ body, html {
   }
 
 a {
-     color: #ffffff;
+     color: #555555;
+ text-decoration: none; 
 }
 
 
@@ -560,7 +561,7 @@ canvas {
 
 
   footer p {
-    color: #ffffff;
+    color: #555555;
     font-size: 1vw;
     font-family: 'courier', sans-serif;
     font-weight: normal;
